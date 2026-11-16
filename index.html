@@ -15,7 +15,6 @@
       --orange: #f17435;
       --line: #315857;
       --panel: #0a2628;
-      --muted: #acc7c4;
       color: #e2ecec;
       background: var(--dark);
       font-family: system-ui, sans-serif;
@@ -48,8 +47,9 @@
     p { margin: 0 0 1rem; }
     .intro > p { max-width: 34rem; }
     .portrait { display: block; width: 100%; height: auto; border: 1px solid var(--line); }
-    .links, .actions { display: flex; flex-wrap: wrap; align-items: center; gap: .65rem 1.35rem; }
-    .links a { font-weight: 600; }
+    .socials, .actions { display: flex; flex-wrap: wrap; align-items: center; gap: .65rem 1.35rem; }
+    .socials { gap: .45rem 1rem; margin-left: auto; font-size: .92rem; }
+    .download { font-weight: 600; }
     section { margin: 1.65rem 0; padding: clamp(1.1rem, 3vw, 2.2rem); border: 1px solid var(--line); background: var(--panel); }
     #prompt {
       padding: .9rem 1rem;
@@ -70,10 +70,26 @@
     button:hover { background: var(--mint); }
     :focus-visible { outline: 2px solid var(--orange); outline-offset: 4px; }
     [role="status"] { color: var(--mint); font-size: .9rem; }
-    footer { display: flex; flex-wrap: wrap; gap: .45rem 1.2rem; color: var(--muted); font-size: .92rem; }
+    .profile { max-width: 46rem; margin: clamp(2rem, 6vw, 4rem) auto 0; }
+    .profile > h2 { color: var(--orange); font-size: clamp(1.7rem, 5vw, 2.25rem); }
+    .profile h3 { color: var(--mint); font: 650 1.15rem/1.35 "IBM Plex Mono", Consolas, monospace; margin: 1.8rem 0 .65rem; }
+    .profile ul, .profile ol { padding-left: 1.25rem; }
+    .profile li { margin-bottom: .6rem; }
+    .profile pre {
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+      margin: 1rem 0;
+      padding: 1rem;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      color: var(--mint);
+      font: .88rem/1.6 "IBM Plex Mono", Consolas, monospace;
+    }
+    .profile img { max-width: 100%; height: auto; }
     @media (max-width: 34rem) {
       .hero { grid-template-columns: minmax(0, 1fr); gap: 1.15rem; }
       .portrait { grid-row: 1; width: min(100%, 11rem); }
+      .socials { width: 100%; margin: .3rem 0 0; }
     }
   </style>
 </head>
@@ -83,32 +99,31 @@
       <div class="intro">
         <p class="brand mono">Ecosystem Operator Collective</p>
         <h1>Ben O’Hanlon</h1>
-        <p>I solve growth, adoption and distribution problems by building ecosystems and leading developer marketing. I get hands-on first and grow the team around what works.</p>
-        <nav class="links" aria-label="Profile links">
-          <a href="https://my.visualcv.com/growth/">Résumé</a>
-          <a href="https://github.com/benohanlon/ecosystem-operator-collective-public/blob/main/benohanlon.md">Read my profile</a>
-          <a href="https://linktr.ee/benohanlon">Linktree</a>
-        </nav>
+        <p>I solve growth, adoption and distribution problems by building ecosystems and leading developer marketing.</p>
+        <a class="download" href="./benohanlon.md" download="benohanlon.md">Download Markdown</a>
       </div>
       <img class="portrait" src="./assets/ben-ohanlon.jpg" alt="Portrait of Ben O’Hanlon" width="640" height="640">
     </header>
     <section aria-labelledby="ai-heading">
       <h2 id="ai-heading">Ask your AI about my work</h2>
-      <p>Paste this into an AI chat with web access. Ask whatever you like about my experience, how I work or what I’m building.</p>
+      <p>Paste this prompt into your AI. Then ask whatever you like about my experience or how I work.</p>
       <p id="prompt">Read https://raw.githubusercontent.com/benohanlon/ecosystem-operator-collective-public/main/benohanlon.md and follow the relevant links to answer my questions about Ben O’Hanlon and his work.</p>
       <div class="actions">
         <button id="copy" type="button" hidden>Copy for your AI</button>
-        <a href="./benohanlon.md" download="benohanlon.md">Download Markdown</a>
         <span id="copy-status" role="status"></span>
+        <nav class="socials" aria-label="Find Ben elsewhere">
+          <a href="https://linktr.ee/benohanlon">Linktree</a>
+          <a href="https://www.linkedin.com/in/memetics/">LinkedIn</a>
+          <a href="https://x.com/benohanlon">X</a>
+          <a href="https://ecosystemoperator.substack.com/">Substack</a>
+        </nav>
       </div>
     </section>
-    <footer>
-      <a href="https://github.com/benohanlon/ecosystem-operator-collective-public">Ecosystem Operator Collective on GitHub</a>
-      <a href="https://github.com/benohanlon/ecosystem-operator-collective-public/tree/main/cases">Cases</a>
-      <a href="https://github.com/benohanlon/ecosystem-operator-collective-public/tree/main/eos-playbook">EOS Playbook</a>
-      <a href="https://github.com/benohanlon/ecosystem-operator-collective-public/tree/main/writing">Writing</a>
-    </footer>
+    <article class="profile" id="profile" aria-label="Ben O’Hanlon’s Markdown profile">
+      <p><a href="./benohanlon.md">Open the Markdown profile</a></p>
+    </article>
   </main>
+  <script src="./assets/marked.umd.js"></script>
   <script>
     const prompt = document.getElementById('prompt');
     const markdown = new URL('./benohanlon.md', window.location.href);
@@ -126,6 +141,43 @@
         }
       });
     }
+
+    async function showProfile() {
+      const response = await fetch(markdown);
+      if (!response.ok) throw new Error('Profile unavailable');
+      const source = await response.text();
+      const content = document.createElement('template');
+      const parser = new marked.Marked({
+        renderer: { html: () => '' },
+        walkTokens(token) {
+          if (token.type === 'heading') token.depth = Math.min(6, token.depth + 1);
+        }
+      });
+      content.innerHTML = parser.parse(source);
+
+      const repository = 'https://github.com/benohanlon/ecosystem-operator-collective-public/blob/main/';
+      const rawRepository = 'https://raw.githubusercontent.com/benohanlon/ecosystem-operator-collective-public/main/';
+      for (const link of content.content.querySelectorAll('a[href], img[src]')) {
+        const attribute = link.tagName === 'A' ? 'href' : 'src';
+        const target = link.getAttribute(attribute);
+        if (attribute === 'href' && target.startsWith('#')) continue;
+        try {
+          const url = new URL(target, attribute === 'href' ? repository : rawRepository);
+          if (['https:', 'http:', 'mailto:'].includes(url.protocol)) {
+            link.setAttribute(attribute, url.href);
+          } else {
+            link.removeAttribute(attribute);
+          }
+        } catch {
+          link.removeAttribute(attribute);
+        }
+      }
+      document.getElementById('profile').replaceChildren(content.content);
+    }
+
+    showProfile().catch(() => {
+      // Keep the direct Markdown link available if rendering fails.
+    });
   </script>
 </body>
 </html>
