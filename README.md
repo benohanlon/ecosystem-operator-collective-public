@@ -13,3 +13,7 @@ An independent consultancy led by Ben O’Hanlon. We help projects grow by worki
 - [Reading list](lists/README.md) · The books and ideas we return to.
 
 [Get in touch with Ben](https://www.linkedin.com/in/memetics/).
+
+## Maintain the public profile
+
+Edit `benohanlon.md` and run `node scripts/build-profile.cjs` to regenerate the homepage article before publishing. Run `node scripts/build-profile.cjs --check` to check that the rendered profile matches the Markdown.

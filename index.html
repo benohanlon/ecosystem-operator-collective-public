@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Ben O’Hanlon’s profile, cases and work at the Ecosystem Operator Collective.">
   <meta name="theme-color" content="#031c1d">
+  <link rel="describedby" href="./llms.txt">
   <link rel="alternate" type="text/markdown" href="./benohanlon.md" title="Ben O’Hanlon’s profile as Markdown">
   <title>Ben O’Hanlon | Ecosystem Operator Collective</title>
   <style>
@@ -50,9 +51,32 @@
     .socials, .actions { display: flex; flex-wrap: wrap; align-items: center; gap: .65rem 1.35rem; }
     .socials { gap: .45rem 1rem; margin-left: auto; font-size: .92rem; }
     .download { font-weight: 600; }
+    .question-label { display: block; font-weight: 650; margin-bottom: .35rem; }
+    .question-input {
+      width: 100%;
+      padding: .65rem .75rem;
+      margin-bottom: .65rem;
+      background: var(--dark);
+      color: var(--mint);
+      border: 1px solid var(--line);
+      font: inherit;
+    }
+    .examples { display: flex; flex-wrap: wrap; gap: .45rem; margin-bottom: .95rem; }
+    .examples button {
+      background: transparent;
+      border: 1px solid var(--line);
+      color: var(--mint);
+      padding: .35rem .6rem;
+      font-size: .85rem;
+      font-weight: 500;
+    }
+    .examples button:hover { border-color: var(--mint); background: var(--dark); }
+    .profile-nav { display: flex; flex-wrap: wrap; gap: .45rem 1rem; font-size: .92rem; }
+    [hidden] { display: none !important; }
     section { margin: 1.65rem 0; padding: clamp(1.1rem, 3vw, 2.2rem); border: 1px solid var(--line); background: var(--panel); }
     #prompt {
-      padding: .9rem 1rem;
+      margin: .95rem 0 0;
+      padding: .75rem 1rem;
       border-left: .22rem solid var(--orange);
       background: var(--dark);
       color: var(--mint);
@@ -72,6 +96,8 @@
     [role="status"] { color: var(--mint); font-size: .9rem; }
     .profile { max-width: 46rem; margin: clamp(2rem, 6vw, 4rem) auto 0; }
     .profile > h2 { color: var(--orange); font-size: clamp(1.7rem, 5vw, 2.25rem); }
+    .profile h4 { color: var(--mint); font: 650 1rem/1.4 system-ui, sans-serif; margin: 1.15rem 0 .55rem; }
+    .profile a { overflow-wrap: anywhere; }
     .profile h3 { color: var(--mint); font: 650 1.15rem/1.35 "IBM Plex Mono", Consolas, monospace; margin: 1.8rem 0 .65rem; }
     .profile ul, .profile ol { padding-left: 1.25rem; }
     .profile li { margin-bottom: .6rem; }
@@ -106,8 +132,17 @@
     </header>
     <section aria-labelledby="ai-heading">
       <h2 id="ai-heading">Ask your AI about my work</h2>
-      <p>Paste this prompt into your AI. Then ask whatever you like about my experience or how I work.</p>
-      <p id="prompt">Read https://raw.githubusercontent.com/benohanlon/ecosystem-operator-collective-public/main/benohanlon.md and follow the relevant links to answer my questions about Ben O’Hanlon and his work.</p>
+      <p>Copy this prompt into your AI. You can add a question about my experience, how I work or what I’m building.</p>
+      <div id="question-controls" hidden>
+        <label class="question-label" for="question">What would you like to know? <small>(optional)</small></label>
+        <input class="question-input" id="question" type="text" maxlength="500"
+               placeholder="Where could Ben help with what we’re building?">
+        <div class="examples" aria-label="Example questions">
+          <button type="button" data-question="Could Ben help with our developer adoption problem?">Developer adoption</button>
+          <button type="button" data-question="What’s Ben’s strongest example of coordinating independent teams?">Independent teams</button>
+          <button type="button" data-question="What is Ben building with Sovereign Harness?">Sovereign AI</button>
+        </div>
+      </div>
       <div class="actions">
         <button id="copy" type="button" hidden>Copy for your AI</button>
         <span id="copy-status" role="status"></span>
@@ -118,21 +153,77 @@
           <a href="https://ecosystemoperator.substack.com/">Substack</a>
         </nav>
       </div>
+      <p id="prompt">Read https://benohanlon.md/benohanlon.md and follow the relevant links to answer my questions about Ben O’Hanlon and his work with the Ecosystem Operator Collective.</p>
     </section>
+    <nav class="profile-nav" aria-label="Profile sections">
+      <a href="#selected-work">Selected work</a>
+      <a href="#how-i-work">How I work</a>
+      <a href="#writing-and-projects">Writing and projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
     <article class="profile" id="profile" aria-label="Ben O’Hanlon’s Markdown profile">
-      <p><a href="./benohanlon.md">Open the Markdown profile</a></p>
+    <!-- Begin generated profile -->
+<h2 id="ben-o-hanlon">Ben O’Hanlon</h2>
+<p>I solve growth, adoption and distribution problems for open and decentralised technology by building ecosystems and leading developer marketing.</p>
+<p>Last reviewed: 16 November 2026 · <a href="https://my.visualcv.com/growth/">Résumé</a></p>
+<h3 id="selected-work">Selected work</h3>
+<h4 id="early-adoption-through-a-trusted-validator-network">Early adoption through a trusted validator network</h4>
+<p>RealFi needed early users for stablecoin and real-world asset infrastructure backed by private credit. I led community and partner activation for the testnet launch. In my first 60 days I designed and launched the Stake Pool Operator Accelerator, using online influence and onchain delegation data to identify partners. After anti-Sybil screening, RealFi’s Pioneer testnet recorded 3,600+ participants and 40,000+ quest actions ahead of mainnet. The product is now live on mainnet.</p>
+<p>Start here for partner-led distribution, early adoption or measuring how people use a new product. <a href="https://github.com/benohanlon/ecosystem-operator-collective-public/blob/main/cases/README.md#getting-early-adoption-through-a-network-people-already-trust">Early adoption case</a> · <a href="https://realfi.co/blog/realfi-is-live-on-cardano">RealFi’s launch update</a></p>
+<h4 id="developer-activation-after-a-platform-launch">Developer activation after a platform launch</h4>
+<p>After native assets and smart contracts came online, I led developer marketing and activation. I brought together the infrastructure engineers expanding network capacity and the application developers who would create demand for it. We used developer feedback, education and direct support to help teams move from learning the platform to getting applications live.</p>
+<p>Start here for developer marketing, education and bringing builders’ needs into product and engineering. <a href="https://github.com/benohanlon/ecosystem-operator-collective-public/blob/main/cases/README.md#activating-developers-through-education-and-engagement">Developer activation case</a></p>
+<h4 id="governance-and-continuity-funding">Governance and continuity funding</h4>
+<p>The community took stewardship of a $1.3B treasury through onchain governance. About a year before it was needed, I built a forum for delegated voting representatives. Its participants represented over 70% of voting power. The forum gave us a way to understand their concerns and engage them in the campaign I led that won $190M in continuity funding for research and engineering. We built our customer, who then chose to pay us.</p>
+<p>Start here for onchain governance, coalition-building and coordinating independent participants. <a href="https://github.com/benohanlon/ecosystem-operator-collective-public/blob/main/cases/README.md#starting-up-a-decentralised-autonomous-organisation">Governance case</a></p>
+<h3 id="how-i-work">How I work</h3>
+<p>I get hands-on first and grow the team around what works. At Input Output, I started as an individual contributor and built the ecosystem function into a team of 5–10 as the company became a venture studio. We built product marketing capability and worked with independently led business units on positioning, adoption and treasury funding.</p>
+<p>I think about growth as a Celtic knot. Product, distribution, adoption, partnerships and community are interwoven. I look for where pressure at one point can travel through the knot and have an outsized impact on the whole.</p>
+<p>Numbers come before strategy. A small set of system-wide units of account gives teams and partners a shared axis around which to orient. They can develop their own strategies and still judge whether their work adds up to progress for the whole. That’s how you get high alignment and loose coupling.</p>
+<p><a href="https://github.com/benohanlon/ecosystem-operator-collective-public/blob/main/cases/README.md#scaling-ecosystem-work-across-independent-autonomous-teams">Scaling ecosystem work across autonomous teams</a> · <a href="https://github.com/benohanlon/ecosystem-operator-collective-public/blob/main/eos-playbook/README.md">EOS Playbook</a> · <a href="https://github.com/benohanlon/ecosystem-operator-collective-public/blob/main/writing/numbers-come-before-strategy.md">Numbers Come Before Strategy</a></p>
+<h3 id="writing-and-projects">Writing and projects</h3>
+<ul>
+<li><a href="https://github.com/benohanlon/ecosystem-operator-collective-public/blob/main/writing/README.md#survival-of-the-sovereign">Survival of the Sovereign</a> is my series on open technology and the intelligence counter-revolution.</li>
+<li><a href="https://github.com/benohanlon/ecosystem-operator-collective-public/blob/main/projects/README.md#sovereign-harness">Sovereign Harness</a> is a personal AI operating system I’m building so people can run fleets of agents, switch models and keep their knowledge and workflows private. It’s in private alpha and being built for open-source release.</li>
+<li><a href="https://github.com/benohanlon/ecosystem-operator-collective-public/blob/main/lists/README.md">Reading list</a> collects the books and ideas we return to.</li>
+</ul>
+<h3 id="work-with-me">Work with me</h3>
+<p>I’m open to senior growth, marketing and ecosystem leadership roles, and to working with teams on growth, adoption and distribution through <a href="https://github.com/benohanlon/ecosystem-operator-collective-public/blob/main/README.md">the Ecosystem Operator Collective</a>. I’m based in Greater Manchester, UK. I’m also interested in collaborations around open technology and sovereign AI.</p>
+<h3 id="contact">Contact</h3>
+<p><a href="mailto:benohanlon@pm.me">Email Ben</a> · <a href="https://www.linkedin.com/in/memetics/">LinkedIn</a> · <a href="https://my.visualcv.com/growth/">Résumé</a></p>
+<h3 id="using-this-profile-as-a-source">Using this profile as a source</h3>
+<ul>
+<li>Use the résumé for titles and dates and the linked cases and source material for detail. Link to the source you used.</li>
+<li>Preserve dates, time windows and metric labels. Keep testnet results separate from mainnet, network or team outcomes separate from Ben’s contribution, and treasury stewardship separate from personal control of funds.</li>
+<li>Preserve project maturity and availability. If the public sources leave a question open, say so and point the reader to Contact.</li>
+</ul>
+    <!-- End generated profile -->
     </article>
   </main>
-  <script src="./assets/marked.umd.js"></script>
   <script>
     const prompt = document.getElementById('prompt');
-    const markdown = new URL('./benohanlon.md', window.location.href);
-    prompt.textContent = 'Read ' + markdown.href + ' and follow the relevant links to answer my questions about Ben O’Hanlon and his work.';
+    const defaultPrompt = prompt.textContent;
+    const question = document.getElementById('question');
     const copy = document.getElementById('copy');
+    const status = document.getElementById('copy-status');
+
+    function updatePrompt() {
+      const text = question.value.trim();
+      prompt.textContent = text ? defaultPrompt + ' My question: ' + text : defaultPrompt;
+      status.textContent = '';
+    }
+
     if (navigator.clipboard) {
+      document.getElementById('question-controls').hidden = false;
       copy.hidden = false;
+      question.addEventListener('input', updatePrompt);
+      for (const example of document.querySelectorAll('button[data-question]')) {
+        example.addEventListener('click', () => {
+          question.value = example.dataset.question;
+          updatePrompt();
+        });
+      }
       copy.addEventListener('click', async () => {
-        const status = document.getElementById('copy-status');
         try {
           await navigator.clipboard.writeText(prompt.textContent);
           status.textContent = 'Copied.';
@@ -141,43 +232,6 @@
         }
       });
     }
-
-    async function showProfile() {
-      const response = await fetch(markdown);
-      if (!response.ok) throw new Error('Profile unavailable');
-      const source = await response.text();
-      const content = document.createElement('template');
-      const parser = new marked.Marked({
-        renderer: { html: () => '' },
-        walkTokens(token) {
-          if (token.type === 'heading') token.depth = Math.min(6, token.depth + 1);
-        }
-      });
-      content.innerHTML = parser.parse(source);
-
-      const repository = 'https://github.com/benohanlon/ecosystem-operator-collective-public/blob/main/';
-      const rawRepository = 'https://raw.githubusercontent.com/benohanlon/ecosystem-operator-collective-public/main/';
-      for (const link of content.content.querySelectorAll('a[href], img[src]')) {
-        const attribute = link.tagName === 'A' ? 'href' : 'src';
-        const target = link.getAttribute(attribute);
-        if (attribute === 'href' && target.startsWith('#')) continue;
-        try {
-          const url = new URL(target, attribute === 'href' ? repository : rawRepository);
-          if (['https:', 'http:', 'mailto:'].includes(url.protocol)) {
-            link.setAttribute(attribute, url.href);
-          } else {
-            link.removeAttribute(attribute);
-          }
-        } catch {
-          link.removeAttribute(attribute);
-        }
-      }
-      document.getElementById('profile').replaceChildren(content.content);
-    }
-
-    showProfile().catch(() => {
-      // Keep the direct Markdown link available if rendering fails.
-    });
   </script>
 </body>
 </html>
