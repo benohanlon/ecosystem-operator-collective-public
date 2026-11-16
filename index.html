@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Ben O’Hanlon’s profile, cases and work at the Ecosystem Operator Collective.">
+  <link rel="alternate" type="text/markdown" href="./benohanlon.md" title="Ben O’Hanlon’s profile as Markdown">
+  <title>Ben O’Hanlon | Ecosystem Operator Collective</title>
+  <style>
+    :root { color-scheme: light; color: #0a3036; background: #f7f3e9; }
+    body { margin: 0; font: 1rem/1.6 system-ui, sans-serif; }
+    main { width: min(42rem, calc(100% - 3rem)); margin: clamp(2.5rem, 10vh, 7rem) auto; }
+    h1 { font-size: clamp(2.5rem, 9vw, 4.5rem); line-height: 1.05; margin: 0 0 1rem; }
+    h2 { font-size: 1.15rem; margin: 0 0 .4rem; }
+    p { margin: 0 0 1rem; }
+    a { color: #0a5b62; text-underline-offset: .2em; }
+    section { margin: 2rem 0; padding: 1.25rem; border: 1px solid #9ab0ab; border-radius: .5rem; }
+    .links { display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; }
+    #prompt { padding: .9rem; background: #e7ece3; border-radius: .3rem; overflow-wrap: anywhere; }
+    button { background: #0a3036; color: white; border: 0; border-radius: .3rem; padding: .55rem .9rem; font: inherit; cursor: pointer; }
+    :focus-visible { outline: 3px solid #a94d0d; outline-offset: 3px; }
+    [role="status"] { margin-left: .5rem; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Ben O’Hanlon</h1>
+    <p>Growth &amp; Marketing Executive · Ecosystem Growth, Developer Marketing &amp; Governance</p>
+    <div class="links">
+      <a href="https://github.com/benohanlon/ecosystem-operator-collective-public/blob/main/benohanlon.md">Read my profile</a>
+      <a href="https://my.visualcv.com/growth/">Résumé</a>
+      <a href="https://github.com/benohanlon/ecosystem-operator-collective-public">Ecosystem Operator Collective</a>
+    </div>
+    <section aria-labelledby="ai-heading">
+      <h2 id="ai-heading">Ask your AI about my work</h2>
+      <p>Paste this into a chat with web access and add your question.</p>
+      <p id="prompt">Read https://raw.githubusercontent.com/benohanlon/ecosystem-operator-collective-public/main/benohanlon.md and follow the relevant links to answer my questions about Ben O’Hanlon and his work.</p>
+      <div>
+        <button id="copy" type="button" hidden>Copy prompt</button>
+        <span id="copy-status" role="status"></span>
+      </div>
+    </section>
+    <a href="./benohanlon.md" download="benohanlon.md">Download the Markdown file</a>
+  </main>
+  <script>
+    const prompt = document.getElementById('prompt');
+    const markdown = new URL('./benohanlon.md', window.location.href);
+    prompt.textContent = `Read ${markdown.href} and follow the relevant links to answer my questions about Ben O’Hanlon and his work.`;
+    const copy = document.getElementById('copy');
+    if (navigator.clipboard) {
+      copy.hidden = false;
+      copy.addEventListener('click', async () => {
+        const status = document.getElementById('copy-status');
+        try {
+          await navigator.clipboard.writeText(prompt.textContent);
+          status.textContent = 'Copied.';
+        } catch {
+          status.textContent = 'Select the prompt and copy it.';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
