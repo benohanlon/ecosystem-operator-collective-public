@@ -8,19 +8,25 @@ Last reviewed: 16 November 2026 · [Résumé](https://my.visualcv.com/growth/)
 
 ### Early adoption through a trusted validator network
 
-RealFi needed early users for stablecoin and real-world asset infrastructure backed by private credit. I led community and partner activation for the testnet launch. In my first 60 days I designed and launched the Stake Pool Operator Accelerator, using online influence and onchain delegation data to identify partners. After anti-Sybil screening, RealFi’s Pioneer testnet recorded 3,600+ participants and 40,000+ quest actions ahead of mainnet. The product is now live on mainnet.
+I designed and launched RealFi’s Stake Pool Operator Accelerator in my first 60 days. After anti-Sybil screening, RealFi’s Pioneer testnet recorded **3,600+ participants and 40,000+ quest actions** ahead of mainnet.
+
+I led community and partner activation for the testnet launch of stablecoin and real-world asset infrastructure backed by private credit. I used online influence and onchain delegation data to identify partners who could reach early users through relationships they already had. The product is now live on mainnet.
 
 Start here for partner-led distribution, early adoption or measuring how people use a new product. [Early adoption case](cases/README.md#getting-early-adoption-through-a-network-people-already-trust) · [RealFi’s launch update](https://realfi.co/blog/realfi-is-live-on-cardano)
 
 ### Developer activation after a platform launch
 
-After native assets and smart contracts came online, I led developer marketing and activation. I brought together the infrastructure engineers expanding network capacity and the application developers who would create demand for it. We used developer feedback, education and direct support to help teams move from learning the platform to getting applications live.
+I led developer marketing and activation after native assets and smart contracts came online. I connected the engineers expanding network capacity with the application developers who would create demand for it.
+
+We used developer feedback, education and direct support to help teams move from learning the platform to getting applications live.
 
 Start here for developer marketing, education and bringing builders’ needs into product and engineering. [Developer activation case](cases/README.md#activating-developers-through-education-and-engagement)
 
 ### Governance and continuity funding
 
-The community took stewardship of a $1.3B treasury through onchain governance. About a year before it was needed, I built a forum for delegated voting representatives. Its participants represented over 70% of voting power. The forum gave us a way to understand their concerns and engage them in the campaign I led that won $190M in continuity funding for research and engineering. We built our customer, who then chose to pay us.
+I led the campaign that won **$190M in continuity funding for research and engineering** after the community took stewardship of a $1.3B treasury through onchain governance. We built our customer, who then chose to pay us.
+
+A forum I’d built about a year before it was needed gave us a way to understand the concerns of delegated voting representatives and engage them during the campaign. Its participants represented over 70% of voting power.
 
 Start here for onchain governance, coalition-building and coordinating independent participants. [Governance case](cases/README.md#starting-up-a-decentralised-autonomous-organisation)
 

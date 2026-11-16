@@ -4,6 +4,7 @@ const { Marked } = require('./vendor/marked.umd.js');
 
 const root = path.join(__dirname, '..');
 const read = filename => fs.readFileSync(path.join(root, filename), 'utf8').replace(/\r\n/g, '\n');
+const repository = 'https://github.com/benohanlon/ecosystem-operator-collective-public/blob/main/';
 
 const markdown = new Marked({
   renderer: {
@@ -16,29 +17,32 @@ const markdown = new Marked({
     }
   },
   walkTokens(token) {
-    if (token.type === 'heading') {
-      token.depth = Math.min(6, token.depth + 1);
-    }
     if (token.type === 'link' && !token.href.startsWith('#')) {
-      const repository = 'https://github.com/benohanlon/ecosystem-operator-collective-public/blob/main/';
       const target = new URL(token.href, repository);
       token.href = ['https:', 'http:', 'mailto:'].includes(target.protocol) ? target.href : '#';
     }
   }
 });
 
-const start = '    <!-- Begin generated profile -->';
-const end = '    <!-- End generated profile -->';
-const source = read('index.html');
-const contentStart = source.indexOf(start) + start.length;
-const contentEnd = source.indexOf(end);
-
-if (contentStart < start.length || contentEnd <= contentStart) {
-  throw new Error('The profile markers in index.html are missing or out of order.');
+function replaceGenerated(source, region, content) {
+  const begin = '    <!-- Begin generated ' + region + ' -->';
+  const end = '    <!-- End generated ' + region + ' -->';
+  const start = source.indexOf(begin);
+  const stop = source.indexOf(end);
+  if (start < 0 || stop <= start + begin.length) {
+    throw new Error('The generated ' + region + ' markers are missing or out of order.');
+  }
+  return source.slice(0, start + begin.length) + '\n' + content.trimEnd() + '\n' + source.slice(stop);
 }
 
-const profile = markdown.parse(read('benohanlon.md')).trimEnd();
-const updated = source.slice(0, contentStart) + '\n' + profile + '\n' + source.slice(contentEnd);
+const [name, positioning, metadata, ...sections] = read('benohanlon.md').trim().split('\n\n');
+if (!name?.startsWith('# ') || !positioning || !metadata?.startsWith('Last reviewed:') || !sections[0]?.startsWith('## Selected work')) {
+  throw new Error('The Markdown profile must start with name, positioning, review date, and selected work.');
+}
+const introduction = markdown.parse(name + '\n\n' + positioning).replace('<p>', '<p class="hero-positioning">');
+const profile = markdown.parse([...sections, metadata].join('\n\n'));
+const source = read('index.html');
+const updated = replaceGenerated(replaceGenerated(source, 'introduction', introduction), 'profile', profile);
 
 if (process.argv.includes('--check')) {
   if (updated !== source) {
