@@ -41,29 +41,32 @@ function replaceGenerated(source, region, content) {
 }
 
 const [name, positioning, metadata, ...sections] = read('benohanlon.md').trim().split('\n\n');
-const selectedWork = sections.indexOf('## Selected work');
-if (!name?.startsWith('# ') || !positioning || !metadata?.startsWith('Last reviewed:') || selectedWork < 0) {
-  throw new Error('The Markdown profile must start with name, positioning, and review date, and include a Selected work section.');
+const workHeading = sections.indexOf('## Work with me');
+const casesHeading = sections.indexOf('## Cases');
+if (!name?.startsWith('# ') || !positioning || !metadata?.startsWith('Last reviewed:') ||
+    workHeading < 0 || casesHeading <= workHeading) {
+  throw new Error('The Markdown profile must start with name, positioning and review date, with Work with me before Cases.');
 }
 const introduction = markdown.parse(name + '\n\n' + positioning).replace('<p>', '<p class="hero-positioning">');
-const starterHeading = sections.indexOf('## Start a chat');
+const starterHeading = sections.indexOf('## Ask your AI about my work');
 const starter = sections[starterHeading + 2]?.match(/^> (.+)$/);
 const instructionsHeading = sections.indexOf('## Agent instructions');
 if (starterHeading < 0 || !starter) {
   throw new Error('The starter prompt must be a single quoted paragraph.');
 }
-if (instructionsHeading !== starterHeading + 3 || instructionsHeading >= selectedWork) {
-  throw new Error('Agent instructions must sit between the starter prompt and Selected work.');
+if (instructionsHeading !== starterHeading + 3 || instructionsHeading >= workHeading) {
+  throw new Error('Agent instructions must sit between the starter prompt and Work with me.');
 }
 const prompt = markdown.parse(starter[1]);
-const work = markdown.parse(sections.slice(selectedWork).join('\n\n'));
-const instructions = markdown.parse(sections.slice(instructionsHeading + 1, selectedWork).join('\n\n'));
-const profile = work + '<details id="agent-instructions">\n<summary>Agent instructions</summary>\n' +
+const work = markdown.parse(sections.slice(workHeading).join('\n\n'));
+const instructions = markdown.parse(sections.slice(instructionsHeading + 1, workHeading).join('\n\n'));
+const guidance = '<details id="agent-instructions">\n<summary>Agent instructions</summary>\n' +
   instructions + '</details>\n' + markdown.parse(metadata.split(' · ')[0]);
 const source = read('index.html');
 let updated = replaceGenerated(source, 'introduction', introduction);
 updated = replaceGenerated(updated, 'prompt', prompt);
-updated = replaceGenerated(updated, 'profile', profile);
+updated = replaceGenerated(updated, 'profile', work);
+updated = replaceGenerated(updated, 'guidance', guidance);
 
 if (process.argv.includes('--check')) {
   if (updated !== source) {

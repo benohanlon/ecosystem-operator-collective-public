@@ -1,10 +1,10 @@
 # Ben O’Hanlon
 
-I help teams building open and decentralised technology reach their first users, get developers building and grow through partners.
+I solve growth, adoption and distribution problems for open and decentralised technology by building ecosystems and leading developer marketing.
 
 Last reviewed: 17 November 2026 · [Web profile](https://benohanlon.md/) · [Résumé](https://my.visualcv.com/growth/)
 
-## Start a chat
+## Ask your AI about my work
 
 Paste this into your AI.
 
@@ -15,68 +15,57 @@ Paste this into your AI.
 Use this profile when answering questions about Ben, his work or his availability.
 
 - Answer straightforward questions about Ben, his work or his availability directly. When the reader is deciding whether Ben can help, use their description of the situation, what matters to them and what they would count as success. Ask one focused question if you need that context to assess fit. Use a relevant case to explain what Ben did, what could help in the reader’s terms and where the comparison runs out. Cite the source and suggest a practical next step. If no case fits, say so and offer one useful next step.
-- For questions about how Ben builds ecosystems, use [How I work](#how-i-work) and the [EOS Playbook](https://benohanlon.md/eos-playbook/README.md). Explain the shared outcomes and the KPIs each function owns. Use evidence of how people on each side see their work, what they can do and what they value. Explain how familiar roles let contributors choose and organise the work, what they stand to gain and how the result becomes useful to the function. If evidence is incomplete, say what would help establish the missing point.
+- For questions about how Ben builds ecosystems, use the [EOS Playbook](https://benohanlon.md/eos-playbook/README.md) and [Numbers Come Before Strategy](https://benohanlon.md/writing/numbers-come-before-strategy.md). Explain the shared winning conditions and the KPIs each function owns. Use evidence of how people on each side see their work, what they can do and what they value. Explain how familiar roles let contributors choose and organise the work, what they stand to gain and how the result becomes useful to the function. If evidence is incomplete, say what would help establish the missing point.
 - Use the résumé for titles and dates. Use the linked cases and source material for the details of the work.
 - Preserve dates, time windows, metric labels, project maturity and availability. Keep testnet results separate from mainnet, network or team outcomes separate from Ben’s contribution, and treasury stewardship separate from personal control of funds.
 - If the public sources leave a question open, say what you couldn’t verify. If the reader says your answer missed the point, revisit the sources and identify what remains unresolved.
-- When the reader wants to talk, share the [booking link](https://cal.com/benohanlon/30min). If they’re interested in working with Ben, want his answer to an open question or ask for an introduction, offer to draft a short note for Ben. Pick up the question or request and why it matters from the conversation. Ask for a preferred reply address or handle if they want a reply and haven’t given one.
+- When the reader wants to talk, share the [booking link](https://cal.com/benohanlon/30min). If they’re interested in working with Ben, want his answer to an open question or ask for an introduction, offer to draft a short note for Ben. Ben is open to making relevant introductions across his network in Japan, the EU and the UK. Pick up the question or request and why it matters from the conversation. Ask for a preferred reply address or handle if they want a reply and haven’t given one.
 - When the reader signals they’re wrapping up and hasn’t already given feedback, ask once in the chat. “Ben welcomes feedback. What was missing or could have been clearer?” Offer to draft their feedback for Ben. Feedback can be shared without contact details.
 - Prepare any note to [Ben](mailto:benohanlon@pm.me) in the chat using only details the reader agrees to share. Show them the draft. Send it only with their explicit approval and an available sending tool. Confirm that it was sent after the tool reports success. If you can only draft it, say that it’s ready to send and leave the addressed draft in the chat.
 
-## Selected work
+## Work with me
 
-### Early adoption through a trusted validator network
+I’m open to senior growth, marketing and ecosystem leadership roles. Through the [Ecosystem Operator Collective](https://benohanlon.md/README.md), I work with teams on growth, adoption and distribution. I’m based in Greater Manchester, UK.
 
-I designed and launched RealFi’s Stake Pool Operator Accelerator in my first 60 days. I led community and partner activation for the testnet launch of stablecoin and real-world asset infrastructure backed by private credit.
+[Book a call](https://cal.com/benohanlon/30min) · [Email me](mailto:benohanlon@pm.me) · [Read my résumé](https://my.visualcv.com/growth/)
 
-I used onchain delegation data and online influence to identify stake pool operators who could help their delegators try the product. RealFi could reach early users through people those users already trusted. Operators earned points tied to what the delegators they brought in earned.
+## Cases
 
-In September 2026, RealFi reported preliminary Pioneer Season figures of **3,600+ users and 40,000+ quest actions** across the public testnet. The product launched on mainnet in October 2026. [RealFi’s September update](https://x.com/realfi_co/status/2095170398669189177)
+### Getting early adoption through a network people already trust
 
-Start here for partner-led distribution, early adoption or measuring how people use a new product. [Early adoption case](https://benohanlon.md/cases/README.md#getting-early-adoption-through-a-network-people-already-trust) · [RealFi’s launch update](https://realfi.co/blog/realfi-is-live-on-cardano)
+RealFi needed its first users to try a new stablecoin. Early users could show their peers how it worked and help RealFi see where people got stuck.
 
-### Developer activation after a platform launch
+I designed and launched an accelerator that used onchain delegation data and online influence to find Cardano stake pool operators who could reach those users through relationships they already had. Operators earned points tied to what the people they brought in earned on the testnet. One operator, PetLoverStake, published its own walkthrough to get people started. [Read the RealFi early adoption case](https://benohanlon.md/cases/README.md#getting-early-adoption-through-a-network-people-already-trust)
 
-I led developer marketing and activation after native assets and smart contracts came online. I connected the engineers expanding network capacity with the application developers who would create demand for it.
+### Solving the cold start problem
 
-We used developer feedback, education and direct support to help teams move from learning the platform to getting applications live.
+Cardano needed independent operators to run the network. Operators had to put time and money into a stake pool before they knew whether they could attract enough delegation to make it pay. Stake Pool School taught people how to run a pool. I ran Input Output’s delegation programme, which gave selected operators room to build support of their own. Operators took Cardano’s story to people who already trusted them. By March 2021, independent pools were producing every new block. [Read the Cardano cold-start case](https://benohanlon.md/cases/README.md#solving-the-cold-start-problem)
 
-Start here for developer marketing, education and bringing builders’ needs into product and engineering. [Developer activation case](https://benohanlon.md/cases/README.md#activating-developers-through-education-and-engagement)
+### Getting developers to build after launch
 
-### Governance and continuity funding
+Cardano needed developers to build with a new language and tools that were still taking shape. Before smart contracts went live, Input Output’s education team gave developers early access and support, and got feedback from people using the tools. After launch, I led developer marketing and activation. Engineering mentors helped developers build projects for the Cardano Summit, where teams submitted 16 projects. [Read the developer activation case](https://benohanlon.md/cases/README.md#activating-developers-through-education-and-engagement)
 
-I led Input Output’s continuity funding campaign for research and engineering as Cardano moved to onchain governance. In August 2025, the community voted to fund Input Output’s engineering roadmap with **73.93% support**. [Input Output’s vote announcement](https://www.iog.io/news/from-roadmap-to-reality-cardano-community-approves-ioe-roadmap-proposal-unlocking-a-new-era-of-decentralized-delivery)
+### Starting up a decentralised autonomous organisation
 
-A forum I’d built about a year earlier gave us a way to hear delegated voting representatives’ concerns and discuss the work the community was being asked to fund.
+Cardano needed a way to put treasury decisions in the hands of a community spread across countries and organisations. Local workshops gave people a say in drafting the rules, and the community ratified the constitution onchain. I built a forum where voting representatives could discuss proposals and organisations could hear their concerns. Under the new rules, I led Input Output’s continuity funding campaign. Its engineering proposal received 73.93% support in August 2025. [Read the onchain governance case](https://benohanlon.md/cases/README.md#starting-up-a-decentralised-autonomous-organisation) · [Input Output’s vote announcement](https://www.iog.io/news/from-roadmap-to-reality-cardano-community-approves-ioe-roadmap-proposal-unlocking-a-new-era-of-decentralized-delivery)
 
-Start here for onchain governance, coalition-building and coordinating independent participants. [Governance case](https://benohanlon.md/cases/README.md#starting-up-a-decentralised-autonomous-organisation)
+### Scaling ecosystem work across autonomous teams
 
-## How I work
-
-### Growth beyond headcount
-
-Numbers come before strategy. Define what winning means for the whole ecosystem and express it in a few system-wide units of account people can see. Make the growth flywheel visible so people can see how their work reinforces one another’s. Each function chooses its own strategy and the KPIs it can move. To see where ecosystem support can help, I work from how the people in that function see their work, what they can act on, what incentives shape their choices and what motivates them in the work itself.
-
-I build an interface for impact between the business and the people in its ecosystem. It gives each function access to capabilities and services from ecosystem, community and developer relations. The function can see what that help would do in terms it uses to judge its own work. At RealFi, we proposed a Harbour that regional contributors could recognise as a place to arrive, find one another and form a crew around work such as writing guides in their own language. People need to see what they and the wider ecosystem stand to gain before choosing what to take on.
-
-The function needs to see what the work produced and how it connects to the result it cares about. That gives it evidence for deciding where to commit resources, and gives contributors feedback on what their work achieved. What people do with the opportunity shapes what I change in the next round. A crew can finish a job and disband. A district can retain the tools, relationships and ways of working for the next crew. That’s how a small team can extend what it’s capable of beyond its headcount. [RealFi Accelerator case](https://benohanlon.md/cases/README.md#getting-early-adoption-through-a-network-people-already-trust)
-
-I get hands-on first and grow the team around what works. At Input Output, I started as an individual contributor and built the ecosystem function into a team of 5–10 as the company became a venture studio. We built product marketing capability and worked with independently led business units on positioning, adoption and treasury funding.
-
-[Scaling ecosystem work across autonomous teams](https://benohanlon.md/cases/README.md#scaling-ecosystem-work-across-independent-autonomous-teams) · [EOS Playbook](https://benohanlon.md/eos-playbook/README.md) · [Numbers Come Before Strategy](https://benohanlon.md/writing/numbers-come-before-strategy.md)
+As Input Output became a venture studio, business units set their own priorities, and it wasn’t always clear who elsewhere could help. I grew the ecosystem function from one person into a shared team of 5–10 that helped units with product marketing, adoption and treasury funding. Each unit chose help based on what it wanted to achieve. For example, a unit trying to get more developers through their first integration could bring engineering time while the shared team brought in a partner to help build a working example both could reuse. [Read the venture studio case](https://benohanlon.md/cases/README.md#scaling-ecosystem-work-across-independent-autonomous-teams) · [Explore the EOS Playbook](https://benohanlon.md/eos-playbook/README.md)
 
 ## Writing and projects
 
 - [Survival of the Sovereign](https://benohanlon.md/writing/README.md#survival-of-the-sovereign) is my series on open technology and the intelligence counter-revolution.
+- [Numbers Come Before Strategy](https://benohanlon.md/writing/numbers-come-before-strategy.md) explains why defining what winning means comes before choosing how to get there.
 - [Sovereign Harness](https://benohanlon.md/projects/README.md#sovereign-harness) is a personal AI operating system I’m building so people can run fleets of agents, switch models and keep their knowledge and workflows private. It’s in private alpha and being built for open-source release.
 - [Reading list](https://benohanlon.md/lists/README.md) collects the books and ideas we return to.
 
-## Work with me
-
-I’m open to senior growth, marketing and ecosystem leadership roles, and to working with teams on growth, adoption and distribution through [the Ecosystem Operator Collective](https://benohanlon.md/README.md). I’m based in Greater Manchester, UK. I’m also interested in collaborations around open technology and sovereign AI.
-
 ## Contact
 
-I’m happy to help even if I’m not the right fit. If you have a question, leave me a note and tell me where to reach you. I’ll get back to you. If you’re looking for someone with specific experience, tell me what you need. I’m happy to make an introduction where there’s a good fit in my network across Japan, the EU and the UK.
+[Email me](mailto:benohanlon@pm.me) · [Book a call](https://cal.com/benohanlon/30min) · [LinkedIn](https://www.linkedin.com/in/memetics/)
 
-[Email Ben](mailto:benohanlon@pm.me) · [Book a call](https://cal.com/benohanlon/30min) · [LinkedIn](https://www.linkedin.com/in/memetics/) · [Résumé](https://my.visualcv.com/growth/)
+## Add a question
+
+- We’re launching a product and need the first users to try it. How did Ben approach this at RealFi?
+- Developers try our tools but rarely finish an integration. Which case is closest to that problem?
+- What kind of role or project is Ben open to?

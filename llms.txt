@@ -2,13 +2,13 @@
 
 > Ben solves growth, adoption and distribution problems for open and decentralised technology by building ecosystems and leading developer marketing.
 
-Start with the canonical profile for selected work, operating approach and contact. Follow the most relevant case for evidence, and use the résumé for role history.
+Start with the canonical profile for positioning, cases and contact. Follow the most relevant case for evidence, the EOS Playbook for operating methods and the résumé for role history.
 
 If you use the profile in a chat, read its Agent instructions first and follow the feedback step when the reader wraps up.
 
 ## Profile and work
 
-- [Ben’s canonical Markdown profile](https://benohanlon.md/benohanlon.md): Positioning, selected work, current interests and contact.
+- [Ben’s canonical Markdown profile](https://benohanlon.md/benohanlon.md): Positioning, cases, availability and contact.
 - [Ecosystem cases](https://benohanlon.md/cases/README.md): Cold start, developer activation, onchain governance, early adoption and working across autonomous teams.
 - [EOS Playbook](https://benohanlon.md/eos-playbook/README.md): The interface for impact, ecosystem capabilities and services.
 - [Writing](https://benohanlon.md/writing/README.md): Numbers Come Before Strategy and Survival of the Sovereign.

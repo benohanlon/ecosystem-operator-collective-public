@@ -50,7 +50,13 @@
       margin: .55rem 0 .85rem;
     }
     p { margin: 0 0 1rem; }
-    .hero-positioning { max-width: 34rem; }
+    .hero-positioning { max-width: 34rem; margin-bottom: .7rem; }
+    .download { font-size: .88rem; }
+    .prompt-heading {
+      margin: 1.2rem 0 .45rem;
+      color: var(--mint);
+      font: 600 .95rem/1.4 system-ui, sans-serif;
+    }
     .portrait { display: block; width: 100%; height: auto; border: 1px solid var(--line); }
     .socials, .profile-nav { display: flex; flex-wrap: wrap; align-items: center; gap: .45rem .95rem; }
     .prompt-actions {
@@ -70,7 +76,7 @@
     }
     .providers img { display: block; width: 1.6rem; height: 1.6rem; object-fit: contain; }
     .providers a:hover img { filter: brightness(1.14); }
-    #copy {
+    .copy-button {
       min-height: 2.75rem;
       padding: 0;
       border: 0;
@@ -82,7 +88,7 @@
       text-underline-offset: .22em;
       cursor: pointer;
     }
-    #copy:hover { color: var(--orange); }
+    .copy-button:hover { color: var(--orange); }
     .socials { font-size: .88rem; margin-top: .9rem; }
     .profile-nav { margin: 0 0 1.25rem; font-size: .92rem; }
     details { margin-top: .4rem; }
@@ -115,6 +121,19 @@
     .profile a { overflow-wrap: anywhere; }
     .profile ul, .profile ol { padding-left: 1.25rem; }
     .profile li { margin-bottom: .6rem; }
+    .question-form label { display: block; margin-bottom: .35rem; }
+    .question-actions { display: flex; flex-wrap: wrap; gap: .5rem 1rem; align-items: center; }
+    .question-actions input {
+      flex: 1 1 18rem;
+      min-width: 0;
+      min-height: 2.75rem;
+      padding: .5rem .7rem;
+      border: 1px solid var(--line);
+      border-radius: .25rem;
+      background: var(--panel);
+      color: inherit;
+      font: inherit;
+    }
     #agent-instructions { margin: 1rem 0; }
     .closing-artwork {
       --shadow-room: #021819;
@@ -199,15 +218,17 @@
         <p class="brand mono">Ecosystem Operator Collective</p>
     <!-- Begin generated introduction -->
 <h1 id="ben-o-hanlon">Ben O’Hanlon</h1>
-<p class="hero-positioning">I help teams building open and decentralised technology reach their first users, get developers building and grow through partners.</p>
+<p class="hero-positioning">I solve growth, adoption and distribution problems for open and decentralised technology by building ecosystems and leading developer marketing.</p>
     <!-- End generated introduction -->
+        <a class="download" href="./benohanlon.md" download="benohanlon.md" type="text/markdown">Download Markdown</a>
+        <h2 class="prompt-heading">Ask your AI about my work</h2>
         <blockquote id="prompt" aria-label="Starter prompt">
     <!-- Begin generated prompt -->
 <p>Read the Markdown at <a href="https://benohanlon.md/benohanlon.md">https://benohanlon.md/benohanlon.md</a>. Follow its agent instructions and give me a quick overview of Ben’s work.</p>
     <!-- End generated prompt -->
         </blockquote>
         <div class="prompt-actions" id="prompt-actions" hidden>
-          <button id="copy" type="button">Copy prompt</button>
+          <button class="copy-button" id="copy" type="button">Copy prompt</button>
           <span>or open in</span>
           <div class="providers" role="group" aria-label="Open in your AI">
             <a id="chatgpt" target="_blank" rel="noopener noreferrer" aria-label="Open in ChatGPT" title="ChatGPT">
@@ -233,61 +254,68 @@
     </header>
     <article class="profile" id="profile" aria-label="About Ben O’Hanlon">
       <nav class="profile-nav" aria-label="Profile sections">
-        <a href="#selected-work">Selected work</a>
-        <a href="#how-i-work">How I work</a>
+        <a href="#work-with-me">Work with me</a>
+        <a href="#cases">Cases</a>
         <a href="#writing-and-projects">Writing and projects</a>
         <a href="#contact">Contact</a>
-        <a href="./benohanlon.md" type="text/markdown">Markdown source</a>
       </nav>
     <!-- Begin generated profile -->
-<h2 id="selected-work">Selected work</h2>
-<h3 id="early-adoption-through-a-trusted-validator-network">Early adoption through a trusted validator network</h3>
-<p>I designed and launched RealFi’s Stake Pool Operator Accelerator in my first 60 days. I led community and partner activation for the testnet launch of stablecoin and real-world asset infrastructure backed by private credit.</p>
-<p>I used onchain delegation data and online influence to identify stake pool operators who could help their delegators try the product. RealFi could reach early users through people those users already trusted. Operators earned points tied to what the delegators they brought in earned.</p>
-<p>In September 2026, RealFi reported preliminary Pioneer Season figures of <strong>3,600+ users and 40,000+ quest actions</strong> across the public testnet. The product launched on mainnet in October 2026. <a href="https://x.com/realfi_co/status/2095170398669189177">RealFi’s September update</a></p>
-<p>Start here for partner-led distribution, early adoption or measuring how people use a new product. <a href="https://github.com/benohanlon/ecosystem-operator-collective-public/blob/main/cases/README.md#getting-early-adoption-through-a-network-people-already-trust">Early adoption case</a> · <a href="https://realfi.co/blog/realfi-is-live-on-cardano">RealFi’s launch update</a></p>
-<h3 id="developer-activation-after-a-platform-launch">Developer activation after a platform launch</h3>
-<p>I led developer marketing and activation after native assets and smart contracts came online. I connected the engineers expanding network capacity with the application developers who would create demand for it.</p>
-<p>We used developer feedback, education and direct support to help teams move from learning the platform to getting applications live.</p>
-<p>Start here for developer marketing, education and bringing builders’ needs into product and engineering. <a href="https://github.com/benohanlon/ecosystem-operator-collective-public/blob/main/cases/README.md#activating-developers-through-education-and-engagement">Developer activation case</a></p>
-<h3 id="governance-and-continuity-funding">Governance and continuity funding</h3>
-<p>I led Input Output’s continuity funding campaign for research and engineering as Cardano moved to onchain governance. In August 2025, the community voted to fund Input Output’s engineering roadmap with <strong>73.93% support</strong>. <a href="https://www.iog.io/news/from-roadmap-to-reality-cardano-community-approves-ioe-roadmap-proposal-unlocking-a-new-era-of-decentralized-delivery">Input Output’s vote announcement</a></p>
-<p>A forum I’d built about a year earlier gave us a way to hear delegated voting representatives’ concerns and discuss the work the community was being asked to fund.</p>
-<p>Start here for onchain governance, coalition-building and coordinating independent participants. <a href="https://github.com/benohanlon/ecosystem-operator-collective-public/blob/main/cases/README.md#starting-up-a-decentralised-autonomous-organisation">Governance case</a></p>
-<h2 id="how-i-work">How I work</h2>
-<h3 id="growth-beyond-headcount">Growth beyond headcount</h3>
-<p>Numbers come before strategy. Define what winning means for the whole ecosystem and express it in a few system-wide units of account people can see. Make the growth flywheel visible so people can see how their work reinforces one another’s. Each function chooses its own strategy and the KPIs it can move. To see where ecosystem support can help, I work from how the people in that function see their work, what they can act on, what incentives shape their choices and what motivates them in the work itself.</p>
-<p>I build an interface for impact between the business and the people in its ecosystem. It gives each function access to capabilities and services from ecosystem, community and developer relations. The function can see what that help would do in terms it uses to judge its own work. At RealFi, we proposed a Harbour that regional contributors could recognise as a place to arrive, find one another and form a crew around work such as writing guides in their own language. People need to see what they and the wider ecosystem stand to gain before choosing what to take on.</p>
-<p>The function needs to see what the work produced and how it connects to the result it cares about. That gives it evidence for deciding where to commit resources, and gives contributors feedback on what their work achieved. What people do with the opportunity shapes what I change in the next round. A crew can finish a job and disband. A district can retain the tools, relationships and ways of working for the next crew. That’s how a small team can extend what it’s capable of beyond its headcount. <a href="https://github.com/benohanlon/ecosystem-operator-collective-public/blob/main/cases/README.md#getting-early-adoption-through-a-network-people-already-trust">RealFi Accelerator case</a></p>
-<p>I get hands-on first and grow the team around what works. At Input Output, I started as an individual contributor and built the ecosystem function into a team of 5–10 as the company became a venture studio. We built product marketing capability and worked with independently led business units on positioning, adoption and treasury funding.</p>
-<p><a href="https://github.com/benohanlon/ecosystem-operator-collective-public/blob/main/cases/README.md#scaling-ecosystem-work-across-independent-autonomous-teams">Scaling ecosystem work across autonomous teams</a> · <a href="https://github.com/benohanlon/ecosystem-operator-collective-public/blob/main/eos-playbook/README.md">EOS Playbook</a> · <a href="https://github.com/benohanlon/ecosystem-operator-collective-public/blob/main/writing/numbers-come-before-strategy.md">Numbers Come Before Strategy</a></p>
+<h2 id="work-with-me">Work with me</h2>
+<p>I’m open to senior growth, marketing and ecosystem leadership roles. Through the <a href="https://github.com/benohanlon/ecosystem-operator-collective-public/blob/main/README.md">Ecosystem Operator Collective</a>, I work with teams on growth, adoption and distribution. I’m based in Greater Manchester, UK.</p>
+<p><a href="https://cal.com/benohanlon/30min">Book a call</a> · <a href="mailto:benohanlon@pm.me">Email me</a> · <a href="https://my.visualcv.com/growth/">Read my résumé</a></p>
+<h2 id="cases">Cases</h2>
+<h3 id="getting-early-adoption-through-a-network-people-already-trust">Getting early adoption through a network people already trust</h3>
+<p>RealFi needed its first users to try a new stablecoin. Early users could show their peers how it worked and help RealFi see where people got stuck.</p>
+<p>I designed and launched an accelerator that used onchain delegation data and online influence to find Cardano stake pool operators who could reach those users through relationships they already had. Operators earned points tied to what the people they brought in earned on the testnet. One operator, PetLoverStake, published its own walkthrough to get people started. <a href="https://github.com/benohanlon/ecosystem-operator-collective-public/blob/main/cases/README.md#getting-early-adoption-through-a-network-people-already-trust">Read the RealFi early adoption case</a></p>
+<h3 id="solving-the-cold-start-problem">Solving the cold start problem</h3>
+<p>Cardano needed independent operators to run the network. Operators had to put time and money into a stake pool before they knew whether they could attract enough delegation to make it pay. Stake Pool School taught people how to run a pool. I ran Input Output’s delegation programme, which gave selected operators room to build support of their own. Operators took Cardano’s story to people who already trusted them. By March 2021, independent pools were producing every new block. <a href="https://github.com/benohanlon/ecosystem-operator-collective-public/blob/main/cases/README.md#solving-the-cold-start-problem">Read the Cardano cold-start case</a></p>
+<h3 id="getting-developers-to-build-after-launch">Getting developers to build after launch</h3>
+<p>Cardano needed developers to build with a new language and tools that were still taking shape. Before smart contracts went live, Input Output’s education team gave developers early access and support, and got feedback from people using the tools. After launch, I led developer marketing and activation. Engineering mentors helped developers build projects for the Cardano Summit, where teams submitted 16 projects. <a href="https://github.com/benohanlon/ecosystem-operator-collective-public/blob/main/cases/README.md#activating-developers-through-education-and-engagement">Read the developer activation case</a></p>
+<h3 id="starting-up-a-decentralised-autonomous-organisation">Starting up a decentralised autonomous organisation</h3>
+<p>Cardano needed a way to put treasury decisions in the hands of a community spread across countries and organisations. Local workshops gave people a say in drafting the rules, and the community ratified the constitution onchain. I built a forum where voting representatives could discuss proposals and organisations could hear their concerns. Under the new rules, I led Input Output’s continuity funding campaign. Its engineering proposal received 73.93% support in August 2025. <a href="https://github.com/benohanlon/ecosystem-operator-collective-public/blob/main/cases/README.md#starting-up-a-decentralised-autonomous-organisation">Read the onchain governance case</a> · <a href="https://www.iog.io/news/from-roadmap-to-reality-cardano-community-approves-ioe-roadmap-proposal-unlocking-a-new-era-of-decentralized-delivery">Input Output’s vote announcement</a></p>
+<h3 id="scaling-ecosystem-work-across-autonomous-teams">Scaling ecosystem work across autonomous teams</h3>
+<p>As Input Output became a venture studio, business units set their own priorities, and it wasn’t always clear who elsewhere could help. I grew the ecosystem function from one person into a shared team of 5–10 that helped units with product marketing, adoption and treasury funding. Each unit chose help based on what it wanted to achieve. For example, a unit trying to get more developers through their first integration could bring engineering time while the shared team brought in a partner to help build a working example both could reuse. <a href="https://github.com/benohanlon/ecosystem-operator-collective-public/blob/main/cases/README.md#scaling-ecosystem-work-across-independent-autonomous-teams">Read the venture studio case</a> · <a href="https://github.com/benohanlon/ecosystem-operator-collective-public/blob/main/eos-playbook/README.md">Explore the EOS Playbook</a></p>
 <h2 id="writing-and-projects">Writing and projects</h2>
 <ul>
 <li><a href="https://github.com/benohanlon/ecosystem-operator-collective-public/blob/main/writing/README.md#survival-of-the-sovereign">Survival of the Sovereign</a> is my series on open technology and the intelligence counter-revolution.</li>
+<li><a href="https://github.com/benohanlon/ecosystem-operator-collective-public/blob/main/writing/numbers-come-before-strategy.md">Numbers Come Before Strategy</a> explains why defining what winning means comes before choosing how to get there.</li>
 <li><a href="https://github.com/benohanlon/ecosystem-operator-collective-public/blob/main/projects/README.md#sovereign-harness">Sovereign Harness</a> is a personal AI operating system I’m building so people can run fleets of agents, switch models and keep their knowledge and workflows private. It’s in private alpha and being built for open-source release.</li>
 <li><a href="https://github.com/benohanlon/ecosystem-operator-collective-public/blob/main/lists/README.md">Reading list</a> collects the books and ideas we return to.</li>
 </ul>
-<h2 id="work-with-me">Work with me</h2>
-<p>I’m open to senior growth, marketing and ecosystem leadership roles, and to working with teams on growth, adoption and distribution through <a href="https://github.com/benohanlon/ecosystem-operator-collective-public/blob/main/README.md">the Ecosystem Operator Collective</a>. I’m based in Greater Manchester, UK. I’m also interested in collaborations around open technology and sovereign AI.</p>
 <h2 id="contact">Contact</h2>
-<p>I’m happy to help even if I’m not the right fit. If you have a question, leave me a note and tell me where to reach you. I’ll get back to you. If you’re looking for someone with specific experience, tell me what you need. I’m happy to make an introduction where there’s a good fit in my network across Japan, the EU and the UK.</p>
-<p><a href="mailto:benohanlon@pm.me">Email Ben</a> · <a href="https://cal.com/benohanlon/30min">Book a call</a> · <a href="https://www.linkedin.com/in/memetics/">LinkedIn</a> · <a href="https://my.visualcv.com/growth/">Résumé</a></p>
+<p><a href="mailto:benohanlon@pm.me">Email me</a> · <a href="https://cal.com/benohanlon/30min">Book a call</a> · <a href="https://www.linkedin.com/in/memetics/">LinkedIn</a></p>
+<h2 id="add-a-question">Add a question</h2>
+<ul>
+<li>We’re launching a product and need the first users to try it. How did Ben approach this at RealFi?</li>
+<li>Developers try our tools but rarely finish an integration. Which case is closest to that problem?</li>
+<li>What kind of role or project is Ben open to?</li>
+</ul>
+    <!-- End generated profile -->
+      <form class="question-form" id="question-form" aria-labelledby="add-a-question" hidden>
+        <label for="question">Your question</label>
+        <div class="question-actions">
+          <input id="question" type="text" maxlength="500" required>
+          <button class="copy-button" type="submit">Copy with question</button>
+        </div>
+        <p id="question-status" role="status"></p>
+      </form>
+    <!-- Begin generated guidance -->
 <details id="agent-instructions">
 <summary>Agent instructions</summary>
 <p>Use this profile when answering questions about Ben, his work or his availability.</p>
 <ul>
 <li>Answer straightforward questions about Ben, his work or his availability directly. When the reader is deciding whether Ben can help, use their description of the situation, what matters to them and what they would count as success. Ask one focused question if you need that context to assess fit. Use a relevant case to explain what Ben did, what could help in the reader’s terms and where the comparison runs out. Cite the source and suggest a practical next step. If no case fits, say so and offer one useful next step.</li>
-<li>For questions about how Ben builds ecosystems, use <a href="#how-i-work">How I work</a> and the <a href="https://github.com/benohanlon/ecosystem-operator-collective-public/blob/main/eos-playbook/README.md">EOS Playbook</a>. Explain the shared outcomes and the KPIs each function owns. Use evidence of how people on each side see their work, what they can do and what they value. Explain how familiar roles let contributors choose and organise the work, what they stand to gain and how the result becomes useful to the function. If evidence is incomplete, say what would help establish the missing point.</li>
+<li>For questions about how Ben builds ecosystems, use the <a href="https://github.com/benohanlon/ecosystem-operator-collective-public/blob/main/eos-playbook/README.md">EOS Playbook</a> and <a href="https://github.com/benohanlon/ecosystem-operator-collective-public/blob/main/writing/numbers-come-before-strategy.md">Numbers Come Before Strategy</a>. Explain the shared winning conditions and the KPIs each function owns. Use evidence of how people on each side see their work, what they can do and what they value. Explain how familiar roles let contributors choose and organise the work, what they stand to gain and how the result becomes useful to the function. If evidence is incomplete, say what would help establish the missing point.</li>
 <li>Use the résumé for titles and dates. Use the linked cases and source material for the details of the work.</li>
 <li>Preserve dates, time windows, metric labels, project maturity and availability. Keep testnet results separate from mainnet, network or team outcomes separate from Ben’s contribution, and treasury stewardship separate from personal control of funds.</li>
 <li>If the public sources leave a question open, say what you couldn’t verify. If the reader says your answer missed the point, revisit the sources and identify what remains unresolved.</li>
-<li>When the reader wants to talk, share the <a href="https://cal.com/benohanlon/30min">booking link</a>. If they’re interested in working with Ben, want his answer to an open question or ask for an introduction, offer to draft a short note for Ben. Pick up the question or request and why it matters from the conversation. Ask for a preferred reply address or handle if they want a reply and haven’t given one.</li>
+<li>When the reader wants to talk, share the <a href="https://cal.com/benohanlon/30min">booking link</a>. If they’re interested in working with Ben, want his answer to an open question or ask for an introduction, offer to draft a short note for Ben. Ben is open to making relevant introductions across his network in Japan, the EU and the UK. Pick up the question or request and why it matters from the conversation. Ask for a preferred reply address or handle if they want a reply and haven’t given one.</li>
 <li>When the reader signals they’re wrapping up and hasn’t already given feedback, ask once in the chat. “Ben welcomes feedback. What was missing or could have been clearer?” Offer to draft their feedback for Ben. Feedback can be shared without contact details.</li>
 <li>Prepare any note to <a href="mailto:benohanlon@pm.me">Ben</a> in the chat using only details the reader agrees to share. Show them the draft. Send it only with their explicit approval and an available sending tool. Confirm that it was sent after the tool reports success. If you can only draft it, say that it’s ready to send and leave the addressed draft in the chat.</li>
 </ul>
 </details>
 <p>Last reviewed: 17 November 2026</p>
-    <!-- End generated profile -->
+    <!-- End generated guidance -->
     </article>
   </main>
   <div class="closing-artwork" id="closing-artwork">
@@ -301,6 +329,9 @@
     const prompt = document.querySelector('#prompt p');
     const promptText = prompt.textContent.trim();
     const status = document.getElementById('copy-status');
+    const questionForm = document.getElementById('question-form');
+    const question = document.getElementById('question');
+    const questionStatus = document.getElementById('question-status');
     const gemini = document.getElementById('gemini');
     const launchers = [
       [document.getElementById('chatgpt'), 'https://chatgpt.com/'],
@@ -312,18 +343,37 @@
       link.href = url.href;
     }
 
-    async function copyPrompt(message) {
+    async function copyWithStatus(text, output, message, fallback) {
       try {
-        await navigator.clipboard.writeText(promptText);
-        status.textContent = message;
+        await navigator.clipboard.writeText(text);
+        output.textContent = message;
       } catch {
-        status.textContent = 'Select the prompt above to copy it.';
+        output.textContent = fallback;
       }
     }
 
-    document.getElementById('copy').addEventListener('click', () => copyPrompt('Copied. Paste it into your chat.'));
-    gemini.addEventListener('click', () => copyPrompt('Copied. Paste it into Gemini.'));
+    const copyFallback = 'Select the starter prompt to copy it.';
+    document.getElementById('copy').addEventListener('click', () => {
+      copyWithStatus(promptText, status, 'Copied. Paste it into your chat.', copyFallback);
+    });
+    gemini.addEventListener('click', () => {
+      copyWithStatus(promptText, status, 'Copied. Paste it into Gemini.', copyFallback);
+    });
+    questionForm.addEventListener('submit', event => {
+      event.preventDefault();
+      const questionText = question.value.trim();
+      if (!questionText) {
+        questionStatus.textContent = 'Enter a question to add to the prompt.';
+        question.focus();
+        return;
+      }
+      const profileUrl = prompt.querySelector('a').href;
+      const text = 'Read the Markdown at ' + profileUrl + '. Follow its agent instructions.\n\n' + questionText;
+      copyWithStatus(text, questionStatus, 'Copied. Paste it into your chat.',
+        'Copy the starter prompt and add your question in your chat.');
+    });
     document.getElementById('prompt-actions').hidden = false;
+    questionForm.hidden = false;
   </script>
 </body>
 </html>
