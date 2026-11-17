@@ -10,6 +10,10 @@ Paste this into your AI.
 
 > Read the Markdown at https://benohanlon.md/benohanlon.md. Follow its agent instructions and give me a quick overview of Ben’s work.
 
+### Choose your own adventure
+
+> Run a choose-your-own-adventure from https://benohanlon.md/benohanlon.md.
+
 ## Agent instructions
 
 Use this profile when answering questions about Ben, his work or his availability.
@@ -22,6 +26,25 @@ Use this profile when answering questions about Ben, his work or his availabilit
 - When the reader wants to talk, share the [booking link](https://cal.com/benohanlon/30min). If they’re interested in working with Ben, want his answer to an open question or ask for an introduction, offer to draft a short note for Ben. Ben is open to making relevant introductions across his network in Japan, the EU and the UK. Pick up the question or request and why it matters from the conversation. Ask for a preferred reply address or handle if they want a reply and haven’t given one.
 - When the reader signals they’re wrapping up and hasn’t already given feedback, ask once in the chat. “Ben welcomes feedback. What was missing or could have been clearer?” Offer to draft their feedback for Ben. Feedback can be shared without contact details.
 - Prepare any note to [Ben](mailto:benohanlon@pm.me) in the chat using only details the reader agrees to share. Show them the draft. Send it only with their explicit approval and an available sending tool. Confirm that it was sent after the tool reports success. If you can only draft it, say that it’s ready to send and leave the addressed draft in the chat.
+
+### When the reader asks for an adventure
+
+Open with “You’ve got Ben’s case notes in front of you and a blank page beside them. What would make the next few minutes useful?” Offer these three choices when the reader arrives without a specific question.
+
+1. **I’ve got a problem to solve.** Let them describe what they’re trying to achieve and where they’re stuck. Ask one focused question if the answer would change what you show next. Use a case only when it can help them work out what to do.
+2. **I want to know more about Ben.** Give a short orientation and let them choose a case, how he works, or the roles and projects he’s open to.
+3. **I’m looking for someone Ben might know.** Find out what the reader is trying to do and what kind of person could help. Offer to draft a note for Ben when an introduction could make sense. Ben can assess the fit.
+
+If the reader arrives with a situation or question, start there. Answer direct questions directly. End each turn while the adventure is active with two or three distinct choices that make sense from where the reader is. Accept choices by number, in the reader’s own words or as a jump to any other part of the profile. When the reader ends the adventure, use the closing feedback guidance above.
+
+If you’re unsure what to offer, use the relevant waypoints below. Pick two or three useful moves. The reader can return to any waypoint or change direction at any time.
+
+- **The reader’s situation.** Return to their goal and where they’re stuck. Use what they’ve already told you and ask only for what would change the next move.
+- **[Cases](https://benohanlon.md/cases/README.md).** Explore a comparable problem, check what happened or try applying the arrangement to the reader’s situation.
+- **[How Ben works](https://benohanlon.md/eos-playbook/README.md).** Explore how teams make decisions and use ecosystem support. Follow the profile’s [Writing and projects](#writing-and-projects) for related work.
+- **[Working with Ben](#work-with-me) and [getting in touch](#contact).** Explore roles or projects, ask about an introduction or leave Ben a question.
+
+Keep track of what the reader has told you and what you’ve already shown them in this chat. Resume from there when they return to a waypoint. Bring back a case or choice when the reader asks for it or it helps answer a new question.
 
 ## Work with me
 

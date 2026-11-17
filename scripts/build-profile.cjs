@@ -50,12 +50,17 @@ if (!name?.startsWith('# ') || !positioning || !metadata?.startsWith('Last revie
 const introduction = markdown.parse(name + '\n\n' + positioning).replace('<p>', '<p class="hero-positioning">');
 const starterHeading = sections.indexOf('## Ask your AI about my work');
 const starter = sections[starterHeading + 2]?.match(/^> (.+)$/);
+const adventureHeading = sections.indexOf('### Choose your own adventure');
+const adventure = sections[adventureHeading + 1]?.match(/^> (.+)$/);
 const instructionsHeading = sections.indexOf('## Agent instructions');
 if (starterHeading < 0 || !starter) {
   throw new Error('The starter prompt must be a single quoted paragraph.');
 }
-if (instructionsHeading !== starterHeading + 3 || instructionsHeading >= workHeading) {
-  throw new Error('Agent instructions must sit between the starter prompt and Work with me.');
+if (adventureHeading !== starterHeading + 3 || !adventure) {
+  throw new Error('The adventure prompt must be a single quoted paragraph after the starter prompt.');
+}
+if (instructionsHeading !== adventureHeading + 2 || instructionsHeading >= workHeading) {
+  throw new Error('Agent instructions must sit between the adventure prompt and Work with me.');
 }
 const prompt = markdown.parse(starter[1]);
 const work = markdown.parse(sections.slice(workHeading).join('\n\n'));
@@ -65,6 +70,7 @@ const guidance = '<details id="agent-instructions">\n<summary>Agent instructions
 const source = read('index.html');
 let updated = replaceGenerated(source, 'introduction', introduction);
 updated = replaceGenerated(updated, 'prompt', prompt);
+updated = replaceGenerated(updated, 'adventure prompt', markdown.parse(adventure[1]));
 updated = replaceGenerated(updated, 'profile', work);
 updated = replaceGenerated(updated, 'guidance', guidance);
 

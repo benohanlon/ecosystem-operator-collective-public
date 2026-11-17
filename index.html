@@ -33,6 +33,43 @@
     a { color: var(--mint); text-underline-offset: .22em; }
     a:hover { color: var(--orange); }
     .mono, h1, h2 { font-family: "IBM Plex Mono", Consolas, "Courier New", monospace; }
+    .adventure-banner {
+      --amber: #d4820a;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
+      gap: clamp(.6rem, 2vw, 1.1rem);
+      padding: .75rem clamp(.7rem, 2.5vw, 1.4rem);
+      margin-bottom: 1rem;
+      border: 1px solid var(--amber);
+      background: linear-gradient(105deg, #312312, #1a2420 76%);
+      color: #f4ecd8;
+      text-decoration: none;
+    }
+    .adventure-banner:hover {
+      background: linear-gradient(105deg, #3a2914, #23302a 76%);
+      color: #fff9ec;
+    }
+    .adventure-banner:focus-visible { outline-color: var(--amber); }
+    .adventure-copy {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: .4rem .85rem;
+    }
+    .adventure-title {
+      display: inline-block;
+      padding: .37em .8em .31em;
+      border-radius: 999px;
+      background: var(--amber);
+      color: #031c1d;
+      font: 700 clamp(.76rem, 2.8vw, 1.05rem)/1.15 "STIX Two Text", Georgia, serif;
+      letter-spacing: .035em;
+      text-align: center;
+      text-transform: uppercase;
+    }
+    .adventure-summary { font-size: .84rem; line-height: 1.4; }
+    .adventure-arrow { color: var(--amber); font-size: 1.3rem; }
     .hero {
       display: grid;
       grid-template-columns: minmax(0, 1fr) minmax(10rem, 29%);
@@ -213,6 +250,13 @@
 </head>
 <body>
   <main>
+    <a class="adventure-banner" id="adventure-banner" href="./benohanlon.md#choose-your-own-adventure">
+      <span class="adventure-copy">
+        <strong class="adventure-title">Choose your own adventure</strong>
+        <span class="adventure-summary">Start with what brought you here.</span>
+      </span>
+      <span class="adventure-arrow" aria-hidden="true">↘</span>
+    </a>
     <header class="hero">
       <div class="intro">
         <p class="brand mono">Ecosystem Operator Collective</p>
@@ -221,12 +265,17 @@
 <p class="hero-positioning">I solve growth, adoption and distribution problems for open and decentralised technology by building ecosystems and leading developer marketing.</p>
     <!-- End generated introduction -->
         <a class="download" href="./benohanlon.md" download="benohanlon.md" type="text/markdown">Download Markdown</a>
-        <h2 class="prompt-heading">Ask your AI about my work</h2>
-        <blockquote id="prompt" aria-label="Starter prompt">
+        <h2 class="prompt-heading" id="prompt-heading" tabindex="-1">Ask your AI about my work</h2>
+        <blockquote id="prompt" aria-labelledby="prompt-heading">
     <!-- Begin generated prompt -->
 <p>Read the Markdown at <a href="https://benohanlon.md/benohanlon.md">https://benohanlon.md/benohanlon.md</a>. Follow its agent instructions and give me a quick overview of Ben’s work.</p>
     <!-- End generated prompt -->
         </blockquote>
+        <template id="adventure-prompt">
+    <!-- Begin generated adventure prompt -->
+<p>Run a choose-your-own-adventure from <a href="https://benohanlon.md/benohanlon.md">https://benohanlon.md/benohanlon.md</a>.</p>
+    <!-- End generated adventure prompt -->
+        </template>
         <div class="prompt-actions" id="prompt-actions" hidden>
           <button class="copy-button" id="copy" type="button">Copy prompt</button>
           <span>or open in</span>
@@ -241,6 +290,7 @@
               <img src="./assets/gemini.png" width="26" height="26" alt="">
             </a>
           </div>
+          <button class="copy-button" id="overview" type="button" hidden>Quick overview</button>
         </div>
         <p id="copy-status" role="status"></p>
         <nav class="socials" aria-label="Find Ben elsewhere">
@@ -313,6 +363,22 @@
 <li>When the reader signals they’re wrapping up and hasn’t already given feedback, ask once in the chat. “Ben welcomes feedback. What was missing or could have been clearer?” Offer to draft their feedback for Ben. Feedback can be shared without contact details.</li>
 <li>Prepare any note to <a href="mailto:benohanlon@pm.me">Ben</a> in the chat using only details the reader agrees to share. Show them the draft. Send it only with their explicit approval and an available sending tool. Confirm that it was sent after the tool reports success. If you can only draft it, say that it’s ready to send and leave the addressed draft in the chat.</li>
 </ul>
+<h3 id="when-the-reader-asks-for-an-adventure">When the reader asks for an adventure</h3>
+<p>Open with “You’ve got Ben’s case notes in front of you and a blank page beside them. What would make the next few minutes useful?” Offer these three choices when the reader arrives without a specific question.</p>
+<ol>
+<li><strong>I’ve got a problem to solve.</strong> Let them describe what they’re trying to achieve and where they’re stuck. Ask one focused question if the answer would change what you show next. Use a case only when it can help them work out what to do.</li>
+<li><strong>I want to know more about Ben.</strong> Give a short orientation and let them choose a case, how he works, or the roles and projects he’s open to.</li>
+<li><strong>I’m looking for someone Ben might know.</strong> Find out what the reader is trying to do and what kind of person could help. Offer to draft a note for Ben when an introduction could make sense. Ben can assess the fit.</li>
+</ol>
+<p>If the reader arrives with a situation or question, start there. Answer direct questions directly. End each turn while the adventure is active with two or three distinct choices that make sense from where the reader is. Accept choices by number, in the reader’s own words or as a jump to any other part of the profile. When the reader ends the adventure, use the closing feedback guidance above.</p>
+<p>If you’re unsure what to offer, use the relevant waypoints below. Pick two or three useful moves. The reader can return to any waypoint or change direction at any time.</p>
+<ul>
+<li><strong>The reader’s situation.</strong> Return to their goal and where they’re stuck. Use what they’ve already told you and ask only for what would change the next move.</li>
+<li><strong><a href="https://github.com/benohanlon/ecosystem-operator-collective-public/blob/main/cases/README.md">Cases</a>.</strong> Explore a comparable problem, check what happened or try applying the arrangement to the reader’s situation.</li>
+<li><strong><a href="https://github.com/benohanlon/ecosystem-operator-collective-public/blob/main/eos-playbook/README.md">How Ben works</a>.</strong> Explore how teams make decisions and use ecosystem support. Follow the profile’s <a href="#writing-and-projects">Writing and projects</a> for related work.</li>
+<li><strong><a href="#work-with-me">Working with Ben</a> and <a href="#contact">getting in touch</a>.</strong> Explore roles or projects, ask about an introduction or leave Ben a question.</li>
+</ul>
+<p>Keep track of what the reader has told you and what you’ve already shown them in this chat. Resume from there when they return to a waypoint. Bring back a case or choice when the reader asks for it or it helps answer a new question.</p>
 </details>
 <p>Last reviewed: 17 November 2026</p>
     <!-- End generated guidance -->
@@ -326,8 +392,12 @@
     <a class="closing-link" href="https://sovereignharness.io/">Sovereign Harness <span aria-hidden="true">↗</span></a>
   </div>
   <script>
-    const prompt = document.querySelector('#prompt p');
-    const promptText = prompt.textContent.trim();
+    const prompt = document.getElementById('prompt');
+    const promptHeading = document.getElementById('prompt-heading');
+    const overviewPrompt = prompt.querySelector('p').cloneNode(true);
+    const adventurePrompt = document.getElementById('adventure-prompt').content.querySelector('p');
+    const overviewButton = document.getElementById('overview');
+    const profileUrl = overviewPrompt.querySelector('a').href;
     const status = document.getElementById('copy-status');
     const questionForm = document.getElementById('question-form');
     const question = document.getElementById('question');
@@ -337,11 +407,32 @@
       [document.getElementById('chatgpt'), 'https://chatgpt.com/'],
       [document.getElementById('claude'), 'https://claude.ai/new']
     ];
-    for (const [link, destination] of launchers) {
-      const url = new URL(destination);
-      url.searchParams.set('q', promptText);
-      link.href = url.href;
+    let promptText;
+    function selectPrompt(isAdventure) {
+      const selected = isAdventure ? adventurePrompt : overviewPrompt;
+      prompt.replaceChildren(selected.cloneNode(true));
+      promptText = prompt.textContent.trim();
+      promptHeading.textContent = isAdventure ? 'Choose your own adventure' : 'Ask your AI about my work';
+      overviewButton.hidden = !isAdventure;
+      status.textContent = '';
+      for (const [link, destination] of launchers) {
+        const url = new URL(destination);
+        url.searchParams.set('q', promptText);
+        link.href = url.href;
+      }
     }
+    selectPrompt(false);
+    document.getElementById('adventure-banner').addEventListener('click', event => {
+      if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
+      selectPrompt(true);
+      promptHeading.focus({ preventScroll: true });
+      promptHeading.scrollIntoView({ block: 'center' });
+    });
+    overviewButton.addEventListener('click', () => {
+      selectPrompt(false);
+      promptHeading.focus();
+    });
 
     async function copyWithStatus(text, output, message, fallback) {
       try {
@@ -352,7 +443,7 @@
       }
     }
 
-    const copyFallback = 'Select the starter prompt to copy it.';
+    const copyFallback = 'Select the prompt to copy it.';
     document.getElementById('copy').addEventListener('click', () => {
       copyWithStatus(promptText, status, 'Copied. Paste it into your chat.', copyFallback);
     });
@@ -367,10 +458,9 @@
         question.focus();
         return;
       }
-      const profileUrl = prompt.querySelector('a').href;
       const text = 'Read the Markdown at ' + profileUrl + '. Follow its agent instructions.\n\n' + questionText;
       copyWithStatus(text, questionStatus, 'Copied. Paste it into your chat.',
-        'Copy the starter prompt and add your question in your chat.');
+        'Use the downloaded Markdown and ask your question in your chat.');
     });
     document.getElementById('prompt-actions').hidden = false;
     questionForm.hidden = false;
