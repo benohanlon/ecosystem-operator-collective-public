@@ -36,8 +36,8 @@ function replaceGenerated(source, region, content) {
 }
 
 const [name, positioning, metadata, ...sections] = read('benohanlon.md').trim().split('\n\n');
-if (!name?.startsWith('# ') || !positioning || !metadata?.startsWith('Last reviewed:') || !sections[0]?.startsWith('## Selected work')) {
-  throw new Error('The Markdown profile must start with name, positioning, review date, and selected work.');
+if (!name?.startsWith('# ') || !positioning || !metadata?.startsWith('Last reviewed:') || !sections.includes('## Selected work')) {
+  throw new Error('The Markdown profile must start with name, positioning, and review date, and include a Selected work section.');
 }
 const introduction = markdown.parse(name + '\n\n' + positioning).replace('<p>', '<p class="hero-positioning">');
 const profile = markdown.parse([...sections, metadata].join('\n\n'));
