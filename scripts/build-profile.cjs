@@ -5,6 +5,7 @@ const { Marked } = require('./vendor/marked.umd.js');
 const root = path.join(__dirname, '..');
 const read = filename => fs.readFileSync(path.join(root, filename), 'utf8').replace(/\r\n/g, '\n');
 const repository = 'https://github.com/benohanlon/ecosystem-operator-collective-public/blob/main/';
+const profileOrigin = 'https://benohanlon.md';
 
 const markdown = new Marked({
   renderer: {
@@ -18,7 +19,11 @@ const markdown = new Marked({
   },
   walkTokens(token) {
     if (token.type === 'link' && !token.href.startsWith('#')) {
-      const target = new URL(token.href, repository);
+      let target = new URL(token.href, repository);
+      // GitHub renders the evidence pages and their section anchors for web readers.
+      if (target.origin === profileOrigin && target.pathname.endsWith('.md') && target.pathname !== '/benohanlon.md') {
+        target = new URL(target.pathname.slice(1) + target.search + target.hash, repository);
+      }
       token.href = ['https:', 'http:', 'mailto:'].includes(target.protocol) ? target.href : '#';
     }
   }
@@ -36,17 +41,25 @@ function replaceGenerated(source, region, content) {
 }
 
 const [name, positioning, metadata, ...sections] = read('benohanlon.md').trim().split('\n\n');
-if (!name?.startsWith('# ') || !positioning || !metadata?.startsWith('Last reviewed:') || !sections.includes('## Selected work')) {
+const selectedWork = sections.indexOf('## Selected work');
+if (!name?.startsWith('# ') || !positioning || !metadata?.startsWith('Last reviewed:') || selectedWork < 0) {
   throw new Error('The Markdown profile must start with name, positioning, and review date, and include a Selected work section.');
 }
 const introduction = markdown.parse(name + '\n\n' + positioning).replace('<p>', '<p class="hero-positioning">');
 const starterHeading = sections.indexOf('## Start with your question');
 const starter = sections[starterHeading + 2]?.match(/^> (.+)\n>\n> (.+)$/);
+const instructionsHeading = sections.indexOf('## Agent instructions');
 if (starterHeading < 0 || !starter) {
   throw new Error('The starter prompt must quote the source instruction and opening question as two paragraphs.');
 }
+if (instructionsHeading !== starterHeading + 3 || instructionsHeading >= selectedWork) {
+  throw new Error('Agent instructions must sit between the starter prompt and Selected work.');
+}
 const prompt = markdown.parse(starter[1] + '\n\n' + starter[2]);
-const profile = markdown.parse([...sections, metadata].join('\n\n'));
+const work = markdown.parse(sections.slice(selectedWork).join('\n\n'));
+const instructions = markdown.parse(sections.slice(instructionsHeading + 1, selectedWork).join('\n\n'));
+const profile = work + '<details id="agent-instructions">\n<summary>Agent instructions</summary>\n' +
+  instructions + '</details>\n' + markdown.parse(metadata.split(' · ')[0]);
 const source = read('index.html');
 let updated = replaceGenerated(source, 'introduction', introduction);
 updated = replaceGenerated(updated, 'prompt', prompt);
