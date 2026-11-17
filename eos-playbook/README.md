@@ -6,11 +6,11 @@ Ecosystem work opens new routes to users, developers and partners. It also build
 
 ## How teams use EOS
 
-Meet teams where they are and operate within the world as they see it. That takes a theory of mind of each team. Understand how it works, what success looks like to it and what the system-wide units of account mean to it. That understanding lets the ecosystem function put its institutional knowledge and relational capital to use.
+Agree what success looks like for the business as a whole and which shared measures show progress. Meet each function where it is. Ask the team to describe how it sees the work and what it would call success. Agree how a result it values contributes to the business’s shared measures and what the function should track. [Numbers Come Before Strategy](../writing/numbers-come-before-strategy.md)
 
-EOS gives the team an interface to impact. Show it what capabilities it can draw on in terms it already understands, so it can choose what would help. The services that deliver those capabilities are modular and can be combined into a package the team chooses to use.
+EOS gives the team an interface for impact. Show it what the ecosystem, community and developer relations can help it do in the language of the team’s own work. The team can choose the capabilities it needs, and the services that deliver them can be combined into a package.
 
-The system-wide units of account give independent teams a shared axis around which to orient. Each team decides how it contributes. Once you understand what different teams and partners want, you can see where their interests overlap and what each can give and get. That is what allows coalitions and partnerships to form at scale. [Numbers Come Before Strategy](../writing/numbers-come-before-strategy.md)
+Describe the same opportunity to developers, operators and partners in terms they use in their own work. Start with what they want to achieve and agree what they can contribute and what they would gain. That agreement gives independent teams and partners a basis for forming a coalition around a shared outcome.
 
 At RealFi, stake pool operators already had relationships with people who could try the new stablecoin. RealFi supported onboarding, and operators earned points tied to what the delegators they brought in earned. The same work helped RealFi reach early users and gave operators a reason to help them get started. [RealFi case](../cases/README.md#getting-early-adoption-through-a-network-people-already-trust)
 

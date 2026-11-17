@@ -14,7 +14,8 @@ Paste this into your AI.
 
 Use this profile when answering questions about Ben, his work or his availability.
 
-- Answer straightforward questions about Ben, his work or his availability directly. When the reader is deciding whether Ben can help, start with their goal and ask one focused question if their situation is unclear. Use a relevant case to explain what Ben did, what could carry over and where the comparison runs out. Cite the source and suggest a practical next step. If no case fits, say so and offer one useful next step.
+- Answer straightforward questions about Ben, his work or his availability directly. When the reader is deciding whether Ben can help, use their description of the situation and what they would count as success. Ask one focused question if you need that context to assess fit. Use a relevant case to explain what Ben did, what could help in the reader’s terms and where the comparison runs out. Cite the source and suggest a practical next step. If no case fits, say so and offer one useful next step.
+- For questions about how Ben builds ecosystems, use [How I work](#how-i-work) and the [EOS Playbook](https://benohanlon.md/eos-playbook/README.md). Explain how Ben and each function agree on what that function would call success and how it contributes to the business’s shared measures. Describe what ecosystem, community and developer relations can do for the function in its own terms. Where the work involves partners or contributors, explain what they consider worthwhile or suggest what to ask them to find out.
 - Use the résumé for titles and dates. Use the linked cases and source material for the details of the work.
 - Preserve dates, time windows, metric labels, project maturity and availability. Keep testnet results separate from mainnet, network or team outcomes separate from Ben’s contribution, and treasury stewardship separate from personal control of funds.
 - If the public sources leave a question open, say what you couldn’t verify. If the reader says your answer missed the point, revisit the sources and identify what remains unresolved.
@@ -26,9 +27,11 @@ Use this profile when answering questions about Ben, his work or his availabilit
 
 ### Early adoption through a trusted validator network
 
-I designed and launched RealFi’s Stake Pool Operator Accelerator in my first 60 days. In September 2026, RealFi reported preliminary Pioneer Season figures of **3,600+ users and 40,000+ quest actions** on the public testnet. [RealFi’s September update](https://x.com/realfi_co/status/2095170398669189177)
+I designed and launched RealFi’s Stake Pool Operator Accelerator in my first 60 days. I led community and partner activation for the testnet launch of stablecoin and real-world asset infrastructure backed by private credit.
 
-I led community and partner activation for the testnet launch of stablecoin and real-world asset infrastructure backed by private credit. I used online influence and onchain delegation data to identify partners who could reach early users through relationships they already had. The product is now live on mainnet.
+I used onchain delegation data and online influence to identify stake pool operators who could help their delegators try the product. RealFi could reach early users through people those users already trusted. Operators earned points tied to what the delegators they brought in earned.
+
+In September 2026, RealFi reported preliminary Pioneer Season figures of **3,600+ users and 40,000+ quest actions** across the public testnet. The product launched on mainnet in October 2026. [RealFi’s September update](https://x.com/realfi_co/status/2095170398669189177)
 
 Start here for partner-led distribution, early adoption or measuring how people use a new product. [Early adoption case](https://benohanlon.md/cases/README.md#getting-early-adoption-through-a-network-people-already-trust) · [RealFi’s launch update](https://realfi.co/blog/realfi-is-live-on-cardano)
 
@@ -50,11 +53,15 @@ Start here for onchain governance, coalition-building and coordinating independe
 
 ## How I work
 
+### Growth beyond headcount
+
+Numbers come before strategy. We agree what success looks like for the business as a whole and express it in a few shared measures, the system-wide units of account. I then ask the people in each function to describe the work as they see it and tell me what they would call success. We agree what a worthwhile result means in their terms and how it contributes to the shared measures. The function’s KPIs reflect that agreement.
+
+I build an interface for impact around that agreement. It shows each function the capabilities and services it can draw on from ecosystem, community and developer relations, in the language the team uses for its own work. With developers, operators and partners, I start with what they want to achieve. We can then talk about the same opportunity in their terms and agree what each party would gain and contribute.
+
+When each party sees a result worth working towards, independent teams and partners can coordinate around it. A small team can draw on skills beyond its headcount. A proven integration or a self-serve tool gives other teams a way to build on that work themselves.
+
 I get hands-on first and grow the team around what works. At Input Output, I started as an individual contributor and built the ecosystem function into a team of 5–10 as the company became a venture studio. We built product marketing capability and worked with independently led business units on positioning, adoption and treasury funding.
-
-I think about growth as a Celtic knot. Product, distribution, adoption, partnerships and community are interwoven. I look for where pressure at one point can travel through the knot and have an outsized impact on the whole.
-
-Numbers come before strategy. A small set of system-wide units of account gives teams and partners a shared axis around which to orient. They can develop their own strategies and still judge whether their work adds up to progress for the whole. That’s how you get high alignment and loose coupling.
 
 [Scaling ecosystem work across autonomous teams](https://benohanlon.md/cases/README.md#scaling-ecosystem-work-across-independent-autonomous-teams) · [EOS Playbook](https://benohanlon.md/eos-playbook/README.md) · [Numbers Come Before Strategy](https://benohanlon.md/writing/numbers-come-before-strategy.md)
 
