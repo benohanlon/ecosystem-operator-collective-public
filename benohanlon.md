@@ -4,13 +4,11 @@ I help teams building open and decentralised technology reach their first users,
 
 Last reviewed: 17 November 2026 · [Web profile](https://benohanlon.md/) · [Résumé](https://my.visualcv.com/growth/)
 
-## Start with your question
+## Start a chat
 
-Paste this into your AI. You can swap in your own question.
+Paste this into your AI.
 
-> Read the Markdown at https://benohanlon.md/benohanlon.md and follow its agent instructions.
->
-> Could Ben help us grow?
+> Read the Markdown at https://benohanlon.md/benohanlon.md. Follow its agent instructions and give me a quick overview of Ben’s work.
 
 ## Agent instructions
 

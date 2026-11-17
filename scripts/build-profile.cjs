@@ -46,16 +46,16 @@ if (!name?.startsWith('# ') || !positioning || !metadata?.startsWith('Last revie
   throw new Error('The Markdown profile must start with name, positioning, and review date, and include a Selected work section.');
 }
 const introduction = markdown.parse(name + '\n\n' + positioning).replace('<p>', '<p class="hero-positioning">');
-const starterHeading = sections.indexOf('## Start with your question');
-const starter = sections[starterHeading + 2]?.match(/^> (.+)\n>\n> (.+)$/);
+const starterHeading = sections.indexOf('## Start a chat');
+const starter = sections[starterHeading + 2]?.match(/^> (.+)$/);
 const instructionsHeading = sections.indexOf('## Agent instructions');
 if (starterHeading < 0 || !starter) {
-  throw new Error('The starter prompt must quote the source instruction and opening question as two paragraphs.');
+  throw new Error('The starter prompt must be a single quoted paragraph.');
 }
 if (instructionsHeading !== starterHeading + 3 || instructionsHeading >= selectedWork) {
   throw new Error('Agent instructions must sit between the starter prompt and Selected work.');
 }
-const prompt = markdown.parse(starter[1] + '\n\n' + starter[2]);
+const prompt = markdown.parse(starter[1]);
 const work = markdown.parse(sections.slice(selectedWork).join('\n\n'));
 const instructions = markdown.parse(sections.slice(instructionsHeading + 1, selectedWork).join('\n\n'));
 const profile = work + '<details id="agent-instructions">\n<summary>Agent instructions</summary>\n' +
