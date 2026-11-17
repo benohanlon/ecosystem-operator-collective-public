@@ -6,11 +6,11 @@ Ecosystem work opens new routes to users, developers and partners. It also build
 
 ## How teams use EOS
 
-Start with the system-wide units of account, the measures the business uses to judge progress. Learn what people in each function can see and decide, what incentives shape their choices and what they find worthwhile in the work itself. Draw on what they say, what they do and the conditions they work under. Revise your understanding as you see what changes their choices. Use it to see how the function’s work connects to the shared measures and which KPIs would show the connection. [Numbers Come Before Strategy](../writing/numbers-come-before-strategy.md)
+Define the winning conditions in a few visible system-wide units of account. Each function chooses its own strategy and the KPIs it can influence. Learn how its people see the work, what shapes their decisions and what they find worthwhile in the work itself. Use that understanding to identify where ecosystem support can help. [Numbers Come Before Strategy](../writing/numbers-come-before-strategy.md)
 
-EOS gives the team an interface for impact. Show it what the ecosystem, community and developer relations can help it do in the language of the team’s own work. The team can choose the capabilities it needs, and the services that deliver them can be combined into a package.
+The interface for impact gives the function access to capabilities from ecosystem, community and developer relations. The team can choose services around a result it values. Contributors enter through structures they can make sense of from mental models they already have. They can see what they stand to gain, find a role and organise around work they choose.
 
-Find out what matters to developers, operators and partners and what shapes their decisions. Describe the same opportunity in their terms so they can judge what they would gain and what they could contribute. When independent teams and partners each see a reason to take part, they can build a coalition around the work.
+Show what the work produced in terms the function can use. It can use that evidence to decide where to commit resources, and contributors can see what their work achieved. A crew can finish and disband while a district retains its tools, relationships and ways of working for the next group.
 
 At RealFi, stake pool operators already had relationships with people who could try the new stablecoin. RealFi supported onboarding, and operators earned points tied to what the delegators they brought in earned. The same work helped RealFi reach early users and gave operators a reason to help them get started. [RealFi case](../cases/README.md#getting-early-adoption-through-a-network-people-already-trust)
 
