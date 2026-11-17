@@ -167,6 +167,36 @@
       text-shadow: 0 1px 4px rgb(0 0 0 / .9), 0 0 18px rgb(0 0 0 / .6);
       text-wrap: balance;
     }
+    .closing-link {
+      display: flex;
+      width: fit-content;
+      min-height: 3.25rem;
+      align-items: center;
+      gap: .85rem;
+      margin: .2rem auto 0;
+      padding: .75rem 1.3rem;
+      border: 1px solid;
+      border-color: #586157 #56483c #203631 #364844;
+      border-radius: 3px;
+      background:
+        radial-gradient(ellipse at 87% -24%, rgb(236 161 98 / .37), transparent 59%),
+        radial-gradient(ellipse at 15% 0, rgb(164 202 185 / .12), transparent 52%),
+        linear-gradient(102deg, transparent 13%, rgb(179 203 193 / .06) 13.6%, transparent 14.3% 32%,
+          rgb(179 203 193 / .04) 32.5%, transparent 33% 58%, rgb(211 190 169 / .07) 58.7%,
+          transparent 59.2% 72%, rgb(211 190 169 / .06) 72.4%, transparent 73%),
+        linear-gradient(#233735, #142624 75%, #122220);
+      box-shadow: inset 0 1px rgb(238 182 127 / .19), 0 .5rem 1rem rgb(0 0 0 / .35);
+      color: #e4e6d9;
+      font: 600 .875rem/1.35 "IBM Plex Mono", Consolas, "Courier New", monospace;
+      letter-spacing: .035em;
+      text-decoration: none;
+      text-shadow: 0 -1px 1px #101b18;
+    }
+    .closing-link span { color: #e1b18b; }
+    .closing-link:hover, .closing-link:focus-visible {
+      border-top-color: #a4805e;
+      color: #fff3e2;
+    }
     @media (min-width: 35rem) {
       .closing-artwork { background: linear-gradient(var(--dark), var(--shadow-room) 100px); }
       .closing-portrait::after {
@@ -294,6 +324,7 @@
       <img src="./assets/angel-in-amber-rain.webp" width="941" height="1672" loading="lazy" alt="Amber-lit rain falls around a weathered stone angel holding a keyboard with a shoulder strap.">
       <figcaption class="closing-caption">The war is spiritual</figcaption>
     </figure>
+    <a class="closing-link" href="https://sovereignharness.io/">Sovereign Harness <span aria-hidden="true">↗</span></a>
   </div>
   <script>
     const [sourceInstruction, promptQuestion] = document.querySelectorAll('#prompt p');
