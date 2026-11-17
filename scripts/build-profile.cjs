@@ -40,9 +40,17 @@ if (!name?.startsWith('# ') || !positioning || !metadata?.startsWith('Last revie
   throw new Error('The Markdown profile must start with name, positioning, and review date, and include a Selected work section.');
 }
 const introduction = markdown.parse(name + '\n\n' + positioning).replace('<p>', '<p class="hero-positioning">');
+const starterHeading = sections.indexOf('## Start with your question');
+const starter = sections[starterHeading + 2]?.match(/^> (.+)\n>\n> (.+)$/);
+if (starterHeading < 0 || !starter) {
+  throw new Error('The starter prompt must quote the source instruction and opening question as two paragraphs.');
+}
+const prompt = markdown.parse(starter[1] + '\n\n' + starter[2]);
 const profile = markdown.parse([...sections, metadata].join('\n\n'));
 const source = read('index.html');
-const updated = replaceGenerated(replaceGenerated(source, 'introduction', introduction), 'profile', profile);
+let updated = replaceGenerated(source, 'introduction', introduction);
+updated = replaceGenerated(updated, 'prompt', prompt);
+updated = replaceGenerated(updated, 'profile', profile);
 
 if (process.argv.includes('--check')) {
   if (updated !== source) {

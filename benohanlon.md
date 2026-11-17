@@ -6,9 +6,11 @@ Last reviewed: 16 November 2026 · [Résumé](https://my.visualcv.com/growth/)
 
 ## Start with your question
 
-Give this file to your AI and adapt this opening question.
+Paste this into your AI. You can swap in your own question.
 
-> Use this profile and its agent instructions. We’re trying to [reach a goal], and we’re stuck on [the problem]. Which of Ben’s cases is closest, and what would carry over to our situation?
+> Read the Markdown at https://benohanlon.md/benohanlon.md and follow its agent instructions.
+>
+> Could Ben help us grow?
 
 ## Agent instructions
 

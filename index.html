@@ -92,6 +92,8 @@
       font: .92rem/1.55 "IBM Plex Mono", Consolas, "Courier New", monospace;
       overflow-wrap: anywhere;
     }
+    #prompt p { margin: 0; }
+    #prompt p + p { margin-top: .45rem; }
     button {
       background: var(--orange);
       color: var(--dark);
@@ -133,7 +135,7 @@
           <a href="./benohanlon.md" download="benohanlon.md">Download Markdown</a>
           <span id="copy-status" role="status"></span>
         </div>
-        <p class="button-note" id="copy-note" hidden>Paste the prompt into your AI to ask about my experience or work.</p>
+        <p class="button-note" id="copy-note" hidden>See where Ben could help you reach users, activate developers or grow through partners.</p>
         <details id="question-controls" hidden>
           <summary>Add a question</summary>
           <label class="question-label" for="question">What would you like to know?</label>
@@ -147,7 +149,12 @@
         </details>
         <details id="prompt-preview">
           <summary>View prompt</summary>
-          <p id="prompt">Read https://benohanlon.md/ and follow the relevant links to answer my questions about Ben O’Hanlon and his work with the Ecosystem Operator Collective.</p>
+          <div id="prompt">
+    <!-- Begin generated prompt -->
+<p>Read the Markdown at <a href="https://benohanlon.md/benohanlon.md">https://benohanlon.md/benohanlon.md</a> and follow its agent instructions.</p>
+<p>Could Ben help us grow?</p>
+    <!-- End generated prompt -->
+          </div>
         </details>
         <nav class="socials" aria-label="Find Ben elsewhere">
           <a href="https://linktr.ee/benohanlon">Linktree</a>
@@ -167,9 +174,10 @@
       </nav>
     <!-- Begin generated profile -->
 <h2 id="start-with-your-question">Start with your question</h2>
-<p>Give this file to your AI and adapt this opening question.</p>
+<p>Paste this into your AI. You can swap in your own question.</p>
 <blockquote>
-<p>Use this profile and its agent instructions. We’re trying to [reach a goal], and we’re stuck on [the problem]. Which of Ben’s cases is closest, and what would carry over to our situation?</p>
+<p>Read the Markdown at <a href="https://benohanlon.md/benohanlon.md">https://benohanlon.md/benohanlon.md</a> and follow its agent instructions.</p>
+<p>Could Ben help us grow?</p>
 </blockquote>
 <h2 id="agent-instructions">Agent instructions</h2>
 <p>Use this profile when answering questions about Ben, his work or his availability.</p>
@@ -216,15 +224,14 @@
     </article>
   </main>
   <script>
-    const prompt = document.getElementById('prompt');
-    const defaultPrompt = prompt.textContent;
+    const [sourceInstruction, promptQuestion] = document.querySelectorAll('#prompt p');
+    const defaultQuestion = promptQuestion.textContent;
     const question = document.getElementById('question');
     const copy = document.getElementById('copy');
     const status = document.getElementById('copy-status');
 
     function updatePrompt() {
-      const text = question.value.trim();
-      prompt.textContent = text ? defaultPrompt + ' My question: ' + text : defaultPrompt;
+      promptQuestion.textContent = question.value.trim() || defaultQuestion;
       status.textContent = '';
     }
 
@@ -241,7 +248,7 @@
       }
       copy.addEventListener('click', async () => {
         try {
-          await navigator.clipboard.writeText(prompt.textContent);
+          await navigator.clipboard.writeText(sourceInstruction.textContent + '\n\n' + promptQuestion.textContent);
           status.textContent = 'Copied. Paste it into your AI.';
         } catch {
           document.getElementById('prompt-preview').open = true;
