@@ -36,10 +36,77 @@ a { color: var(--mint); text-underline-offset: .22em; }
 a:hover { color: var(--orange); }
 .mono, h1, h2 { font-family: "IBM Plex Mono", Consolas, "Courier New", monospace; }
 .profile-page {
+  position: relative;
   --profile-content-width: 46rem;
   --profile-top-space: clamp(1.15rem, 1.75vw, 1.35rem);
   margin-top: var(--profile-top-space);
   margin-bottom: clamp(1rem, 2.6vw, 2rem);
+}
+.page-share { position: relative; z-index: 2; }
+.profile-share { position: absolute; inset: 0 -.55rem auto auto; }
+.page-share button:not([hidden]) {
+  display: flex;
+  align-items: center;
+  gap: .45rem;
+  height: 2.75rem;
+  padding: 0 .65rem;
+  border: 0;
+  border-radius: .35rem;
+  background: transparent;
+  color: #d3e2de;
+  font: inherit;
+  font-size: .875rem;
+  cursor: pointer;
+}
+.page-share button:hover, .page-share button:focus-visible { color: var(--mint); }
+.share-icon {
+  display: block;
+  position: relative;
+  width: .99rem;
+  height: .77rem;
+  margin-top: .35rem;
+  border: 1.5px solid currentColor;
+  border-top: 0;
+  border-radius: 0 0 .19rem .19rem;
+}
+.share-icon::before, .share-icon::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+}
+.share-icon::before {
+  top: -.39rem;
+  width: 1.5px;
+  height: .8rem;
+  background: currentColor;
+  transform: translateX(-50%);
+}
+.share-icon::after {
+  top: -.39rem;
+  width: .41rem;
+  height: .41rem;
+  border: solid currentColor;
+  border-width: 1.5px 0 0 1.5px;
+  transform: translateX(-50%) rotate(45deg);
+}
+.page-share-status {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: max-content;
+  margin: 0;
+  padding: .2rem .55rem;
+  border-radius: .25rem;
+  background: #090d0d;
+  color: #e2ecec;
+  font-size: .8rem;
+}
+.page-share-status:empty { padding: 0; }
+@media (max-width: 40rem) {
+  .page-share button:not([hidden]) { background: #090d0d; }
+}
+@media (max-width: 44rem) {
+  .profile-share { position: relative; inset: auto; width: max-content; margin-inline-start: auto; }
 }
 .adventure-opening { --pocket-depth: clamp(3.4rem, 8vw, 5.2rem); }
 .adventure-stage { position: relative; isolation: isolate; }
