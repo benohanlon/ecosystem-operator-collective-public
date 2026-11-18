@@ -65,3 +65,20 @@ The Ecosystem Operating System gave units a way to choose help based on what the
 When several units face that problem, there’s a reason to work together. An outside partner can contribute expertise and get a tested example it can reuse with its own clients. The units get a better way to help developers get started. Each party can see what it would contribute, what it would gain and what they could achieve together.
 
 [EOS Playbook](../eos-playbook/README.md) · [Input Output Venture Studio](https://www.iog.io/venturestudio)
+
+
+## Unblocking developers
+
+After Alonzo, application teams building on Plutus could identify the issues that stopped their work. The engineers maintaining Plutus understood the effort and dependencies involved in fixing them. Ben started DApp Orbit to bring those views together. The developer relations team collected feedback and met with engineering each week to help weigh issues and decide what to fix first.
+
+The team's March 2023 retrospective records the active backlog falling from more than 200 issues to 46 and reports that issues which previously took months were being resolved in days. The retrospective is an internal team record. This is the team's backlog and turnaround, and the case above describes Ben's role in setting up the working relationship.
+
+[Ben’s résumé](https://my.visualcv.com/growth/)
+
+## Building a coalition to fund shared infrastructure
+
+In Cardano’s first funding cycle after moving to full on-chain governance, independent infrastructure teams needed enough certainty to keep people and plan delivery. The people voting needed to understand what they were funding and how it would be checked. CDEC shifted from trying to form a consortium to helping members coordinate funding proposals. Ben led an operating review and published the coalition’s open letter on the costs of delay and the value of milestone-based payments.
+
+NFTCDN illustrates how a member could make its case. It explained its costs and what might happen after the funding period. The Cardano Foundation recorded changing its vote from No to Yes after the clarification. The treasury withdrawal was enacted, and NFTCDN offered free access to developers.
+
+[CDEC’s open letter](https://forum.cardano.org/t/an-open-letter-to-dreps-from-cdec-let-s-keep-cardano-moving-forward/147438) · [Foundation vote rationale](https://ipfs.io/ipfs/QmSwBobJWfJ9sVZew4PH2v9UN6scWLUPtuU4ciecHUv2Cw) · [NFTCDN](https://nftcdn.io/)

@@ -43,9 +43,10 @@ function replaceGenerated(source, region, content) {
 const [name, role, positioning, proof, metadata, ...sections] = read('benohanlon.md').trim().split('\n\n');
 const workHeading = sections.indexOf('## Work with me');
 const casesHeading = sections.indexOf('## Cases');
+const writingHeading = sections.indexOf('## Writing and projects');
 const contactStart = sections.indexOf('<!-- contact-links -->');
 if (!name?.startsWith('# ') || !role || !positioning || !proof || !metadata?.startsWith('Last reviewed:') ||
-    workHeading < 0 || contactStart <= workHeading || casesHeading <= contactStart) {
+    workHeading < 0 || contactStart <= workHeading || casesHeading <= contactStart || writingHeading <= casesHeading) {
   throw new Error('The Markdown profile must start with name, role, positioning, proof and review date. The contact-links marker belongs under Work with me, before Cases.');
 }
 const introduction = markdown.parse(name) + '<div class="hero-positioning">\n' +
@@ -63,9 +64,11 @@ const prompt = markdown.parse(adventure[1]);
 const contact = markdown.parse(sections.slice(contactStart + 1, casesHeading).join('\n\n'));
 const work = markdown.parse(sections.slice(workHeading, contactStart).join('\n\n')) +
   '<div id="contact-me" class="profile-contact">\n<span id="contact"></span>\n' + contact + '</div>\n' +
-  markdown.parse(sections.slice(casesHeading).join('\n\n'));
+  markdown.parse(sections[casesHeading]) +
+  '<div class="profile-cases">\n' + markdown.parse(sections.slice(casesHeading + 1, writingHeading).join('\n\n')) + '</div>\n' +
+  markdown.parse(sections.slice(writingHeading).join('\n\n'));
 const instructions = markdown.parse(sections.slice(instructionsHeading + 1, workHeading).join('\n\n'));
-const guidance = '<details id="agent-instructions">\n<summary>Agent instructions</summary>\n' +
+const guidance = '<details id="agent-instructions">\n<summary><h2>Agent instructions</h2></summary>\n' +
   instructions + '</details>\n' + markdown.parse(metadata.split(' · ')[0]);
 const source = read('index.html');
 let updated = replaceGenerated(source, 'introduction', introduction);
