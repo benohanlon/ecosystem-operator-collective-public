@@ -286,7 +286,7 @@ summary:hover { color: var(--orange); }
   align-items: center;
   gap: .6rem;
   max-width: 36rem;
-  margin-top: .6rem;
+  margin: .6rem auto 0;
   padding: .55rem .75rem 0;
   border: 1px solid var(--line);
   border-radius: .4rem;

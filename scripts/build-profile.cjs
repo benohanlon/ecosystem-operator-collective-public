@@ -46,12 +46,12 @@ const introCopy = blocks.slice(0, reviewIndex);
 const [metadata, ...sections] = blocks.slice(reviewIndex);
 const workHeading = sections.indexOf('## Work with me');
 const casesHeading = sections.indexOf('## Cases');
-const methodHeading = sections.indexOf('## Interface for impact');
+const playbookHeading = sections.indexOf('## Ecosystem Operating System Playbook');
 const writingHeading = sections.indexOf('## Writing and projects');
 const contactStart = sections.indexOf('<!-- contact-links -->');
 if (!name?.startsWith('# ') || !role || reviewIndex < 2 ||
-    workHeading < 0 || contactStart <= workHeading || casesHeading <= contactStart || methodHeading <= casesHeading || writingHeading <= methodHeading) {
-  throw new Error('The Markdown profile must start with name, role, positioning, proof and review date. The contact-links marker belongs under Work with me, before Cases. Interface for impact must sit between Cases and Writing and projects.');
+    workHeading < 0 || contactStart <= workHeading || casesHeading <= contactStart || playbookHeading <= casesHeading || writingHeading <= playbookHeading) {
+  throw new Error('The Markdown profile must start with name, role, positioning, proof and review date. The contact-links marker belongs under Work with me, before Cases. The Ecosystem Operating System Playbook must sit between Cases and Writing and projects.');
 }
 const introduction = markdown.parse(name) + '<div class="hero-positioning">\n' +
   markdown.parse(introCopy.join('\n\n')) + '</div>\n';
@@ -69,8 +69,8 @@ const contact = markdown.parse(sections.slice(contactStart + 1, casesHeading).jo
 const work = markdown.parse(sections.slice(workHeading, contactStart).join('\n\n')) +
   '<div id="contact-me" class="profile-contact">\n<span id="contact"></span>\n' + contact + '</div>\n' +
   markdown.parse(sections[casesHeading]) +
-  '<div class="profile-cases">\n' + markdown.parse(sections.slice(casesHeading + 1, methodHeading).join('\n\n')) + '</div>\n' +
-  markdown.parse(sections.slice(methodHeading).join('\n\n'));
+  '<div class="profile-cases">\n' + markdown.parse(sections.slice(casesHeading + 1, playbookHeading).join('\n\n')) + '</div>\n' +
+  markdown.parse(sections.slice(playbookHeading).join('\n\n'));
 const instructions = markdown.parse(sections.slice(instructionsHeading + 1, workHeading).join('\n\n'));
 const guidance = '<details id="agent-instructions">\n<summary><h2>Agent instructions</h2></summary>\n' +
   instructions + '</details>\n' + markdown.parse(metadata.split(' · ')[0]);

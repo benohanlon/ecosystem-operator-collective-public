@@ -121,15 +121,22 @@ As Cardano moved to full on-chain governance, delegated representatives (DReps) 
 
 As Cardano prepared for Shelley in 2020, contributors needed a public way to propose technical changes and get feedback from people who would use them. I worked with Frederic Johnson on contributor guidance for Cardano Improvement Proposals and invited public feedback as we introduced the process. The process gave people a shared way to state a problem, put forward a design and invite technical review. A later proposal, CIP-31, became part of the Vasil upgrade. It let applications read information on the blockchain without spending the transaction output that held it. [Read the case](https://benohanlon.md/cases/README.md#giving-developers-a-way-to-shape-shared-standards)
 
-## Interface for impact
+## Ecosystem Operating System Playbook
 
-I act as an interface for impact. Numbers come before strategy. I start by establishing what would benefit the ecosystem as a whole and expressing it in a few system-wide units of account. Those numbers make the winning conditions visible and give teams inside and outside the company a shared basis for coordinating without direct authority.
+I use the Ecosystem Operating System (EOS) to coordinate work at scale across autonomous teams inside and outside a company.
 
-Each team sees a different part of the system. I go to them to understand their work as they see it, what they value, what shapes their decisions and what they count as progress. That lets me show them, in terms they already use, how shared capabilities can advance their own priorities and contribute to the ecosystem as a whole.
+**[Numbers come before strategy](https://benohanlon.md/writing/numbers-come-before-strategy.md).** I start by establishing what would benefit the ecosystem as a whole and expressing it in a few system-wide units of account. These measures make the winning conditions visible and give teams a shared basis for coordinating without direct authority. Each team still owns its strategy and the measures it can influence.
+
+### Interface for impact
+
+Each team sees a different part of the same system. A decision can make sense for one team and still work against what the ecosystem needs as a whole. I go to teams to understand their work as they see it, what they value, what shapes their decisions and what they count as progress.
+
+I then show them, in terms they already use, how they can draw on partners, community, developer relations or AI to advance their own priorities and contribute to what the ecosystem needs.
+
+[Read the full EOS Playbook](https://benohanlon.md/eos-playbook/README.md)
 
 ## Writing and projects
 
-- [How I work](https://benohanlon.md/eos-playbook/README.md) is my Ecosystem Operating System playbook. It shows how teams with their own priorities can find and use shared capabilities to solve problems they care about.
 - [Survival of the Sovereign](https://benohanlon.md/writing/README.md#survival-of-the-sovereign) is my series on open technology and the intelligence counter-revolution.
 - [Numbers Come Before Strategy](https://benohanlon.md/writing/numbers-come-before-strategy.md) shows how setting a few shared measures of success before choosing a strategy helps independent teams coordinate their decisions.
 - [Sovereign Harness](https://benohanlon.md/projects/README.md#sovereign-harness) is a personal AI operating system I’m building so people can run fleets of agents, switch models and keep their knowledge and workflows private. It’s in private alpha and being built for open-source release.

@@ -1,6 +1,6 @@
 # EOS Playbook
 
-The **Ecosystem Operating System (EOS)** is a way for independent teams to draw on a shared ecosystem and build on each other’s work. It grew out of a venture studio where each business unit had its own leadership, priorities and measures of success. [Venture studio case](../cases/README.md#scaling-ecosystem-work-across-independent-autonomous-teams)
+The **Ecosystem Operating System (EOS)** is a way for independent teams to draw on a shared ecosystem and build on each other’s work. It grew out of a venture studio where each business unit had its own leadership, priorities and measures of success. [Venture studio case](../cases/README.md#coordinating-teams-and-partners-with-different-priorities)
 
 Ecosystem work opens new routes to users, developers and partners. It also builds something the next team can use, such as a trusted relationship, a proven integration or a better way to bring developers on board. Over time, that can speed up adoption, reduce duplicated effort and open new sources of revenue.
 
@@ -14,7 +14,7 @@ At RealFi, we proposed a Harbour where regional contributors could arrive, find 
 
 Show what the work produced in terms the function can use. The function can decide where to commit resources, contributors can see what their work achieved, and the people organising the work can use what they learn to change the next round.
 
-At RealFi, stake pool operators already had relationships with people who could try the new stablecoin. RealFi supported onboarding, and operators earned points tied to what the delegators they brought in earned. The same work helped RealFi reach early users and gave operators a reason to help them get started. [RealFi case](../cases/README.md#getting-early-adoption-through-a-network-people-already-trust)
+At RealFi, stake pool operators already had relationships with people who could try the new stablecoin. RealFi supported onboarding, and operators earned points tied to what the delegators they brought in earned. The same work helped RealFi reach early users and gave operators a reason to help them get started. [RealFi case](../cases/README.md#reaching-early-users-through-communities-they-already-trust)
 
 ## Explore the playbook
 
