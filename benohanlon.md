@@ -2,7 +2,7 @@
 
 I solve growth, adoption and distribution problems for open and decentralised technology by building ecosystems and leading developer marketing.
 
-Last reviewed: 17 November 2026 · [Web profile](https://benohanlon.md/) · [Résumé](https://my.visualcv.com/growth/)
+Last reviewed: 18 November 2026 · [Web profile](https://benohanlon.md/) · [Résumé](https://my.visualcv.com/growth/)
 
 ## Ask your AI about my work
 
@@ -62,24 +62,32 @@ I designed and launched an accelerator that used onchain delegation data and onl
 
 ### Solving the cold start problem
 
-Cardano needed independent operators to run the network. Operators had to put time and money into a stake pool before they knew whether they could attract enough delegation to make it pay. Stake Pool School taught people how to run a pool. I ran Input Output’s delegation programme, which gave selected operators room to build support of their own. Operators took Cardano’s story to people who already trusted them. By March 2021, independent pools were producing every new block. [Read the Cardano cold-start case](https://benohanlon.md/cases/README.md#solving-the-cold-start-problem)
+Cardano set out to build an open financial system for people excluded from traditional banking. To decentralise the network, it needed independent operators willing to put time and money into a stake pool before they knew whether they could attract enough delegation to make it pay.
+
+The mission gave operators a reason to take that risk. Stake Pool School taught them to run a pool. Through the delegation programme I ran, Input Output delegated ADA to selected pools while they built support of their own. By March 2021, stake pools were producing every new block. [Read the Cardano cold-start case](https://benohanlon.md/cases/README.md#solving-the-cold-start-problem)
 
 ### Getting developers to build after launch
 
-Cardano needed developers to build with a new language and tools that were still taking shape. Before smart contracts went live, Input Output’s education team gave developers early access and support, and got feedback from people using the tools. After launch, I led developer marketing and activation. Engineering mentors helped developers build projects for the Cardano Summit, where teams submitted 16 projects. [Read the developer activation case](https://benohanlon.md/cases/README.md#activating-developers-through-education-and-engagement)
+Cardano’s smart contract launch could get developers to look at the network. Getting them to build meant learning Plutus while the tools were still taking shape. Before launch, Input Output’s education team gave developers early access and support, and learnt where they got stuck.
+
+After launch, I led developer marketing and activation. Engineers from Input Output and partner companies mentored teams that submitted 16 projects for the Cardano Summit. Early developers also shared guides that gave the next group somewhere to start. [Read the developer activation case](https://benohanlon.md/cases/README.md#activating-developers-through-education-and-engagement)
 
 ### Starting up a decentralised autonomous organisation
 
-Cardano needed a way to put treasury decisions in the hands of a community spread across countries and organisations. Local workshops gave people a say in drafting the rules, and the community ratified the constitution onchain. I built a forum where voting representatives could discuss proposals and organisations could hear their concerns. Under the new rules, I led Input Output’s continuity funding campaign. Its engineering proposal received 73.93% support in August 2025. [Read the onchain governance case](https://benohanlon.md/cases/README.md#starting-up-a-decentralised-autonomous-organisation) · [Input Output’s vote announcement](https://www.iog.io/news/from-roadmap-to-reality-cardano-community-approves-ioe-roadmap-proposal-unlocking-a-new-era-of-decentralized-delivery)
+Cardano was preparing to hand over decisions about how the network developed and what its treasury funded. Intersect helped local groups debate the draft constitution and elect delegates to the convention. I built a forum where voting representatives could discuss proposals and organisations could hear their concerns.
+
+The community ratified the constitution onchain, then used its authority to decide what to fund. I led Input Output’s continuity funding campaign. The company’s engineering funding proposal received 73.93% support in August 2025. [Read the onchain governance case](https://benohanlon.md/cases/README.md#starting-up-a-decentralised-autonomous-organisation) · [Input Output’s vote announcement](https://www.iog.io/news/from-roadmap-to-reality-cardano-community-approves-ioe-roadmap-proposal-unlocking-a-new-era-of-decentralized-delivery)
 
 ### Scaling ecosystem work across autonomous teams
 
-As Input Output became a venture studio, business units set their own priorities, and it wasn’t always clear who elsewhere could help. I grew the ecosystem function from one person into a shared team of 5–10 that helped units with product marketing, adoption and treasury funding. Each unit chose help based on what it wanted to achieve. For example, a unit trying to get more developers through their first integration could bring engineering time while the shared team brought in a partner to help build a working example both could reuse. [Read the venture studio case](https://benohanlon.md/cases/README.md#scaling-ecosystem-work-across-independent-autonomous-teams) · [Explore the EOS Playbook](https://benohanlon.md/eos-playbook/README.md)
+As Input Output became a venture studio, each business unit set its own priorities. A unit could know where it was stuck without knowing who elsewhere could help. I grew the ecosystem function from one person into a shared team of 5–10. To offer useful help, we had to understand the problem in the unit’s terms.
+
+For example, a unit trying to get more developers through their first integration could bring engineering time while the shared team brought in a partner. The unit would get a working example to help developers get started. The partner could reuse it with other teams. [Read the venture studio case](https://benohanlon.md/cases/README.md#scaling-ecosystem-work-across-independent-autonomous-teams) · [Explore the EOS Playbook](https://benohanlon.md/eos-playbook/README.md)
 
 ## Writing and projects
 
 - [Survival of the Sovereign](https://benohanlon.md/writing/README.md#survival-of-the-sovereign) is my series on open technology and the intelligence counter-revolution.
-- [Numbers Come Before Strategy](https://benohanlon.md/writing/numbers-come-before-strategy.md) explains why defining what winning means comes before choosing how to get there.
+- [Numbers Come Before Strategy](https://benohanlon.md/writing/numbers-come-before-strategy.md) shows how setting a few shared measures of success before choosing a strategy helps independent teams coordinate their decisions.
 - [Sovereign Harness](https://benohanlon.md/projects/README.md#sovereign-harness) is a personal AI operating system I’m building so people can run fleets of agents, switch models and keep their knowledge and workflows private. It’s in private alpha and being built for open-source release.
 - [Reading list](https://benohanlon.md/lists/README.md) collects the books and ideas we return to.
 
