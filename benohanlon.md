@@ -4,11 +4,7 @@ Growth & Marketing Executive
 
 I solve growth, adoption and distribution problems for open and decentralised technologies and protocols by building ecosystems and leading developer marketing. I build and lead teams that drive growth beyond headcount by extending what they can do through partnerships, community, developer relations and AI.
 
-I act as an interface for impact. Numbers come before strategy. I start by establishing what would benefit the ecosystem as a whole and expressing it in a few system-wide units of account. Those numbers make the winning conditions visible and give teams inside and outside the company a shared basis for coordinating without direct authority.
-
-Each team sees a different part of the system. I go to them to understand their work as they see it, what they value, what shapes their decisions and what they count as progress. That lets me show them, in terms they already use, how shared capabilities can advance their own priorities and contribute to the ecosystem as a whole.
-
-I worked on Cardano’s ecosystem from the Shelley Incentivized Testnet, first at the Cardano Foundation and then at IOHK, where I built and led its ecosystem function. Ada reached #3 by market cap in 2021. I helped build its on-chain governance and led Input Output’s continuity campaign, which secured ₳195 million in treasury funding, including ₳123.7 million for research and engineering. We built our customer, who then chose to pay us. At RealFi, I led community and partner activation for the launch of stablecoin and real-world asset infrastructure connecting on-chain capital with private credit.
+I led Input Output’s continuity campaign. Cardano’s community approved about ₳195 million in treasury funding for the company across five proposals.
 
 Last reviewed: 18 November 2026 · [Web profile](https://benohanlon.md/) · [Résumé](https://my.visualcv.com/growth/)
 
@@ -124,6 +120,12 @@ As Cardano moved to full on-chain governance, delegated representatives (DReps) 
 *Open standards & ecosystem coordination*
 
 As Cardano prepared for Shelley in 2020, contributors needed a public way to propose technical changes and get feedback from people who would use them. I worked with Frederic Johnson on contributor guidance for Cardano Improvement Proposals and invited public feedback as we introduced the process. The process gave people a shared way to state a problem, put forward a design and invite technical review. A later proposal, CIP-31, became part of the Vasil upgrade. It let applications read information on the blockchain without spending the transaction output that held it. [Read the case](https://benohanlon.md/cases/README.md#giving-developers-a-way-to-shape-shared-standards)
+
+## Interface for impact
+
+I act as an interface for impact. Numbers come before strategy. I start by establishing what would benefit the ecosystem as a whole and expressing it in a few system-wide units of account. Those numbers make the winning conditions visible and give teams inside and outside the company a shared basis for coordinating without direct authority.
+
+Each team sees a different part of the system. I go to them to understand their work as they see it, what they value, what shapes their decisions and what they count as progress. That lets me show them, in terms they already use, how shared capabilities can advance their own priorities and contribute to the ecosystem as a whole.
 
 ## Writing and projects
 
