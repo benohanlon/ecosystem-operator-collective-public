@@ -21,54 +21,57 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://benohanlon.md/assets/adventure-a4-pocket-social.jpg">
   <meta name="twitter:image:alt" content="Journey to the Centre of the Problem, a worn illustrated paperback tucked into a dark teal pocket.">
-  <link rel="stylesheet" href="./assets/site.css?v=compact-desktop-adventure">
+  <link rel="stylesheet" href="./assets/site.css?v=desktop-book-and-prompt">
 </head>
 <body>
   <main class="profile-page">
-    <div class="adventure-stage">
-      <a class="adventure-pocket" href="./adventure.html">
-        <span class="adventure-book-window">
-          <img class="adventure-book-cover" src="./assets/adventure-a4-cover.webp" width="1055" height="1491"
-            alt="Journey to the Centre of the Problem. Choose your own adventure." fetchpriority="high">
-        </span>
-        <span class="adventure-pocket-front">
-          <span class="adventure-pocket-tab">
-            <img src="./assets/adventure-pocket-start-tab.webp" width="264" height="80" alt="">
-            <span class="adventure-pocket-label">start here</span>
+    <div class="adventure-opening">
+      <div class="adventure-stage">
+        <a class="adventure-pocket" href="./adventure.html">
+          <span class="adventure-book-window">
+            <img class="adventure-book-cover" src="./assets/adventure-a4-cover.webp" width="1055" height="1491"
+              alt="Journey to the Centre of the Problem. Choose your own adventure." fetchpriority="high">
           </span>
-          <span class="adventure-pocket-action">
-            <img src="./assets/adventure-a4-pocket-stitch.webp?v=fine-thread" alt="">
-            <span class="adventure-pocket-label">click the book to turn to page 1 <span aria-hidden="true">↗</span></span>
+          <span class="adventure-pocket-front">
+            <span class="adventure-pocket-tab">
+              <img src="./assets/adventure-pocket-start-tab.webp" width="264" height="80" alt="">
+              <span class="adventure-pocket-label">start here</span>
+            </span>
+            <span class="adventure-pocket-action">
+              <img src="./assets/adventure-a4-pocket-stitch.webp?v=fine-thread" alt="">
+              <span class="adventure-pocket-label">click the book to turn to page 1</span>
+              <span class="adventure-pocket-arrow" aria-hidden="true">↑</span>
+            </span>
           </span>
-        </span>
-      </a>
-    </div>
-    <section class="profile-prompt" aria-labelledby="prompt-heading">
-      <h2 class="prompt-heading" id="prompt-heading" tabindex="-1">Copy and paste this into your AI</h2>
-      <blockquote id="prompt" aria-labelledby="prompt-heading">
+        </a>
+      </div>
+      <section class="profile-prompt" aria-labelledby="prompt-heading">
+        <h2 class="prompt-heading" id="prompt-heading" tabindex="-1">Copy and paste this into your AI</h2>
+        <blockquote id="prompt" aria-labelledby="prompt-heading">
     <!-- Begin generated prompt -->
 <p>Visit benohanlon.md and run a choose-your-own-adventure from the Markdown. Give me choices and I’ll reply.</p>
     <!-- End generated prompt -->
-      </blockquote>
-      <div class="prompt-actions" id="prompt-actions" hidden>
-        <button class="copy-button" id="copy" type="button"><span class="copy-icon" aria-hidden="true"></span>Copy prompt</button>
-        <div class="prompt-openers">
-          <span>Open in</span>
-          <div class="providers" role="group" aria-label="Open in your AI">
-            <a id="chatgpt" target="_blank" rel="noopener noreferrer" aria-label="Open in ChatGPT" title="ChatGPT">
-              <img src="./assets/chatgpt.svg" width="26" height="26" alt="">
-            </a>
-            <a id="claude" target="_blank" rel="noopener noreferrer" aria-label="Open in Claude" title="Claude">
-              <img src="./assets/claude.svg" width="26" height="26" alt="">
-            </a>
-            <a id="gemini" href="https://gemini.google.com/app" target="_blank" rel="noopener noreferrer" aria-label="Copy prompt and open Gemini" title="Gemini">
-              <img src="./assets/gemini.png" width="26" height="26" alt="">
-            </a>
+        </blockquote>
+        <div class="prompt-actions" id="prompt-actions" hidden>
+          <button class="copy-button" id="copy" type="button"><span class="copy-icon" aria-hidden="true"></span>Copy prompt</button>
+          <div class="prompt-openers">
+            <span>Open in</span>
+            <div class="providers" role="group" aria-label="Open in your AI">
+              <a id="chatgpt" target="_blank" rel="noopener noreferrer" aria-label="Open in ChatGPT" title="ChatGPT">
+                <img src="./assets/chatgpt.svg" width="26" height="26" alt="">
+              </a>
+              <a id="claude" target="_blank" rel="noopener noreferrer" aria-label="Open in Claude" title="Claude">
+                <img src="./assets/claude.svg" width="26" height="26" alt="">
+              </a>
+              <a id="gemini" href="https://gemini.google.com/app" target="_blank" rel="noopener noreferrer" aria-label="Copy prompt and open Gemini" title="Gemini">
+                <img src="./assets/gemini.png" width="26" height="26" alt="">
+              </a>
+            </div>
           </div>
         </div>
-      </div>
-      <p id="copy-status" role="status"></p>
-    </section>
+        <p id="copy-status" role="status"></p>
+      </section>
+    </div>
     <header class="hero">
       <div class="profile-record">
     <!-- Begin generated role -->

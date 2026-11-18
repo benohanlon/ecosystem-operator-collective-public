@@ -41,6 +41,7 @@ a:hover { color: var(--orange); }
   margin-top: var(--profile-top-space);
   margin-bottom: clamp(1rem, 2.6vw, 2rem);
 }
+.adventure-opening { --pocket-depth: clamp(3.4rem, 8vw, 5.2rem); }
 .adventure-stage { position: relative; isolation: isolate; }
 .adventure-stage::before {
   content: "";
@@ -90,7 +91,7 @@ a:hover { color: var(--orange); }
   align-items: center;
   align-content: start;
   gap: .35rem clamp(.45rem, 1.4vw, .85rem);
-  min-height: clamp(3.4rem, 8vw, 5.2rem);
+  min-height: var(--pocket-depth);
   margin: -.6rem clamp(-1.25rem, -2.1vw, -.4rem) 0;
   padding: clamp(.23rem, .65vw, .4rem) clamp(.8rem, 3vw, 1.5rem) 1rem;
 }
@@ -114,6 +115,7 @@ a:hover { color: var(--orange); }
 }
 .adventure-pocket-tab img, .adventure-pocket-action img { display: block; width: 100%; height: auto; }
 .adventure-pocket-action img { filter: brightness(1.12); }
+.adventure-pocket-arrow { display: none; }
 .adventure-pocket-label {
   position: absolute;
   inline-size: 1px;
@@ -386,6 +388,30 @@ summary:hover { color: var(--orange); }
     border: 0;
   }
   .profile-prompt #copy-status { margin: 0; }
+}
+@media (min-width: 75rem) {
+  .adventure-opening { display: grid; grid-template-columns: minmax(0, 1fr); }
+  .adventure-opening > * { grid-area: 1 / 1; align-self: end; }
+  .adventure-book-window {
+    width: min(45%, 26rem, calc(50svh * 1055 / 970));
+    margin-inline: 2rem auto;
+  }
+  .adventure-opening .profile-prompt {
+    z-index: 1;
+    justify-self: end;
+    width: min(43%, 23.5rem);
+    margin: 0 max(0px, (100% - var(--profile-content-width)) / 2) calc(var(--pocket-depth) + .6rem) 0;
+  }
+  .adventure-pocket-action img { clip-path: inset(0 4.5% 0 0); }
+  .adventure-pocket-arrow {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-65%);
+    font: 600 .9rem/1 Georgia, serif;
+    color: #e6bc83;
+  }
 }
 :focus-visible { outline: 2px solid var(--orange); outline-offset: 4px; }
 [role="status"] { color: var(--mint); font-size: .9rem; }
