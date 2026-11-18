@@ -85,7 +85,7 @@ a:hover { color: var(--orange); }
   z-index: 3;
   inset-inline-start: var(--pocket-text-inset);
   inset-block-end: var(--pocket-label-line);
-  width: min(22rem, calc(100% - var(--pocket-text-inset) - .5rem));
+  width: min(19rem, calc(94% - var(--pocket-text-inset) - .4rem));
   transform: translateY(50%);
   mix-blend-mode: lighten;
 }
@@ -109,13 +109,14 @@ a:hover { color: var(--orange); }
 }
 .adventure-pocket-tab {
   position: absolute;
-  z-index: 3;
+  /* The canvas covers the bottom of the tab where it enters the seam. */
+  z-index: 1;
   inset-inline-start: var(--pocket-tab-inset);
-  inset-block-end: var(--pocket-label-line);
+  inset-block-end: calc(var(--pocket-height) - .32rem);
   width: var(--pocket-tab-width);
   height: auto;
   filter: drop-shadow(0 2px 2px #001313da);
-  transform: translateY(50%) rotate(-4deg);
+  transform: rotate(-4deg);
 }
 .adventure-pocket:focus-visible { outline: 2px solid var(--orange); outline-offset: 4px; }
 .adventure-stage + .hero { border-top: 0; }
