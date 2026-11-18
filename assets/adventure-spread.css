@@ -20,7 +20,50 @@
   font-size: .875rem;
 }
 
-.adventure-links > a { padding-block: .4rem; justify-self: start; }
+.adventure-signpost {
+  width: min(100%, 60rem, calc(100vw - 2.5rem));
+  margin-inline: auto;
+}
+.adventure-signpost .adventure-logo-scale {
+  aspect-ratio: auto;
+  margin: 0 auto;
+  clip-path: none;
+}
+.adventure-signpost-label {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  width: 77.54%;
+  aspect-ratio: 818 / 80;
+  margin: 0 auto;
+  border-radius: 999px;
+}
+.adventure-signpost-label img {
+  position: absolute;
+  inset: -108.75% auto auto -14.67%;
+  display: block;
+  width: 128.97%;
+  height: auto;
+}
+.adventure-signpost .adventure-links {
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  margin-top: .15rem;
+}
+.adventure-signpost .adventure-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  grid-column: 2;
+}
+.adventure-signpost .page-share {
+  grid-column: 3;
+  justify-self: end;
+}
+@media (max-width: 38rem) {
+  .adventure-signpost {
+    width: calc(100% + clamp(1.25rem, 4vw, 2rem) - 2.5rem);
+  }
+}
 .adventure-edition {
   margin-block-start: .9rem;
   text-align: center;
