@@ -21,21 +21,6 @@
 }
 
 .adventure-links > a { padding-block: .4rem; justify-self: start; }
-.adventure-cover-banner {
-  display: grid;
-  justify-items: center;
-  width: min(100%, 34rem);
-  margin: 0 auto clamp(.8rem, 2.2vw, 1.5rem);
-  font-size: .875rem;
-}
-.adventure-cover-banner img {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: .35rem;
-}
-.adventure-cover-banner span { padding-block: .45rem; }
-#adventure-title { scroll-margin-top: 1rem; }
 .adventure-edition {
   margin-block-start: .9rem;
   text-align: center;
