@@ -28,6 +28,10 @@ document.getElementById('gemini').addEventListener('click', () =>
   copyWithStatus(promptText, status, 'Copied. Paste it into Gemini.', copyFallback));
 document.getElementById('prompt-actions').hidden = false;
 
+document.querySelector('.agent-instructions-jump')?.addEventListener('click', () => {
+  document.getElementById('agent-instructions').open = true;
+});
+
 const questionForm = document.getElementById('question-form');
 if (questionForm) {
   const question = document.getElementById('question');
