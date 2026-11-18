@@ -40,16 +40,16 @@ function replaceGenerated(source, region, content) {
   return source.slice(0, start + begin.length) + '\n' + content.trimEnd() + '\n' + source.slice(stop);
 }
 
-const [name, role, positioning, metadata, ...sections] = read('benohanlon.md').trim().split('\n\n');
+const [name, role, positioning, proof, metadata, ...sections] = read('benohanlon.md').trim().split('\n\n');
 const workHeading = sections.indexOf('## Work with me');
 const casesHeading = sections.indexOf('## Cases');
 const contactStart = sections.indexOf('<!-- contact-links -->');
-if (!name?.startsWith('# ') || !role || !positioning || !metadata?.startsWith('Last reviewed:') ||
+if (!name?.startsWith('# ') || !role || !positioning || !proof || !metadata?.startsWith('Last reviewed:') ||
     workHeading < 0 || contactStart <= workHeading || casesHeading <= contactStart) {
-  throw new Error('The Markdown profile must start with name, role, positioning and review date. The contact-links marker belongs under Work with me, before Cases.');
+  throw new Error('The Markdown profile must start with name, role, positioning, proof and review date. The contact-links marker belongs under Work with me, before Cases.');
 }
-const introduction = markdown.parse(name) +
-  markdown.parse(positioning).replace('<p>', '<p class="hero-positioning">');
+const introduction = markdown.parse(name) + '<div class="hero-positioning">\n' +
+  markdown.parse(positioning + '\n\n' + proof) + '</div>\n';
 const adventureHeading = sections.indexOf('## Choose your own adventure');
 const adventure = sections[adventureHeading + 2]?.match(/^> (.+)$/);
 const instructionsHeading = sections.indexOf('## Agent instructions');

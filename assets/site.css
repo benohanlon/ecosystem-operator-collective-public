@@ -349,6 +349,8 @@ a:hover { color: var(--orange); }
 }
 p { margin: 0 0 1rem; }
 .hero-positioning { max-width: 34rem; margin: 0; }
+.hero-positioning p { margin: 0; }
+.hero-positioning p + p { margin-top: .65rem; }
 .profile-actions, .profile-document-links { display: flex; flex-wrap: wrap; align-items: center; gap: .2rem 1rem; }
 .profile-actions { grid-area: actions; justify-content: space-between; font-size: .875rem; }
 .profile-actions a {
