@@ -37,6 +37,7 @@ a:hover { color: var(--orange); }
 .profile-page {
   --profile-top-space: clamp(1.15rem, 1.75vw, 1.35rem);
   margin-top: var(--profile-top-space);
+  margin-bottom: clamp(1rem, 2.6vw, 2rem);
 }
 .adventure-stage { position: relative; isolation: isolate; }
 .adventure-stage::before {
@@ -424,29 +425,39 @@ summary:hover { color: var(--orange); }
 }
 #agent-instructions { margin: 1rem 0; }
 .closing-artwork {
-  --shadow-room: #021819;
-  padding-bottom: 2rem;
+  --shadow-room: #021415;
+  --rain-lead-in: clamp(9rem, 25svh, 14rem);
+  --rain-tile-width: 34rem;
+  position: relative;
+  isolation: isolate;
+  padding: var(--rain-lead-in) 0 2rem;
   scroll-margin-top: 26svh;
-  background: var(--shadow-room);
+  background: linear-gradient(var(--dark), var(--shadow-room) clamp(8rem, 22vw, 19rem));
+}
+.closing-artwork::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: url('./amber-rain-tile.webp') center / var(--rain-tile-width) 100% repeat-x;
+  filter: brightness(.8);
+  mask-image: linear-gradient(transparent .75rem, black var(--rain-lead-in), black 72%, transparent 96%);
+  opacity: .7;
+  pointer-events: none;
 }
 .closing-portrait {
   position: relative;
-  isolation: isolate;
-  width: min(100%, 34rem);
+  width: min(100%, 30rem);
   margin: 0 auto;
-  mask-image: linear-gradient(black 97%, transparent);
+}
+.closing-portrait picture {
+  display: block;
+  --rain-entry: linear-gradient(166deg, transparent 5%, black 25%);
+  --vertical-fade: linear-gradient(transparent, black 9%, black 96%, transparent);
+  mask-image: var(--rain-entry), var(--vertical-fade);
+  mask-composite: intersect;
 }
 .closing-portrait img { display: block; width: 100%; height: auto; }
-.closing-portrait::before {
-  content: '';
-  position: absolute;
-  inset: 0 0 auto;
-  height: 100px;
-  pointer-events: none;
-  background:
-    radial-gradient(ellipse 110% 132% at 0 0, var(--dark), transparent 72%),
-    linear-gradient(var(--dark), transparent 20px);
-}
 .closing-caption {
   position: absolute;
   z-index: 1;
@@ -481,15 +492,20 @@ summary:hover { color: var(--orange); }
   border-top-color: #a4805e;
   color: #fff3e2;
 }
-@media (min-width: 35rem) {
-  .closing-artwork { background: linear-gradient(var(--dark), var(--shadow-room) 100px); }
-  .closing-portrait::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    background: linear-gradient(to right, var(--shadow-room), transparent 6%, transparent 94%, var(--shadow-room));
-    mask-image: linear-gradient(transparent, black 140px);
+@media (min-width: 43rem) {
+  .closing-artwork {
+    --rain-lead-in: clamp(6rem, 14svh, 9rem);
+    --rain-tile-width: clamp(48rem, 75vw, 68rem);
+  }
+  .closing-portrait { width: min(100%, 44rem); }
+  .closing-portrait picture {
+    --vertical-fade: linear-gradient(transparent, black 9%, black 89%, transparent);
+    mask-image: var(--rain-entry), var(--vertical-fade),
+      linear-gradient(to right, transparent, #0002 5%, #0008 12%, black 22%, black 78%, #0008 88%, #0002 95%, transparent);
+  }
+  .closing-caption {
+    inset-block-start: 40%;
+    font-size: clamp(1.9rem, 4.5vw, 2.55rem);
   }
 }
 @media (max-width: 38rem) {
