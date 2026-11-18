@@ -171,7 +171,7 @@ a:hover { color: var(--orange); }
 }
 .adventure-page h1 {
   max-width: 15ch;
-  color: #f3d0a3;
+  color: #69b9d9;
   font: 700 clamp(2.25rem, 6vw, 4.5rem)/.99 Georgia, serif;
   letter-spacing: -.055em;
   text-wrap: balance;
