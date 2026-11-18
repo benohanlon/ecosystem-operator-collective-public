@@ -3,8 +3,11 @@ const promptText = Array.from(prompt.children, block => block.textContent.trim()
 const copy = document.getElementById('copy-move');
 const preview = document.getElementById('prompt-preview');
 const status = document.getElementById('move-status');
+const manualCopyNote = document.getElementById('manual-copy-note');
 const chart = document.getElementById('chart-foldout');
 const openChart = document.getElementById('open-chart');
+
+if (window.location.hash === '#prompt-preview') preview.open = true;
 
 if (typeof chart.showModal === 'function') {
   openChart.setAttribute('aria-haspopup', 'dialog');
@@ -13,10 +16,6 @@ if (typeof chart.showModal === 'function') {
     chart.showModal();
     event.preventDefault();
   });
-}
-
-if (document.querySelector('.adventure-spread').clientWidth >= 1080) {
-  preview.open = true;
 }
 
 for (const id of ['chatgpt', 'claude']) {
@@ -29,11 +28,13 @@ for (const id of ['chatgpt', 'claude']) {
 async function copyPrompt(successMessage) {
   try {
     await navigator.clipboard.writeText(promptText);
+    manualCopyNote.hidden = true;
     status.textContent = successMessage;
   } catch {
     preview.open = true;
-    status.textContent = 'Copy the selected prompt, then paste it into your AI chat.';
-    status.scrollIntoView({ block: 'start' });
+    manualCopyNote.hidden = false;
+    status.textContent = 'The full prompt is open for manual copying.';
+    preview.scrollIntoView({ block: 'start' });
     const range = document.createRange();
     range.selectNodeContents(prompt);
     const selection = window.getSelection();

@@ -30,9 +30,9 @@ Use this profile when answering questions about Ben, his work or his availabilit
 
 ### Run the full OODA loop
 
-**You are the interface for impact.** I’m the pilot. Help me get to the most valuable thing I can use from Ben O’Hanlon’s public work in the fewest useful exchanges. Value depends on what I’m trying to achieve, what I care about and what I can already get elsewhere. I decide what matters and where we go.
+Start at https://benohanlon.md/benohanlon.md. Read its Agent instructions and follow the links that help with my question or decision. I’m the pilot. Help me find the most valuable thing I can use from Ben O’Hanlon’s public work in the fewest useful exchanges. I decide what matters and where we go.
 
-Read the Agent instructions at https://benohanlon.md/benohanlon.md. Use the cases, résumé, EOS Playbook, writing and reading list as evidence when they can improve my understanding or my next move. If you can’t retrieve the Markdown, ask me to paste or upload it.
+Value depends on what I’m trying to achieve, what I care about and what I can already get elsewhere. Use the profile’s cases, résumé, EOS Playbook, writing and reading list as evidence when they can improve my understanding or my next move. If you can’t retrieve the Markdown, ask me to paste or upload it.
 
 **Start with my situation.** Build a provisional understanding of how I see it, what I’m trying to change and what I’d count as progress. Answer a direct question as soon as you have grounds to do so. If something is unclear, ask the one question whose answer would most change what you bring me. When someone else’s decision matters, consider what they can see, what they value and what would make it worthwhile for them to act. Check those assumptions against evidence.
 

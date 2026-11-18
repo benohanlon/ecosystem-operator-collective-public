@@ -68,9 +68,13 @@ if (instructionsHeading !== adventureHeading + 3 || instructionsHeading >= workH
 if (oodaHeading <= instructionsHeading || oodaHeading + 1 >= workHeading) {
   throw new Error('Full OODA loop guidance must sit inside Agent instructions.');
 }
+const profileUrl = profileOrigin + '/benohanlon.md';
+const opening = sections[oodaHeading + 1];
+if (!adventure[1].includes(profileUrl) || !opening.includes(profileUrl)) {
+  throw new Error('Both the short prompt and the full prompt opening must reference the public Markdown profile.');
+}
 const prompt = markdown.parse(adventure[1]);
 const oodaPrompt = markdown.parse(sections.slice(oodaHeading + 1, workHeading).join('\n\n'));
-const oodaOpening = markdown.parse(sections[oodaHeading + 1]);
 const contact = markdown.parse(sections.slice(contactStart + 1, casesHeading).join('\n\n'));
 const work = markdown.parse(sections.slice(workHeading, contactStart).join('\n\n')) +
   '<div id="contact-me" class="profile-contact">\n<span id="contact"></span>\n' + contact + '</div>\n' +
@@ -88,8 +92,7 @@ updated = replaceGenerated(updated, 'profile', work);
 updated = replaceGenerated(updated, 'guidance', guidance);
 
 const adventureSource = read('adventure.html');
-const adventureOpening = replaceGenerated(adventureSource, 'opening', oodaOpening);
-const adventurePage = replaceGenerated(adventureOpening, 'prompt', oodaPrompt);
+const adventurePage = replaceGenerated(adventureSource, 'prompt', oodaPrompt);
 
 if (process.argv.includes('--check')) {
   if (updated !== source || adventurePage !== adventureSource) {
