@@ -67,39 +67,59 @@ Socials
 
 ## Cases
 
-### Getting early adoption through a network people already trust
+### Reaching early users through communities they already trust
 
-RealFi needed its first users to try a new stablecoin. Early users could show their peers how it worked and help RealFi see where people got stuck.
+*Asset-based community development*
 
-I designed and launched an accelerator that used onchain delegation data and online influence to find Cardano stake pool operators who could reach those users through relationships they already had. Operators earned points tied to what the people they brought in earned on the testnet. One operator, PetLoverStake, published its own walkthrough to get people started. [Read the RealFi early adoption case](https://benohanlon.md/cases/README.md#getting-early-adoption-through-a-network-people-already-trust)
+RealFi was preparing to launch USDrf, a stablecoin designed to give holders access to returns from real-world credit, including private lending, when they staked it. We needed people to try the product and tell us where they got stuck. I designed and launched an accelerator around Cardano stake pool operators, who already had the trust of the people we wanted to reach and the skills to help them get started. Operators earned points tied to what the people they brought in earned on the testnet. One operator, PetLoverStake, wrote its own walkthrough for its community. After RealFi launched on Cardano mainnet, its Head of Product credited the testers, bug reporters and operators who brought their delegators with helping the launch go smoothly. [Operator walkthrough](https://petloverstake.com/) · [Launch retrospective](https://realfi.co/blog/realfi-office-hours-recap-september-2026)
 
-In July 2026, RealFi reported that delegation grew for 84% of participating pools and 17% of similarly sized pools outside the accelerator. The comparison covered a short period, and RealFi selected the comparison pools. [RealFi’s July report](https://realfi.co/blog/realfi-office-hours-recap-july-2026)
+### Activating developers
 
-### Solving the cold start problem
+*Developer marketing & education*
 
-Cardano set out to build an open financial system for people excluded from traditional banking. To decentralise the network, it needed independent operators willing to put time and money into a stake pool before they knew whether they could attract enough delegation to make it pay.
+During Cardano’s Goguen rollout, Mary added native asset support in March 2021. Alonzo brought Plutus smart contracts to mainnet that September. Ahead of Alonzo, developers needed a way to learn Plutus and see what they could build with it. The Plutus Pioneers programme gave them early access and training. The community and developer relations function I built and led supported the programme alongside IO’s education team. At the Summit Capstone, engineers from IO and partner companies mentored teams through challenges designed to produce tools other developers could use. Teams submitted 16 projects, and members of the early Pioneer cohorts later contributed to Plutus Community Docs. [Summit Capstone](https://www.iog.io/news/building-on-the-cardano-summit) · [Plutus Community Docs](https://www.iog.io/news/plutus-community-docs-a-new-documentation-site-for-devs-by-devs)
 
-The mission gave operators a reason to take that risk. Stake Pool School taught them to run a pool. Through the delegation programme I ran, Input Output delegated ADA to selected pools while they built support of their own. By March 2021, stake pools were producing every new block. [Read the Cardano cold-start case](https://benohanlon.md/cases/README.md#solving-the-cold-start-problem)
+### Unblocking developers
 
-### Getting developers to build after launch
+*Developer relations & product feedback*
 
-Cardano’s smart contract launch could get developers to look at the network. Getting them to build meant learning Plutus while the tools were still taking shape. Before launch, Input Output’s education team gave developers early access and support, and learnt where they got stuck.
+After Alonzo brought Plutus smart contracts to Cardano mainnet, teams building decentralised applications could tell us which Plutus issues stopped them from shipping. The engineers maintaining Plutus could see what it would take to fix them. I started DApp Orbit to bring those perspectives together. Our developer relations team gathered evidence from application teams and worked with Plutus engineering each week to decide which issues to tackle first. That gave application teams a route to influence which fixes engineering prioritised. [Read the DApp Orbit case](https://benohanlon.md/cases/README.md#unblocking-developers)
 
-Teams mentored by engineers from Input Output and partner companies submitted 16 projects for the 2021 Cardano Summit capstone. Early developers also shared guides that gave the next group somewhere to start. [Read the developer activation case](https://benohanlon.md/cases/README.md#activating-developers-through-education-and-engagement)
+### Solving the cold-start problem
 
-As Chapter Director from February 2023 to May 2024, I led developer marketing and activation. I worked with Input Output’s education team to help developers put their training into practice and brought application developers’ feedback to the engineers building Cardano’s infrastructure.
+*Network growth & operator adoption*
 
-### Starting up a decentralised autonomous organisation
+Cardano’s Shelley upgrade introduced stake pools and stake delegation on mainnet. The move from a federated network to decentralised block production depended on independent stake pool operators. Cardano’s aim of opening up access to finance gave operators a reason to help build it, and running a pool offered them a business opportunity. They still had to invest time and money before they knew whether enough people would delegate to make a pool viable. Stake Pool School taught people how to run a pool. I designed and ran Input Output’s delegation programme, which selected 100 pools from 299 first-round applicants and allocated 3.2 million ada per pool in temporary delegation. That gave operators a better chance to earn rewards while attracting delegators of their own. By March 2021, community stake pools were producing every new block on Cardano. [First-round report](https://www.iog.io/news/our-new-delegation-strategy-announcing-the-pools-we-are-supporting) · [Network retrospective](https://www.iog.io/news/cardano-5-years-on)
 
-Cardano was preparing to hand over decisions about how the network developed and what its treasury funded. Intersect helped local groups debate the draft constitution and elect delegates to the convention. I built a forum where voting representatives could discuss proposals and organisations could hear their concerns.
+### Launching a cross-chain product from an existing ecosystem
 
-The community ratified the constitution onchain, then used its authority to decide what to fund. I led Input Output’s continuity funding campaign. The company’s engineering funding proposal received 73.93% support in August 2025. [Read the onchain governance case](https://benohanlon.md/cases/README.md#starting-up-a-decentralised-autonomous-organisation) · [Input Output’s vote announcement](https://www.iog.io/news/from-roadmap-to-reality-cardano-community-approves-ioe-roadmap-proposal-unlocking-a-new-era-of-decentralized-delivery)
+*Product go-to-market & partner distribution*
 
-### Scaling ecosystem work across autonomous teams
+Midnight, a privacy-focused partner chain to Cardano, needed experienced operators to test block production ahead of mainnet. Cardano stake pool operators already knew how to run independent infrastructure, and Midnight gave them a way to put those skills to work on a new network. I coordinated early DevNet support for Midnight, and our ecosystem team used its Cardano operator relationships to help recruit block producer candidates for Midnight testnet-02. Operators registered as candidates and shared what they learned, including a community-written guide for others to follow. [Midnight’s testnet guide](https://midnight.network/blog/how-to-become-midnight-block-producer-testnet) · [Operator onboarding guide](https://forum.midnight.network/t/guide-how-to-become-a-midnight-block-producer/258)
 
-As Input Output became a venture studio, each business unit set its own priorities. A unit could know where it was stuck without knowing who elsewhere could help. I grew the ecosystem function from one person and hired and led a shared team of 5–10. To offer useful help, we had to understand the problem in the unit’s terms.
+### Building a coalition to fund shared infrastructure
 
-For example, a unit trying to get more developers through their first integration could bring engineering time while the shared team brought in a partner. The unit would get a working example to help developers get started. The partner could reuse it with other teams. [Read the venture studio case](https://benohanlon.md/cases/README.md#scaling-ecosystem-work-across-independent-autonomous-teams) · [Explore the EOS Playbook](https://benohanlon.md/eos-playbook/README.md)
+*Partnerships & coalitions*
+
+In Cardano’s first funding cycle after the transition to full on-chain governance, independent infrastructure teams needed treasury decisions in time to retain staff and plan delivery. Voting representatives needed to know what the work would deliver and how it would be checked. When a formal consortium proved hard to establish, the CDEC coalition shifted to helping builders coordinate proposals and make their case together. I led an operating review and published the coalition’s open letter, explaining what delays meant for builders and how milestone-based payments could protect the treasury. One member, NFTCDN, clarified its budget and long-term options for voters. The Cardano Foundation changed its vote to Yes, and the withdrawal was enacted. [CDEC’s open letter](https://forum.cardano.org/t/an-open-letter-to-dreps-from-cdec-let-s-keep-cardano-moving-forward/147438) · [Read the coalition case](https://benohanlon.md/cases/README.md#building-a-coalition-to-fund-shared-infrastructure)
+
+### Coordinating teams and partners with different priorities
+
+*Ecosystem strategy & orchestration*
+
+As Input Output became a venture studio, I built and led an ecosystem function that could help ventures draw on relationships and expertise they would otherwise have to build themselves. Blockfrost wanted to make its Cardano API less dependent on central infrastructure. Stake pool operators wanted another source of revenue from infrastructure they already ran. Our team brought the operator relationships, and Blockfrost provided the software and routed developer traffic. More than 100 operators took part and demonstrated that the model could serve real API traffic. Blockfrost later closed the programme after the next funding model failed to gain approval. [EOS Playbook](https://benohanlon.md/eos-playbook/README.md) · [IceBreakers programme](https://blog.blockfrost.io/icebreakers/) · [Operator account of the closure](https://sipo.tokyo/language/en/weekly-brief-27-en/)
+
+### Scaling governance
+
+*Stakeholder engagement*
+
+As Cardano moved to full on-chain governance in the Voltaire era, delegated representatives (DReps) needed to compare what they heard from their constituents and scrutinise teams seeking treasury funding. I built the DRep Forum before the first full funding round and used it in the continuity campaign I led. Esther Eze and I published a briefing that laid out arguments on both sides and explained the difference between voting to advance a budget and voting to release funds. The community went on to approve Input Output Engineering’s roadmap funding with 73.93% support. [DRep dispatch](https://drepforum.substack.com/p/drep-double-espresso-dispatch-6f9) · [Engineering roadmap vote](https://www.iog.io/news/from-roadmap-to-reality-cardano-community-approves-ioe-roadmap-proposal-unlocking-a-new-era-of-decentralized-delivery)
+
+### Giving developers a way to shape shared standards
+
+*Open standards & ecosystem coordination*
+
+As Cardano opened up to more contributors, independent builders needed a public way to propose changes to the platform and work through them with the people affected. I worked with Frederic Johnson on contributor guidance for Cardano Improvement Proposals and invited feedback when we introduced the process in 2020. CIPs gave developers a shared way to document a proposal, explain the problem it addressed and get technical input. The Vasil upgrade later added Plutus features such as reference inputs and inline datums, specified in CIP-31 and CIP-32. [Early public discussion](https://forum.cardano.org/t/early-announcement-cardano-improvement-proposals-cips/32769) · [CIP process](https://cips.cardano.org/cip/CIP-0001) · [Vasil features](https://www.iog.io/news/vasil-what-to-expect)
 
 ## Writing and projects
 
@@ -109,11 +129,3 @@ For example, a unit trying to get more developers through their first integratio
 - [Reading list](https://benohanlon.md/lists/README.md) collects the books and ideas we return to.
 
 I’m part of [AI Builders LCR](https://luma.com/aibuilderslcr) and the Hermes community on the [Nous Research Discord](https://discord.gg/NousResearch).
-
-## Ask your AI a question
-
-Write a question about my work, then copy the prompt and paste it into your AI.
-
-- We’re launching a product and need the first users to try it. How did Ben approach this at RealFi?
-- Developers try our tools but rarely finish an integration. Which case is closest to that problem?
-- What kind of role or project is Ben open to?
