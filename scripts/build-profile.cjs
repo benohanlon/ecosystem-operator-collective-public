@@ -40,17 +40,20 @@ function replaceGenerated(source, region, content) {
   return source.slice(0, start + begin.length) + '\n' + content.trimEnd() + '\n' + source.slice(stop);
 }
 
-const [name, role, positioning, proof, metadata, ...sections] = read('benohanlon.md').trim().split('\n\n');
+const [name, role, ...blocks] = read('benohanlon.md').trim().split('\n\n');
+const reviewIndex = blocks.findIndex(block => block.startsWith('Last reviewed:'));
+const introCopy = blocks.slice(0, reviewIndex);
+const [metadata, ...sections] = blocks.slice(reviewIndex);
 const workHeading = sections.indexOf('## Work with me');
 const casesHeading = sections.indexOf('## Cases');
 const writingHeading = sections.indexOf('## Writing and projects');
 const contactStart = sections.indexOf('<!-- contact-links -->');
-if (!name?.startsWith('# ') || !role || !positioning || !proof || !metadata?.startsWith('Last reviewed:') ||
+if (!name?.startsWith('# ') || !role || reviewIndex < 2 ||
     workHeading < 0 || contactStart <= workHeading || casesHeading <= contactStart || writingHeading <= casesHeading) {
   throw new Error('The Markdown profile must start with name, role, positioning, proof and review date. The contact-links marker belongs under Work with me, before Cases.');
 }
 const introduction = markdown.parse(name) + '<div class="hero-positioning">\n' +
-  markdown.parse(positioning + '\n\n' + proof) + '</div>\n';
+  markdown.parse(introCopy.join('\n\n')) + '</div>\n';
 const adventureHeading = sections.indexOf('## Choose your own adventure');
 const adventure = sections[adventureHeading + 2]?.match(/^> (.+)$/);
 const instructionsHeading = sections.indexOf('## Agent instructions');
