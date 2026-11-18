@@ -144,6 +144,7 @@
 #copy-move:hover { background: #1c4d47; }
 .adventure-continuation h2 { font-size: clamp(1.5rem, 2.4vw, 1.9rem); }
 .adventure-continuation > p:not([role="status"]) { margin: .55rem 0 .75rem; max-width: 42ch; }
+.adventure-continuation .markdown-fallback { font-size: .95rem; }
 .adventure-continuation .prompt-openers {
   width: fit-content;
   margin: 0;
