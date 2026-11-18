@@ -1,0 +1,346 @@
+@font-face {
+  font-family: Alegreya;
+  src: url('./Alegreya.ttf') format('truetype');
+  font-weight: 400 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: UnifrakturMaguntia;
+  src: url('./UnifrakturMaguntia-Book.ttf') format('truetype');
+  font-display: swap;
+}
+:root {
+  color-scheme: dark;
+  --dark: #031c1d;
+  --mint: #b8f4dc;
+  --orange: #f17435;
+  --line: #315857;
+  --panel: #0a2628;
+  color: #e2ecec;
+  background: var(--dark);
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+}
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; background: var(--dark); }
+main { width: min(60rem, calc(100% - 2.5rem)); margin: clamp(1.25rem, 5vw, 3.75rem) auto; }
+a { color: var(--mint); text-underline-offset: .22em; }
+a:hover { color: var(--orange); }
+.mono, h1, h2 { font-family: "IBM Plex Mono", Consolas, "Courier New", monospace; }
+.adventure-banner {
+  --book-serif: Alegreya, "Times New Roman", serif;
+  --book-ink: #221d18;
+  --cover-paper: url('./adventure-cover-paper.webp');
+  position: relative;
+  isolation: isolate;
+  display: block;
+  container-name: adventure-banner;
+  container-type: inline-size;
+  margin-bottom: 1rem;
+  border: 1px solid #b69d76;
+  background: #f5efe2 var(--cover-paper) center / 100% 100% no-repeat;
+  color: #163230;
+  text-decoration: none;
+}
+.adventure-print {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) clamp(5.75rem, 26vw, 14.75rem);
+  align-items: center;
+  gap: clamp(.65rem, 3vw, 2rem);
+  padding: clamp(.9rem, 3vw, 1.6rem) clamp(.75rem, 3.4vw, 2rem);
+  mix-blend-mode: multiply;
+}
+/* The same fold map lights the printed content and the paper underneath. */
+.adventure-banner::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  background: var(--cover-paper) center / 100% 100% no-repeat;
+  filter: grayscale(1) brightness(.54) contrast(3);
+  mix-blend-mode: hard-light;
+  opacity: .52;
+  pointer-events: none;
+}
+@media (forced-colors: active) {
+  .adventure-banner { background-image: none; }
+  .adventure-banner::after { display: none; }
+  .adventure-print { mix-blend-mode: normal; }
+}
+.adventure-banner:hover { color: #163230; border-color: #fff8e9; }
+.adventure-banner:focus-visible { outline: 2px solid var(--orange); outline-offset: 4px; }
+.adventure-copy {
+  width: 100%;
+  min-width: 0;
+  max-width: 32rem;
+  margin-inline: auto;
+  container-type: inline-size;
+  text-align: center;
+}
+.adventure-caption { display: block; }
+.adventure-start {
+  display: inline-block;
+  margin-top: .64rem;
+  color: var(--book-ink);
+  font: 700 clamp(.82rem, 3.3cqi, 1rem)/1.15 var(--book-serif);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: .17em;
+}
+.adventure-masthead {
+  display: inline-block;
+  padding: .26em .56em;
+  background: #97411d;
+  color: #fff4d7;
+  font: 700 clamp(.62rem, 2.3vw, .9rem)/1.18 Georgia, serif;
+  letter-spacing: .075em;
+  text-transform: uppercase;
+}
+.adventure-banner .adventure-masthead {
+  width: fit-content;
+  max-width: 100%;
+  padding: .22em .72em .24em;
+  border-radius: 999px;
+  background: #b72c26;
+  color: #fff9ee;
+  font: 800 clamp(.625rem, 5.15cqi, 1.44rem)/1.02 var(--book-serif);
+  letter-spacing: -.022em;
+  white-space: nowrap;
+}
+.adventure-title {
+  display: block;
+  margin-top: .32rem;
+  padding-block: .19em .22em;
+  border-block: 1px solid #8b7e6b;
+  color: #24568a;
+  font: 700 clamp(1.18rem, 8.5cqi, 2.8rem)/.91 var(--book-serif);
+  letter-spacing: -.035em;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+.adventure-title span { display: block; }
+.adventure-summary { display: block; margin-top: .4rem; font: italic .9rem/1.25 Georgia, serif; }
+.adventure-banner .adventure-summary {
+  margin-top: .5rem;
+  color: var(--book-ink);
+  font: 700 clamp(.68rem, 3.65cqi, 1rem)/1.08 var(--book-serif);
+  text-transform: uppercase;
+}
+.adventure-cover-art {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+@container adventure-banner (max-width: 17rem) {
+  .adventure-copy { display: contents; }
+  .adventure-banner .adventure-masthead {
+    grid-column: 1 / -1;
+    justify-self: center;
+    font-size: clamp(.67rem, 4.5cqi, 1rem);
+  }
+  .adventure-caption { min-width: 0; container-type: inline-size; text-align: center; }
+}
+.cover {
+  display: block;
+  width: 100%;
+  height: auto;
+  padding: .25rem;
+  border: 1px solid #ac7639;
+  background: #eddbb0;
+  box-shadow: 2px 3px 0 #9a672b;
+}
+.adventure-page .back { display: inline-block; margin-bottom: 1.4rem; }
+.adventure-landing {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr);
+  align-items: start;
+  gap: clamp(1.5rem, 5vw, 4rem);
+}
+.adventure-page h1 {
+  max-width: 15ch;
+  color: #f3d0a3;
+  font: 700 clamp(2.25rem, 6vw, 4.5rem)/.99 Georgia, serif;
+  letter-spacing: -.055em;
+  text-wrap: balance;
+}
+.adventure-page .adventure-summary { margin: .65rem 0 1rem; color: #f3d0a3; }
+@media (max-width: 38rem) {
+  .adventure-landing { grid-template-columns: minmax(0, 1fr); }
+  .adventure-landing .cover { max-width: 18rem; }
+}
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(10rem, 29%);
+  gap: clamp(1rem, 5vw, 4.25rem);
+  align-items: start;
+  padding: clamp(1.2rem, 3vw, 2rem) 0;
+  border-block: 1px solid var(--line);
+}
+.brand { color: var(--mint); font-size: .83rem; letter-spacing: .07em; text-transform: uppercase; }
+h1 {
+  color: var(--orange);
+  font-size: clamp(2.3rem, 6.5vw, 4.65rem);
+  line-height: 1;
+  letter-spacing: -.07em;
+  margin: .55rem 0 .85rem;
+}
+p { margin: 0 0 1rem; }
+.hero-positioning { max-width: 34rem; margin-bottom: .7rem; }
+.download { font-size: .88rem; }
+.prompt-heading {
+  margin: 1.2rem 0 .45rem;
+  color: var(--mint);
+  font: 600 .95rem/1.4 system-ui, sans-serif;
+}
+.portrait { display: block; width: 100%; height: auto; border: 1px solid var(--line); }
+.socials, .profile-nav { display: flex; flex-wrap: wrap; align-items: center; gap: .45rem .95rem; }
+.prompt-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .15rem .65rem;
+  margin-top: .45rem;
+  font-size: .875rem;
+}
+.providers { display: flex; }
+.providers a {
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+}
+.providers img { display: block; width: 1.6rem; height: 1.6rem; object-fit: contain; }
+.providers a:hover img { filter: brightness(1.14); }
+.copy-button {
+  min-height: 2.75rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--mint);
+  font: inherit;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: .22em;
+  cursor: pointer;
+}
+.copy-button:hover { color: var(--orange); }
+.socials { font-size: .88rem; margin-top: .9rem; }
+.profile-nav { margin: 0 0 1.25rem; font-size: .92rem; }
+details { margin-top: .4rem; }
+summary {
+  width: fit-content;
+  padding: .25rem 0;
+  color: var(--mint);
+  font-weight: 600;
+  cursor: pointer;
+}
+summary:hover { color: var(--orange); }
+[hidden] { display: none; }
+[role="status"]:empty { position: absolute; }
+#prompt {
+  max-width: 34rem;
+  margin: 0;
+  padding: .7rem .85rem;
+  border-left: .22rem solid var(--orange);
+  background: var(--panel);
+  color: var(--mint);
+  font: .92rem/1.5 system-ui, sans-serif;
+  overflow-wrap: anywhere;
+}
+#prompt p { margin: 0; }
+:focus-visible { outline: 2px solid var(--orange); outline-offset: 4px; }
+[role="status"] { color: var(--mint); font-size: .9rem; }
+.profile { max-width: 46rem; margin: clamp(1.4rem, 4vw, 2.5rem) auto 0; }
+.profile h2 { color: var(--orange); font-size: clamp(1.35rem, 4.2vw, 1.85rem); line-height: 1.3; margin: 1.7rem 0 .65rem; }
+.profile h3 { color: var(--mint); font: 700 1.05rem/1.4 system-ui, sans-serif; margin: 1.35rem 0 .55rem; }
+.profile a { overflow-wrap: anywhere; }
+.profile ul, .profile ol { padding-left: 1.25rem; }
+.profile li { margin-bottom: .6rem; }
+.question-form label { display: block; margin-bottom: .35rem; }
+.question-actions { display: flex; flex-wrap: wrap; gap: .5rem 1rem; align-items: center; }
+.question-actions input {
+  flex: 1 1 18rem;
+  min-width: 0;
+  min-height: 2.75rem;
+  padding: .5rem .7rem;
+  border: 1px solid var(--line);
+  border-radius: .25rem;
+  background: var(--panel);
+  color: inherit;
+  font: inherit;
+}
+#agent-instructions { margin: 1rem 0; }
+.closing-artwork {
+  --shadow-room: #021819;
+  padding-bottom: 2rem;
+  scroll-margin-top: 26svh;
+  background: var(--shadow-room);
+}
+.closing-portrait {
+  position: relative;
+  isolation: isolate;
+  width: min(100%, 34rem);
+  margin: 0 auto;
+  mask-image: linear-gradient(black 97%, transparent);
+}
+.closing-portrait img { display: block; width: 100%; height: auto; }
+.closing-portrait::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto;
+  height: 100px;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 110% 132% at 0 0, var(--dark), transparent 72%),
+    linear-gradient(var(--dark), transparent 20px);
+}
+.closing-caption {
+  position: absolute;
+  z-index: 1;
+  inset: 62% .5rem auto;
+  text-align: center;
+  color: #e6f2ed;
+  font: 400 clamp(1.5rem, 6.9vw, 3.1rem)/1.1 UnifrakturMaguntia, Georgia, serif;
+  text-shadow: 0 1px 4px rgb(0 0 0 / .9), 0 0 18px rgb(0 0 0 / .6);
+  text-wrap: balance;
+}
+.closing-link {
+  display: flex;
+  width: fit-content;
+  min-height: 3.25rem;
+  align-items: center;
+  gap: .85rem;
+  margin: .2rem auto 0;
+  padding: .75rem 1.3rem;
+  border: 1px solid;
+  border-color: #526157 #55483d #1b312c #344944;
+  border-radius: 3px;
+  background: #172624 url('./wet-slate.webp') center / cover;
+  box-shadow: inset 0 1px rgb(238 182 127 / .12), 0 .5rem 1rem rgb(0 0 0 / .35);
+  color: #edefe4;
+  font: 600 .875rem/1.35 "IBM Plex Mono", Consolas, "Courier New", monospace;
+  letter-spacing: .035em;
+  text-decoration: none;
+  text-shadow: 0 -1px 1px #101b18;
+}
+.closing-link span { color: #e1b18b; }
+.closing-link:hover, .closing-link:focus-visible {
+  border-top-color: #a4805e;
+  color: #fff3e2;
+}
+@media (min-width: 35rem) {
+  .closing-artwork { background: linear-gradient(var(--dark), var(--shadow-room) 100px); }
+  .closing-portrait::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(to right, var(--shadow-room), transparent 6%, transparent 94%, var(--shadow-room));
+    mask-image: linear-gradient(transparent, black 140px);
+  }
+}
+@media (max-width: 34rem) {
+  .hero { grid-template-columns: minmax(0, 1fr); gap: .7rem; }
+  .portrait { grid-row: 1; width: 6rem; }
+  .brand { margin-bottom: .45rem; }
+}

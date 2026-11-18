@@ -16,4 +16,4 @@ An independent consultancy led by Ben O’Hanlon. We help projects grow by worki
 
 ## Maintain the public profile
 
-Edit `benohanlon.md` and run `node scripts/build-profile.cjs` to regenerate the homepage article before publishing. Run `node scripts/build-profile.cjs --check` to check that the rendered profile matches the Markdown.
+Edit `benohanlon.md` and run `node scripts/build-profile.cjs` to regenerate the homepage and the prompt on the adventure page. Run `node scripts/build-profile.cjs --check` before publishing to check both against the Markdown.

@@ -70,15 +70,18 @@ const guidance = '<details id="agent-instructions">\n<summary>Agent instructions
 const source = read('index.html');
 let updated = replaceGenerated(source, 'introduction', introduction);
 updated = replaceGenerated(updated, 'prompt', prompt);
-updated = replaceGenerated(updated, 'adventure prompt', markdown.parse(adventure[1]));
 updated = replaceGenerated(updated, 'profile', work);
 updated = replaceGenerated(updated, 'guidance', guidance);
 
+const adventureSource = read('adventure.html');
+const adventurePage = replaceGenerated(adventureSource, 'prompt', markdown.parse(adventure[1]));
+
 if (process.argv.includes('--check')) {
-  if (updated !== source) {
-    console.error('Run node scripts/build-profile.cjs before publishing the profile.');
+  if (updated !== source || adventurePage !== adventureSource) {
+    console.error('Run node scripts/build-profile.cjs before publishing the profile or adventure.');
     process.exitCode = 1;
   }
-} else if (updated !== source) {
-  fs.writeFileSync(path.join(root, 'index.html'), updated, 'utf8');
+} else {
+  if (updated !== source) fs.writeFileSync(path.join(root, 'index.html'), updated, 'utf8');
+  if (adventurePage !== adventureSource) fs.writeFileSync(path.join(root, 'adventure.html'), adventurePage, 'utf8');
 }
