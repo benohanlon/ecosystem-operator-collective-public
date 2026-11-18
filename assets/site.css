@@ -349,15 +349,14 @@ a:hover { color: var(--orange); }
 }
 p { margin: 0 0 1rem; }
 .hero-positioning { max-width: 34rem; margin: 0; }
-.profile-actions, .profile-document-links { display: flex; flex-wrap: wrap; align-items: center; gap: .2rem 1rem; }
-.profile-actions { grid-area: actions; justify-content: space-between; font-size: .875rem; }
+.hero-positioning p { margin: 0; }
+.hero-positioning p + p { margin-top: .65rem; }
+.profile-actions { grid-area: actions; display: flex; flex-wrap: wrap; align-items: center; gap: .2rem 1rem; font-size: .875rem; }
 .profile-actions a {
   display: inline-flex;
   align-items: center;
   min-height: 2.75rem;
 }
-.contact-jump { margin-inline-start: auto; gap: .4rem; }
-.contact-jump span { color: var(--orange); }
 .hero .intro { grid-area: tools; }
 .hero .profile-prompt { margin-top: 0; }
 .prompt-heading {
@@ -646,7 +645,7 @@ summary:hover { color: var(--orange); }
   .profile-story .hero-positioning { grid-area: bio; }
   .profile-portrait-frame { width: 4.1rem; justify-self: end; align-self: center; }
   .profile-portrait-frame .portrait { position: static; width: 100%; height: auto; }
-  .profile-actions, .profile-document-links { column-gap: .45rem; }
+  .profile-actions { column-gap: .65rem; }
   .profile-contact ul { gap: .35rem .7rem; }
   .profile-contact a { font-size: .9rem; }
 }
