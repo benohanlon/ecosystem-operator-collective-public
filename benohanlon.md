@@ -1,6 +1,8 @@
 # Ben O’Hanlon
 
-I solve growth, adoption and distribution problems for open and decentralised technology by building ecosystems and leading developer marketing.
+Growth & Marketing Executive
+
+I solve growth, adoption and distribution problems for open and decentralised technology by building ecosystems and leading developer marketing. I build and lead teams that drive growth beyond headcount when adoption depends on people outside the company.
 
 Last reviewed: 18 November 2026 · [Web profile](https://benohanlon.md/) · [Résumé](https://my.visualcv.com/growth/)
 

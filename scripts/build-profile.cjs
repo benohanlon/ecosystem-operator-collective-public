@@ -40,14 +40,16 @@ function replaceGenerated(source, region, content) {
   return source.slice(0, start + begin.length) + '\n' + content.trimEnd() + '\n' + source.slice(stop);
 }
 
-const [name, positioning, metadata, ...sections] = read('benohanlon.md').trim().split('\n\n');
+const [name, role, positioning, metadata, ...sections] = read('benohanlon.md').trim().split('\n\n');
 const workHeading = sections.indexOf('## Work with me');
 const casesHeading = sections.indexOf('## Cases');
-if (!name?.startsWith('# ') || !positioning || !metadata?.startsWith('Last reviewed:') ||
+if (!name?.startsWith('# ') || !role || !positioning || !metadata?.startsWith('Last reviewed:') ||
     workHeading < 0 || casesHeading <= workHeading) {
-  throw new Error('The Markdown profile must start with name, positioning and review date, with Work with me before Cases.');
+  throw new Error('The Markdown profile must start with name, role, positioning and review date, with Work with me before Cases.');
 }
-const introduction = markdown.parse(name + '\n\n' + positioning).replace('<p>', '<p class="hero-positioning">');
+const introduction = markdown.parse(name) +
+  markdown.parse(role).replace('<p>', '<p class="hero-role">') +
+  markdown.parse(positioning).replace('<p>', '<p class="hero-positioning">');
 const adventureHeading = sections.indexOf('## Choose your own adventure');
 const adventure = sections[adventureHeading + 2]?.match(/^> (.+)$/);
 const instructionsHeading = sections.indexOf('## Agent instructions');
