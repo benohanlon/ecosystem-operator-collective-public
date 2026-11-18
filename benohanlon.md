@@ -2,7 +2,7 @@
 
 Growth & Marketing Executive
 
-I solve growth, adoption and distribution problems for open and decentralised technology by building ecosystems and leading developer marketing. I build and lead teams that drive growth beyond headcount by extending what they can do through partnerships, community, developer relations and AI. The interface for impact starts with what each team is trying to achieve and shows how it can draw on those capabilities.
+I solve growth, adoption and distribution problems for open and decentralised technology by building ecosystems and leading developer marketing. I build and lead teams that drive growth beyond headcount by extending what they can do through partnerships, community, developer relations and AI. The interface for impact starts with a few system-wide units of account that make the winning conditions visible. Numbers come before strategy. I then find out what stakeholders value and how they judge success, and connect teams to capabilities that can advance their own priorities and contribute to those shared outcomes.
 
 I worked on Cardano’s ecosystem from the Shelley Incentivized Testnet, first at the Cardano Foundation and then at IOHK, where I built and led its ecosystem function. Ada reached #3 by market cap in 2021. I helped build its on-chain governance and led Input Output’s continuity campaign, which secured ₳195 million in treasury funding, including ₳123.7 million for research and engineering. We built our customer, who then chose to pay us. At RealFi, I led community and partner activation for the launch of stablecoin and real-world asset infrastructure connecting on-chain capital with private credit.
 
