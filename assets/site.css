@@ -82,6 +82,7 @@ a:hover { color: var(--orange); }
   pointer-events: none;
 }
 .adventure-pocket-action {
+  --stitch-finish: saturate(.76) contrast(1.12);
   position: absolute;
   z-index: 3;
   inset-inline-start: var(--pocket-text-inset);
@@ -95,11 +96,23 @@ a:hover { color: var(--orange); }
   display: block;
   width: 100%;
   height: auto;
-  filter: saturate(.76) contrast(1.12);
+  filter: var(--stitch-finish);
   mask-image:
-    linear-gradient(90deg, transparent, #000 3% 97%, transparent),
+    linear-gradient(90deg, transparent, #000 3% 89.8%, transparent 90.6%),
     linear-gradient(180deg, transparent, #000 18% 81%, transparent);
   mask-composite: intersect;
+}
+/* Rotate the arrow from the same photograph so its thread matches the lettering. */
+.adventure-pocket-action::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('./adventure-pocket-gold-stitch.webp') center / 100% 100% no-repeat;
+  clip-path: inset(22% 1% 22% 90.6%);
+  filter: var(--stitch-finish);
+  transform-origin: 94.5% 47%;
+  transform: rotate(-45deg);
+  pointer-events: none;
 }
 .adventure-pocket-action-label {
   position: absolute;
@@ -204,7 +217,8 @@ a:hover { color: var(--orange); }
     text-decoration: underline;
     white-space: normal;
   }
-  .adventure-stage::before, .adventure-pocket-action img, .adventure-pocket-tab, .adventure-pocket::before,
+  .adventure-stage::before, .adventure-pocket-action img, .adventure-pocket-action::after,
+  .adventure-pocket-tab, .adventure-pocket::before,
   .adventure-pocket::after, .adventure-banner::before, .adventure-banner::after { display: none; }
 }
 .adventure-copy {
