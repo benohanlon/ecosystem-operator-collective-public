@@ -62,9 +62,7 @@ a:hover { color: var(--orange); }
   /* The pocket intersects the A4 cover halfway down its framed illustration. */
   aspect-ratio: 1055 / 970;
   margin: auto;
-  overflow: clip;
-  overflow-clip-margin: 1.25rem;
-  clip-path: inset(-1.75rem -1.75rem 0);
+  clip-path: inset(-3rem -3rem 0);
 }
 .adventure-book-cover {
   position: absolute;
@@ -80,14 +78,14 @@ a:hover { color: var(--orange); }
 .adventure-pocket-front {
   position: relative;
   z-index: 1;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
   align-items: center;
-  gap: .35rem .65rem;
+  align-content: start;
+  gap: .35rem clamp(.45rem, 1.4vw, .85rem);
   min-height: clamp(3.65rem, 11vw, 6.8rem);
   margin: -.6rem clamp(-1.25rem, -2.1vw, -.4rem) 0;
-  padding: clamp(.6rem, 2vw, .95rem) clamp(.8rem, 3vw, 1.5rem) 1rem;
-  align-content: start;
+  padding: clamp(.23rem, .65vw, .4rem) clamp(.8rem, 3vw, 1.5rem) 1rem;
 }
 .adventure-pocket-front::before {
   position: absolute;
@@ -97,33 +95,38 @@ a:hover { color: var(--orange); }
   background: url('./adventure-pocket-canvas.webp') center top / 100% 100% no-repeat;
   mask-image: linear-gradient(to bottom, #000 40%, transparent 100%);
 }
+.adventure-pocket-tab, .adventure-pocket-action { display: block; position: relative; }
 .adventure-pocket-tab {
-  padding: .22em .55em;
-  border: 1px solid #ab4c39;
-  border-radius: .25rem;
-  background: #8d221c;
-  box-shadow: inset 0 0 0 1px #60201b, 0 2px 4px #061715c7;
-  color: #fff0cf;
-  font: 700 clamp(.8rem, 2.4vw, 1rem)/1.2 Alegreya, Georgia, serif;
+  width: clamp(4.25rem, 10vw, 5.75rem);
+  filter: drop-shadow(0 2px 2px #001313da);
   transform: rotate(-2deg);
 }
-.adventure-pocket-action {
-  color: #ebc277;
-  font: 600 clamp(.8rem, 2.4vw, 1rem)/1.25 Alegreya, Georgia, serif;
+.adventure-pocket-action { width: min(100%, clamp(10.5rem, 23vw, 13.25rem)); }
+.adventure-pocket-tab img, .adventure-pocket-action img { display: block; width: 100%; height: auto; }
+.adventure-pocket-label {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
-.adventure-pocket-arrow { white-space: nowrap; }
-.adventure-pocket-arrow span { font-family: "Segoe UI Symbol", sans-serif; }
 .adventure-pocket:focus-visible { outline: 2px solid var(--orange); outline-offset: 4px; }
 .adventure-stage + .hero { border-top: 0; }
 @media (forced-colors: active) {
-  .adventure-stage::before, .adventure-pocket-front::before { display: none; }
-  .adventure-pocket-tab, .adventure-pocket-action { color: LinkText; }
-  .adventure-pocket-tab { border-color: LinkText; transform: none; }
-  .adventure-book-cover {
-  position: absolute;
-  inset: 0 auto auto 0; transform: none; box-shadow: none; }
+  .adventure-stage::before, .adventure-pocket-front::before,
+  .adventure-pocket-tab img, .adventure-pocket-action img { display: none; }
+  .adventure-pocket-tab, .adventure-pocket-action { width: auto; filter: none; transform: none; }
+  .adventure-pocket-label {
+    position: static;
+    inline-size: auto;
+    block-size: auto;
+    clip-path: none;
+    color: LinkText;
+    white-space: normal;
+  }
+  .adventure-book-cover { transform: none; box-shadow: none; }
 }
-
 .adventure-masthead {
   display: inline-block;
   padding: .26em .56em;
