@@ -56,9 +56,11 @@ I’m open to senior leadership roles in growth, marketing and ecosystems, full-
 
 Socials
 
-- [LinkedIn](https://www.linkedin.com/in/memetics/ "LinkedIn")
-- [X](https://x.com/benohanlon "X")
 - [Substack](https://ecosystemoperator.substack.com/ "Substack")
+- [GitHub](https://github.com/benohanlon "GitHub")
+- [X](https://x.com/benohanlon "X")
+- [LinkedIn](https://www.linkedin.com/in/memetics/ "LinkedIn")
+- [Telegram](https://t.me/benohanlon "Telegram")
 - [Linktree](https://linktr.ee/benohanlon "Linktree")
 
 ## Cases

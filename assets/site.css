@@ -530,24 +530,26 @@ summary:hover { color: var(--orange); }
 .profile-contact a[title="LinkedIn"] { --contact-icon: url('./contact-linkedin.svg'); }
 .profile-contact a[title="X"] { --contact-icon: url('./contact-x.svg'); }
 .profile-contact a[title="Substack"] { --contact-icon: url('./contact-substack.svg'); }
+.profile-contact a[title="GitHub"] { --contact-icon: url('./contact-github.svg'); }
+.profile-contact a[title="Telegram"] { --contact-icon: url('./contact-telegram.svg'); }
 .profile-contact a[title="Linktree"] { --contact-icon: url('./contact-linktree.svg'); }
-.profile-contact a:is([title="LinkedIn"], [title="X"], [title="Substack"], [title="Linktree"]) {
+.profile-contact a:is([title="Substack"], [title="GitHub"], [title="X"], [title="LinkedIn"], [title="Telegram"], [title="Linktree"]) {
   width: 2.75rem;
   justify-content: center;
   color: #bdd5d0;
   font-size: 0;
 }
-.profile-contact a:is([title="LinkedIn"], [title="X"], [title="Substack"], [title="Linktree"])::before {
+.profile-contact a:is([title="Substack"], [title="GitHub"], [title="X"], [title="LinkedIn"], [title="Telegram"], [title="Linktree"])::before {
   content: '';
   width: 1.12rem;
   height: 1.12rem;
   background: currentColor;
   mask: var(--contact-icon) center / contain no-repeat;
 }
-.profile-contact a:is([title="LinkedIn"], [title="X"], [title="Substack"], [title="Linktree"]):hover { color: var(--orange); }
+.profile-contact a:is([title="Substack"], [title="GitHub"], [title="X"], [title="LinkedIn"], [title="Telegram"], [title="Linktree"]):hover { color: var(--orange); }
 @media (forced-colors: active) {
-  .profile-contact a:is([title="LinkedIn"], [title="X"], [title="Substack"], [title="Linktree"]) { width: auto; font-size: .875rem; }
-  .profile-contact a:is([title="LinkedIn"], [title="X"], [title="Substack"], [title="Linktree"])::before { display: none; }
+  .profile-contact a:is([title="Substack"], [title="GitHub"], [title="X"], [title="LinkedIn"], [title="Telegram"], [title="Linktree"]) { width: auto; font-size: .875rem; }
+  .profile-contact a:is([title="Substack"], [title="GitHub"], [title="X"], [title="LinkedIn"], [title="Telegram"], [title="Linktree"])::before { display: none; }
 }
 .question-form label { display: block; margin-bottom: .35rem; }
 .question-actions { display: flex; flex-wrap: wrap; gap: .5rem 1rem; align-items: center; }
