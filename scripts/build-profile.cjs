@@ -58,13 +58,19 @@ const introduction = markdown.parse(name) + '<div class="hero-positioning">\n' +
 const adventureHeading = sections.indexOf('## Choose your own adventure');
 const adventure = sections[adventureHeading + 2]?.match(/^> (.+)$/);
 const instructionsHeading = sections.indexOf('## Agent instructions');
+const oodaHeading = sections.indexOf('### Run the full OODA loop');
 if (adventureHeading < 0 || !adventure) {
   throw new Error('The adventure prompt must be a single quoted paragraph after the copy instructions.');
 }
 if (instructionsHeading !== adventureHeading + 3 || instructionsHeading >= workHeading) {
   throw new Error('Agent instructions must sit between the adventure prompt and Work with me.');
 }
+if (oodaHeading <= instructionsHeading || oodaHeading + 1 >= workHeading) {
+  throw new Error('Full OODA loop guidance must sit inside Agent instructions.');
+}
 const prompt = markdown.parse(adventure[1]);
+const oodaPrompt = markdown.parse(sections.slice(oodaHeading + 1, workHeading).join('\n\n'));
+const oodaOpening = markdown.parse(sections[oodaHeading + 1]);
 const contact = markdown.parse(sections.slice(contactStart + 1, casesHeading).join('\n\n'));
 const work = markdown.parse(sections.slice(workHeading, contactStart).join('\n\n')) +
   '<div id="contact-me" class="profile-contact">\n<span id="contact"></span>\n' + contact + '</div>\n' +
@@ -82,7 +88,8 @@ updated = replaceGenerated(updated, 'profile', work);
 updated = replaceGenerated(updated, 'guidance', guidance);
 
 const adventureSource = read('adventure.html');
-const adventurePage = replaceGenerated(adventureSource, 'prompt', prompt);
+const adventureOpening = replaceGenerated(adventureSource, 'opening', oodaOpening);
+const adventurePage = replaceGenerated(adventureOpening, 'prompt', oodaPrompt);
 
 if (process.argv.includes('--check')) {
   if (updated !== source || adventurePage !== adventureSource) {

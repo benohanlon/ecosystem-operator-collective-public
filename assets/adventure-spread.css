@@ -1,0 +1,203 @@
+.adventure-page {
+  --paper: #f6eedb;
+  --ink: #25231e;
+  --paper-rule: #c6b795;
+  --wrinkled-paper: url('./inner-sea-paper.webp');
+}
+
+.adventure-page main {
+  width: min(75rem, calc(100% - 2rem));
+  margin-block-start: 1.25rem;
+}
+
+.adventure-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: .25rem 1rem;
+  margin-bottom: .75rem;
+  font-size: .875rem;
+}
+
+.adventure-links a { padding-block: .45rem; }
+
+.adventure-spread {
+  isolation: isolate;
+  display: grid;
+  gap: .9rem;
+  color: var(--ink);
+  font: 400 1.17rem/1.42 Alegreya, Georgia, serif;
+}
+
+.book-leaf {
+  min-width: 0;
+  display: grid;
+  align-content: start;
+  gap: clamp(.65rem, 1.6vw, 1.4rem);
+  padding: clamp(1rem, 3vw, 2.5rem);
+  border: 1px solid #b4a184;
+  border-radius: .3rem .45rem;
+  background: var(--paper) var(--wrinkled-paper) center / 100% 100% no-repeat;
+  box-shadow: 0 2px 0 #dcc9a4, 0 4px 0 #b09875, 0 6px 0 #d1bc99,
+    0 8px 0 #59432f, 0 1rem 1.8rem #00101080;
+}
+
+.adventure-page .spread-title h1,
+.adventure-continuation h2,
+.chart-foldout h2 {
+  max-width: none;
+  margin: 0;
+  color: inherit;
+  font: 750 1.5rem/1.08 Alegreya, Georgia, serif;
+  letter-spacing: -.025em;
+}
+
+.adventure-page .spread-title h1 { font-size: clamp(1.85rem, 3.7vw, 3.2rem); }
+.spread-title p { margin: 0 0 .2rem; font-size: .94rem; font-weight: 650; }
+.spread-epigraph, .spread-chart { margin: 0; }
+.spread-epigraph blockquote { margin: 0; font-size: 1.25rem; font-style: italic; }
+.spread-epigraph figcaption { font-size: .86rem; }
+:is(.spread-chart, .chart-foldout) img {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: grayscale(1) contrast(1.12) brightness(1.13);
+  mix-blend-mode: multiply;
+}
+.spread-chart figcaption {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: .1rem .65rem;
+  margin-top: .22rem;
+  font-size: .9rem;
+}
+.adventure-spread a, .chart-foldout a { color: #3c3325; }
+.adventure-spread a:hover, .chart-foldout a:hover { color: #773e1f; }
+.spread-scene { margin: 0; max-width: 49ch; font-size: 1.12rem; }
+.spread-notes { align-self: end; padding-top: .7rem; border-top: 1px solid var(--paper-rule); }
+.spread-notes h2 { margin: 0 0 .3rem; font: 700 1rem/1.2 Alegreya, Georgia, serif; }
+.spread-notes ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .2rem 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: .94rem;
+}
+.adventure-continuation {
+  scroll-margin-top: 1rem;
+}
+:is(.adventure-continuation, .chart-foldout) button:not([hidden]) {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding: .3rem .75rem;
+  border: 1px solid var(--paper-rule);
+  border-radius: .25rem;
+  background: #e9ddc2;
+  color: var(--ink);
+  font: inherit;
+  cursor: pointer;
+}
+.adventure-continuation h2 { font-size: clamp(1.5rem, 2.7vw, 2.2rem); }
+.adventure-continuation > p { margin: .5rem 0; }
+.prompt-opening {
+  max-width: 42ch;
+  margin: .9rem 0 .6rem;
+  padding: .2rem 0 .2rem .9rem;
+  border-inline-start: 1px solid #9c815e;
+  font-style: italic;
+}
+.prompt-opening p { margin: 0; }
+.adventure-continuation .prompt-openers {
+  width: fit-content;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.adventure-continuation #chatgpt img { filter: brightness(0) opacity(.82); }
+.chart-foldout {
+  width: min(84rem, calc(100% - 2rem));
+  max-width: none;
+  max-height: calc(100% - 2rem);
+  padding: .75rem clamp(.85rem, 2vw, 1.75rem);
+  border: 1px solid #b4a184;
+  color: var(--ink);
+  background: var(--paper) var(--wrinkled-paper) center / cover;
+  font: 400 1.05rem/1.4 Alegreya, Georgia, serif;
+}
+.chart-foldout::backdrop { background: #001314e8; }
+.chart-foldout header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: .65rem;
+  margin-block-end: .65rem;
+}
+.chart-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .35rem .85rem; }
+#move-status { margin: .35rem 0 0; color: #3c3325; font-size: .9rem; scroll-margin-top: 1rem; }
+.pilot-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 0 .75rem; font-size: .95rem; }
+.pilot-actions a { display: inline-flex; align-items: center; min-height: 2.75rem; }
+.generic-prompt summary { color: var(--ink); cursor: pointer; font-size: 1rem; text-decoration: underline; }
+.generic-prompt {
+  margin: .8rem 0 0;
+  border-top: 1px solid var(--paper-rule);
+  padding-top: .55rem;
+  scroll-margin-top: 1rem;
+}
+.adventure-continuation:has(.generic-prompt[open]) .prompt-opening { display: none; }
+.generic-prompt #prompt {
+  max-width: none;
+  margin: .45rem 0 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  font: 400 1rem/1.3 Alegreya, Georgia, serif;
+}
+.generic-prompt #prompt p + p { margin-top: .55rem; }
+.generic-prompt blockquote a { color: #473525; }
+
+@media (min-width: 60rem) {
+  .adventure-page main {
+    width: min(calc(100% - 2rem), 75rem, max(44rem, calc((100svh - 6.75rem) * 1.415)));
+    container-type: inline-size;
+  }
+  .adventure-page .spread-title h1 { font-size: clamp(1.85rem, 4.25cqi, 3.2rem); }
+  .spread-scene { font-size: clamp(1.05rem, 1.75cqi, 1.28rem); }
+  .spread-epigraph blockquote { font-size: clamp(1.18rem, 2.25cqi, 1.48rem); }
+  .adventure-spread {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0;
+  }
+  .book-leaf {
+    /* Each leaf uses the portrait proportions of the closed cover. */
+    aspect-ratio: 1055 / 1491;
+    width: 100%;
+    align-self: stretch;
+    gap: clamp(.55rem, .95cqi, .8rem);
+    padding: clamp(1.05rem, 2.75vmin, 2rem);
+  }
+  .book-leaf-left {
+    grid-template-rows: auto auto auto auto 1fr;
+    border-radius: .5rem 1.25rem .8rem .45rem / .5rem .3rem .3rem .45rem;
+    border-inline-end: 0;
+    background-image: linear-gradient(90deg, #7e583124 0, #fff4 2%, transparent 6% 93%, #75503365 99.5%), var(--wrinkled-paper);
+    background-position: center, left;
+    background-size: 100% 100%, 200% 100%;
+    box-shadow: -2px 2px 0 #dcc9a4, -3px 4px 0 #b09875, -4px 6px 0 #d1bc99,
+      -5px 8px 0 #59432f, 0 1rem 1.8rem #00101080;
+  }
+  .book-leaf-right {
+    border-radius: 1.25rem .5rem .45rem .8rem / .3rem .5rem .45rem .3rem;
+    border-inline-start-color: #9e7950;
+    background-image: linear-gradient(90deg, #57391b6b, #fff5 3%, transparent 9% 95%, #7e583124 100%), var(--wrinkled-paper);
+    background-position: center, right;
+    background-size: 100% 100%, 200% 100%;
+    box-shadow: 2px 2px 0 #dcc9a4, 3px 4px 0 #b09875, 4px 6px 0 #d1bc99,
+      5px 8px 0 #59432f, 0 1rem 1.8rem #00101080;
+  }
+}
