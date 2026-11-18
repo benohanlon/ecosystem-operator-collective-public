@@ -49,193 +49,76 @@ a:hover { color: var(--orange); }
   pointer-events: none;
 }
 .adventure-pocket {
-  --pocket-depth: clamp(.82rem, 2.85vw, 1.75rem);
-  --pocket-front: clamp(2.35rem, 6.7vw, 5.4rem);
-  --pocket-pull: clamp(.16rem, .46vw, .38rem);
-  --pocket-height: calc(var(--pocket-front) + var(--pocket-depth) - var(--pocket-pull));
-  --pocket-tab-drop: clamp(.24rem, .46vw, .36rem);
-  --pocket-tab-top: calc(100% - var(--pocket-height) + var(--pocket-tab-drop));
-  --pocket-tab-inset: clamp(.32rem, 1.4vw, .9rem);
-  --pocket-tab-width: clamp(4.05rem, 8vw, 4.75rem);
-  --pocket-text-inset: calc(var(--pocket-tab-inset) + var(--pocket-tab-width) + .65rem);
   position: relative;
   isolation: isolate;
   display: block;
-  padding-block: clamp(.55rem, 2.35vw, 1.4rem) var(--pocket-front);
-  padding-inline: clamp(.45rem, 2vw, 1.35rem);
+  padding-top: clamp(1.15rem, 4vw, 2.5rem);
   text-decoration: none;
 }
-.adventure-pocket::before {
-  content: "";
-  position: absolute;
-  z-index: 1;
-  inset: auto 1.5% calc(var(--pocket-front) - .12rem - var(--pocket-pull));
-  height: calc(var(--pocket-depth) + .3rem);
-  background: radial-gradient(ellipse at 48% 100%, #1c1109db, #1c11094d 53%, transparent 74%);
-  pointer-events: none;
+.adventure-book-window {
+  display: block;
+  width: min(72%, 29rem);
+  /* The pocket intersects the A4 cover halfway down its framed illustration. */
+  aspect-ratio: 1055 / 970;
+  margin: auto;
+  overflow: clip;
+  overflow-clip-margin: 1.25rem;
+  clip-path: inset(-1.75rem -1.75rem 0);
 }
-/* One front hem crosses the book. The pressure shows in the weave below it. */
-.adventure-pocket::after {
-  content: "";
-  position: absolute;
-  z-index: 2;
-  inset: auto clamp(-1.25rem, -2.1vw, -.4rem) 0;
-  height: var(--pocket-height);
-  background: url('./adventure-pocket-canvas.webp') center top / 100% 110% no-repeat;
-  mask-image:
-    linear-gradient(90deg, transparent, #000 2.4% 97.6%, transparent),
-    linear-gradient(180deg, #000 44%, #000b 58%, transparent 100%);
-  mask-composite: intersect;
-  pointer-events: none;
-}
-.adventure-pocket-action {
-  --stitch-finish: saturate(.76) contrast(1.12);
-  position: absolute;
-  z-index: 3;
-  inset-inline-start: var(--pocket-text-inset);
-  inset-block-start: calc(var(--pocket-tab-top) + var(--pocket-tab-width) * .177);
-  /* Both stitch images use the tab's visible letter height. */
-  width: min(calc(var(--pocket-tab-width) * 1.9), calc(100% - var(--pocket-text-inset) - .4rem));
-  transform: translateY(-50%);
-  mix-blend-mode: lighten;
-}
-.adventure-pocket-action img {
+.adventure-book-cover {
   display: block;
   width: 100%;
   height: auto;
-  filter: var(--stitch-finish);
-  mask-image:
-    linear-gradient(90deg, transparent, #000 3% 89.8%, transparent 90.6%),
-    linear-gradient(180deg, transparent, #000 18% 81%, transparent);
-  mask-composite: intersect;
+  border-radius: .25rem .35rem .2rem .18rem;
+  transform: rotate(-4deg);
+  transform-origin: 50% 65%;
+  box-shadow: -.45rem .45rem .85rem #000a;
 }
-/* Rotate the arrow from the same photograph so its thread matches the lettering. */
-.adventure-pocket-action::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: url('./adventure-pocket-gold-stitch.webp') center / 100% 100% no-repeat;
-  clip-path: inset(22% 1% 22% 90.6%);
-  filter: var(--stitch-finish);
-  transform-origin: 94.5% 47%;
-  transform: rotate(-45deg);
-  pointer-events: none;
-}
-.adventure-pocket-action-label {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
-.adventure-pocket-tab {
-  position: absolute;
-  z-index: 3;
-  inset-inline-start: var(--pocket-tab-inset);
-  inset-block-start: var(--pocket-tab-top);
-  width: var(--pocket-tab-width);
-  height: auto;
-  filter: drop-shadow(0 2px 2px #001313da);
-  transform: rotate(-2deg);
-}
-.adventure-pocket:focus-visible { outline: 2px solid var(--orange); outline-offset: 4px; }
-.adventure-stage + .hero { border-top: 0; }
-.adventure-banner {
-  --book-serif: Alegreya, "Times New Roman", serif;
-  --book-ink: #221d18;
-  --paper-edge: polygon(
-    0 19px, 1px 15px, 3px 13px, 2px 10px, 5px 8px, 6px 5px,
-    10px 3px, 13px 0, 16px 2px, 24px 1px, 62% 0,
-    calc(100% - 13px) 0, calc(100% - 6px) 2px, calc(100% - 2px) 6px,
-    100% 12px, calc(100% - 1px) 43%, 100% 73%, 100% 100%, 0 100%,
-    1px 72%, 0 61%, 1px 41%, 0 29%
-  );
-  --book-depth: clamp(.12rem, .42vw, .28rem);
+.adventure-pocket-front {
   position: relative;
-  isolation: isolate;
-  display: block;
-  container-name: adventure-banner;
-  container-type: inline-size;
-  transform: rotate(-1.4deg);
-  transform-origin: 50% 100%;
-  filter: drop-shadow(-11px 8px 12px #000a) drop-shadow(-2px 2px 2px #000a);
-  color: #163230;
-  text-decoration: none;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .35rem .65rem;
+  min-height: clamp(3.65rem, 11vw, 6.8rem);
+  margin: -.6rem clamp(-1.25rem, -2.1vw, -.4rem) 0;
+  padding: clamp(.6rem, 2vw, .95rem) clamp(.8rem, 3vw, 1.5rem) 1rem;
+  align-content: start;
 }
-/* The page block sits just behind the thinner printed cover. */
-.adventure-banner::before {
-  content: "";
+.adventure-pocket-front::before {
   position: absolute;
   z-index: -1;
-  inset: calc(-.42 * var(--book-depth)) calc(-1 * var(--book-depth)) 1px 8px;
-  border-radius: 2px 9px 1px 0;
-  background:
-    linear-gradient(95deg, #60534491, transparent 19%, #5543313d 87%, #9e876152),
-    linear-gradient(180deg, #97866c 0 .45px, #e7dcc6 .7px 1.35px, #b5a585 1.8px,
-      #e2d7bc 2.35px, #c6b698 3.15px, #e3d8bf) top / 100% var(--book-depth) no-repeat,
-    linear-gradient(90deg, #c7b795 0 1px, #eee5ce 2px, #a99777 2.5px, #ded1b5 3.3px, #b7a583 4px)
-      right / var(--book-depth) 100% no-repeat #ded4bc;
-  clip-path: polygon(0 70%, 0 17px, 8px 10px, 24px 5px, 24% 2px, 54% 1px, 86% 0,
-    calc(100% - 8px) 0, calc(100% - 3px) 3px, 100% 11px, 100% 72%, calc(100% - 1px) 100%, 0 100%);
-  pointer-events: none;
-}
-.adventure-print {
-  position: relative;
-  isolation: isolate;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) clamp(5.75rem, 26vw, 14.75rem);
-  align-items: center;
-  gap: clamp(.65rem, 3vw, 2rem);
-  padding: clamp(.9rem, 3vw, 1.6rem) clamp(.75rem, 3.4vw, 2rem);
-  padding-block-end: calc(clamp(.9rem, 3vw, 1.6rem) + var(--pocket-depth));
-  background: #f5efe2 var(--cover-paper) center / 100% 100% no-repeat;
-  clip-path: var(--paper-edge);
-}
-.adventure-copy, .adventure-cover-art { mix-blend-mode: multiply; }
-/* The same fold map lights the printed content and the paper underneath. */
-.adventure-banner::after {
-  content: "";
-  position: absolute;
-  z-index: 1;
   inset: 0;
-  background: var(--cover-paper) center / 100% 100% no-repeat;
-  clip-path: var(--paper-edge);
-  filter: grayscale(1) brightness(.61) contrast(2.7);
-  mix-blend-mode: hard-light;
-  opacity: .26;
-  pointer-events: none;
+  content: "";
+  background: url('./adventure-pocket-canvas.webp') center top / 100% 100% no-repeat;
+  mask-image: linear-gradient(to bottom, #000 40%, transparent 100%);
 }
+.adventure-pocket-tab {
+  padding: .22em .55em;
+  border: 1px solid #ab4c39;
+  border-radius: .25rem;
+  background: #8d221c;
+  box-shadow: inset 0 0 0 1px #60201b, 0 2px 4px #061715c7;
+  color: #fff0cf;
+  font: 700 clamp(.8rem, 2.4vw, 1rem)/1.2 Alegreya, Georgia, serif;
+  transform: rotate(-2deg);
+}
+.adventure-pocket-action {
+  color: #ebc277;
+  font: 600 clamp(.8rem, 2.4vw, 1rem)/1.25 Alegreya, Georgia, serif;
+}
+.adventure-pocket-arrow { white-space: nowrap; }
+.adventure-pocket-arrow span { font-family: "Segoe UI Symbol", sans-serif; }
+.adventure-pocket:focus-visible { outline: 2px solid var(--orange); outline-offset: 4px; }
+.adventure-stage + .hero { border-top: 0; }
 @media (forced-colors: active) {
-  .adventure-pocket { padding: 0 0 1rem; }
-  .adventure-banner { transform: none; filter: none; border: 1px solid LinkText; }
-  .adventure-print { background: Canvas; clip-path: none; }
-  .adventure-pocket-action { position: static; transform: none; mix-blend-mode: normal; }
-  .adventure-pocket-action-label {
-    position: static;
-    display: block;
-    width: auto;
-    height: auto;
-    padding: .5rem;
-    clip-path: none;
-    color: LinkText;
-    text-align: center;
-    text-decoration: underline;
-    white-space: normal;
-  }
-  .adventure-stage::before, .adventure-pocket-action img, .adventure-pocket-action::after,
-  .adventure-pocket-tab, .adventure-pocket::before,
-  .adventure-pocket::after, .adventure-banner::before, .adventure-banner::after { display: none; }
+  .adventure-stage::before, .adventure-pocket-front::before { display: none; }
+  .adventure-pocket-tab, .adventure-pocket-action { color: LinkText; }
+  .adventure-pocket-tab { border-color: LinkText; transform: none; }
+  .adventure-book-cover { transform: none; box-shadow: none; }
 }
-.adventure-copy {
-  width: 100%;
-  min-width: 0;
-  max-width: 32rem;
-  margin-inline: auto;
-  container-type: inline-size;
-  text-align: center;
-}
-.adventure-caption { display: block; }
+
 .adventure-masthead {
   display: inline-block;
   padding: .26em .56em;
@@ -245,50 +128,7 @@ a:hover { color: var(--orange); }
   letter-spacing: .075em;
   text-transform: uppercase;
 }
-.adventure-banner .adventure-masthead {
-  width: fit-content;
-  max-width: 100%;
-  padding: .22em .72em .24em;
-  border-radius: 999px;
-  background: #b72c26;
-  color: #fff9ee;
-  font: 800 clamp(.625rem, 5.15cqi, 1.44rem)/1.02 var(--book-serif);
-  letter-spacing: -.022em;
-  white-space: nowrap;
-}
-.adventure-title {
-  display: block;
-  margin-top: .32rem;
-  padding-block: .19em .22em;
-  border-block: 1px solid #8b7e6b;
-  color: #24568a;
-  font: 700 clamp(1.18rem, 8.5cqi, 2.8rem)/.91 var(--book-serif);
-  letter-spacing: -.035em;
-  text-transform: uppercase;
-  text-wrap: balance;
-}
-.adventure-title span { display: block; }
 .adventure-summary { display: block; margin-top: .4rem; font: italic .9rem/1.25 Georgia, serif; }
-.adventure-banner .adventure-summary {
-  margin-top: .5rem;
-  color: var(--book-ink);
-  font: 700 clamp(.68rem, 3.65cqi, 1rem)/1.08 var(--book-serif);
-  text-transform: uppercase;
-}
-.adventure-cover-art {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-@container adventure-banner (max-width: 17rem) {
-  .adventure-copy { display: contents; }
-  .adventure-banner .adventure-masthead {
-    grid-column: 1 / -1;
-    justify-self: center;
-    font-size: clamp(.67rem, 4.5cqi, 1rem);
-  }
-  .adventure-caption { min-width: 0; container-type: inline-size; text-align: center; }
-}
 .cover {
   display: block;
   width: 100%;
