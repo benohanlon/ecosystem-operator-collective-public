@@ -125,13 +125,13 @@ As Cardano prepared for Shelley in 2020, contributors needed a public way to pro
 
 I use the Ecosystem Operating System (EOS) to coordinate work at scale across autonomous teams inside and outside a company.
 
-**[Numbers come before strategy](https://benohanlon.md/writing/numbers-come-before-strategy.md).** I start by establishing what would benefit the ecosystem as a whole and expressing it in a few system-wide units of account. These measures make the winning conditions visible and give teams a shared basis for coordinating without direct authority. Each team still owns its strategy and the measures it can influence.
+### Numbers come before strategy
+
+I start by establishing what would benefit the ecosystem as a whole and expressing it in a few system-wide units of account. These measures make the winning conditions visible and give teams a shared basis for coordinating without direct authority. Each team still owns its strategy and the measures it can influence.
 
 ### Interface for impact
 
-Each team sees a different part of the same system. A decision can make sense for one team and still work against what the ecosystem needs as a whole. I go to teams to understand their work as they see it, what they value, what shapes their decisions and what they count as progress.
-
-I then show them, in terms they already use, how they can draw on partners, community, developer relations or AI to advance their own priorities and contribute to what the ecosystem needs.
+Each team sees a different part of the same system. A decision can make sense for one team and still work against what the ecosystem needs as a whole. I go to teams to understand their work as they see it, what they value, what shapes their decisions and what they count as progress. From there I bring together the capabilities that can help, whether they come from partners, community, developer relations or AI. I use terms people already recognise so contributors can see where they fit, what they stand to gain and how they can organise around work they choose. The team can then judge what that work delivered using the measures it already uses.
 
 [Read the full EOS Playbook](https://benohanlon.md/eos-playbook/README.md)
 
