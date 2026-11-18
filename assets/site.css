@@ -320,10 +320,10 @@ a:hover { color: var(--orange); }
 .hero {
   display: grid;
   grid-template-columns: minmax(0, 34rem) minmax(9rem, 1fr);
-  grid-template-areas: "record record" "story photo" "download jump" "tools tools";
+  grid-template-areas: "record record" "story photo" "actions actions" "tools tools";
   gap: .8rem 1.5rem;
   padding: clamp(1.2rem, 3vw, 2rem) 0;
-  border-block: 1px solid var(--line);
+  border-top: 1px solid var(--line);
 }
 .profile-record {
   grid-area: record;
@@ -349,16 +349,14 @@ a:hover { color: var(--orange); }
 }
 p { margin: 0 0 1rem; }
 .hero-positioning { max-width: 34rem; margin: 0; }
-.hero .download { grid-area: download; justify-self: start; align-self: center; }
-.download, .contact-jump { font-size: .875rem; }
-.contact-jump {
-  grid-area: jump;
-  justify-self: end;
+.profile-actions, .profile-document-links { display: flex; flex-wrap: wrap; align-items: center; gap: .2rem 1rem; }
+.profile-actions { grid-area: actions; justify-content: space-between; font-size: .875rem; }
+.profile-actions a {
   display: inline-flex;
   align-items: center;
-  gap: .4rem;
   min-height: 2.75rem;
 }
+.contact-jump { margin-inline-start: auto; gap: .4rem; }
 .contact-jump span { color: var(--orange); }
 .hero .intro { grid-area: tools; }
 .hero .profile-prompt { margin-top: 0; }
@@ -508,11 +506,13 @@ summary:hover { color: var(--orange); }
 [role="status"] { color: var(--mint); font-size: .9rem; }
 .profile { max-width: 46rem; margin: clamp(1.4rem, 4vw, 2.5rem) auto 0; }
 .profile h2 { color: var(--orange); font-size: clamp(1.35rem, 4.2vw, 1.85rem); line-height: 1.3; margin: 1.7rem 0 .65rem; }
+.profile > h2 { margin-top: 1.75rem; padding-top: .9rem; border-top: 1px solid var(--line); }
+.profile-nav + h2 { margin-top: 0; }
 .profile h3 { color: var(--mint); font: 700 1.05rem/1.4 system-ui, sans-serif; margin: 1.35rem 0 .55rem; }
 .profile a { overflow-wrap: anywhere; }
 .profile ul, .profile ol { padding-left: 1.25rem; }
 .profile li { margin-bottom: .6rem; }
-.profile-contact { margin-top: 1.25rem; padding-top: .85rem; border-top: 1px solid var(--line); }
+.profile-contact { margin-top: 1.25rem; }
 .profile-contact > h3 { margin: 0 0 .65rem; }
 .profile-contact ul { display: flex; flex-wrap: wrap; align-items: center; gap: .35rem 1.05rem; list-style: none; padding: 0; margin: 0; }
 .profile-contact li { margin: 0; }
@@ -639,13 +639,13 @@ summary:hover { color: var(--orange); }
     grid-template-areas: "record record" "name photo" "bio bio" "actions actions" "tools tools";
     gap: .6rem .45rem;
   }
-  .hero .download, .hero .contact-jump { grid-area: actions; }
   .profile-record { font-size: .78rem; }
   .profile-story { display: contents; }
   .profile-story h1 { grid-area: name; align-self: center; font-size: clamp(1.78rem, 9.2vw, 2.3rem); margin: 0; }
   .profile-story .hero-positioning { grid-area: bio; }
   .profile-portrait-frame { width: 4.1rem; justify-self: end; align-self: center; }
   .profile-portrait-frame .portrait { position: static; width: 100%; height: auto; }
+  .profile-actions, .profile-document-links { column-gap: .45rem; }
   .profile-contact ul { gap: .35rem .7rem; }
   .profile-contact a { font-size: .9rem; }
 }
