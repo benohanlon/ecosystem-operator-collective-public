@@ -415,9 +415,10 @@ summary:hover { color: var(--orange); }
 .profile-prompt #prompt {
   grid-column: 1 / -1;
   max-width: none;
-  padding: .25rem .65rem;
-  background: transparent;
-  color: #ffdb9e;
+  padding: .55rem .65rem;
+  border-left-color: currentColor;
+  background: #ffe5b0;
+  color: #873a11;
   font-size: .98rem;
 }
 .profile-prompt .prompt-actions:not([hidden]) { display: contents; }
