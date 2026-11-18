@@ -46,9 +46,10 @@ a:hover { color: var(--orange); }
   --pocket-front: clamp(2.35rem, 6.7vw, 5.4rem);
   --pocket-pull: clamp(.16rem, .46vw, .38rem);
   --pocket-height: calc(var(--pocket-front) + var(--pocket-depth) - var(--pocket-pull));
-  --pocket-label-line: calc(var(--pocket-height) - clamp(1.46rem, 3.6vw, 2.75rem));
+  --pocket-tab-drop: clamp(.24rem, .46vw, .36rem);
+  --pocket-tab-top: calc(100% - var(--pocket-height) + var(--pocket-tab-drop));
   --pocket-tab-inset: clamp(.32rem, 1.4vw, .9rem);
-  --pocket-tab-width: clamp(3.65rem, 8vw, 4.75rem);
+  --pocket-tab-width: clamp(4.05rem, 8vw, 4.75rem);
   --pocket-text-inset: calc(var(--pocket-tab-inset) + var(--pocket-tab-width) + .65rem);
   position: relative;
   isolation: isolate;
@@ -84,9 +85,10 @@ a:hover { color: var(--orange); }
   position: absolute;
   z-index: 3;
   inset-inline-start: var(--pocket-text-inset);
-  inset-block-end: var(--pocket-label-line);
-  width: min(19rem, calc(94% - var(--pocket-text-inset) - .4rem));
-  transform: translateY(50%);
+  inset-block-start: calc(var(--pocket-tab-top) + var(--pocket-tab-width) * .177);
+  /* Both stitch images use the tab's visible letter height. */
+  width: min(calc(var(--pocket-tab-width) * 1.9), calc(100% - var(--pocket-text-inset) - .4rem));
+  transform: translateY(-50%);
   mix-blend-mode: lighten;
 }
 .adventure-pocket-action img {
@@ -109,14 +111,13 @@ a:hover { color: var(--orange); }
 }
 .adventure-pocket-tab {
   position: absolute;
-  /* The canvas covers the bottom of the tab where it enters the seam. */
-  z-index: 1;
+  z-index: 3;
   inset-inline-start: var(--pocket-tab-inset);
-  inset-block-end: calc(var(--pocket-height) - .32rem);
+  inset-block-start: var(--pocket-tab-top);
   width: var(--pocket-tab-width);
   height: auto;
   filter: drop-shadow(0 2px 2px #001313da);
-  transform: rotate(-4deg);
+  transform: rotate(-2deg);
 }
 .adventure-pocket:focus-visible { outline: 2px solid var(--orange); outline-offset: 4px; }
 .adventure-stage + .hero { border-top: 0; }
