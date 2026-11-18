@@ -56,6 +56,7 @@ a:hover { color: var(--orange); }
   text-decoration: none;
 }
 .adventure-book-window {
+  position: relative;
   display: block;
   width: min(72%, 29rem);
   /* The pocket intersects the A4 cover halfway down its framed illustration. */
@@ -66,6 +67,8 @@ a:hover { color: var(--orange); }
   clip-path: inset(-1.75rem -1.75rem 0);
 }
 .adventure-book-cover {
+  position: absolute;
+  inset: 0 auto auto 0;
   display: block;
   width: 100%;
   height: auto;
@@ -116,7 +119,9 @@ a:hover { color: var(--orange); }
   .adventure-stage::before, .adventure-pocket-front::before { display: none; }
   .adventure-pocket-tab, .adventure-pocket-action { color: LinkText; }
   .adventure-pocket-tab { border-color: LinkText; transform: none; }
-  .adventure-book-cover { transform: none; box-shadow: none; }
+  .adventure-book-cover {
+  position: absolute;
+  inset: 0 auto auto 0; transform: none; box-shadow: none; }
 }
 
 .adventure-masthead {
