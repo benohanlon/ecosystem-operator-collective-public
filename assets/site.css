@@ -27,14 +27,35 @@ main { width: min(60rem, calc(100% - 2.5rem)); margin: clamp(1.25rem, 5vw, 3.75r
 a { color: var(--mint); text-underline-offset: .22em; }
 a:hover { color: var(--orange); }
 .mono, h1, h2 { font-family: "IBM Plex Mono", Consolas, "Courier New", monospace; }
+.adventure-stage { position: relative; isolation: isolate; }
+.adventure-stage::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: calc(-1 * clamp(1.25rem, 5vw, 3.75rem)) -1.25rem -.6rem;
+  background: url('./adventure-canvas-weave.webp') center top / cover no-repeat;
+  mask-image:
+    linear-gradient(90deg, transparent, #000 12% 88%, transparent),
+    linear-gradient(180deg, #000, #000 49%, #000a 70%, transparent 100%);
+  mask-composite: intersect;
+  opacity: .62;
+  pointer-events: none;
+}
 .adventure-pocket {
   --pocket-depth: clamp(.82rem, 2.85vw, 1.75rem);
   --pocket-front: clamp(2.35rem, 6.7vw, 5.4rem);
   --pocket-pull: clamp(.16rem, .46vw, .38rem);
+  --pocket-height: calc(var(--pocket-front) + var(--pocket-depth) - var(--pocket-pull));
+  --pocket-label-line: calc(var(--pocket-height) - clamp(1.46rem, 3.6vw, 2.75rem));
+  --pocket-tab-inset: clamp(.32rem, 1.4vw, .9rem);
+  --pocket-tab-width: clamp(3.65rem, 8vw, 4.75rem);
+  --pocket-text-inset: calc(var(--pocket-tab-inset) + var(--pocket-tab-width) + .65rem);
   position: relative;
   isolation: isolate;
+  display: block;
   padding-block: clamp(.55rem, 2.35vw, 1.4rem) var(--pocket-front);
   padding-inline: clamp(.45rem, 2vw, 1.35rem);
+  text-decoration: none;
 }
 .adventure-pocket::before {
   content: "";
@@ -51,7 +72,7 @@ a:hover { color: var(--orange); }
   position: absolute;
   z-index: 2;
   inset: auto clamp(-1.25rem, -2.1vw, -.4rem) 0;
-  height: calc(var(--pocket-front) + var(--pocket-depth) - var(--pocket-pull));
+  height: var(--pocket-height);
   background: url('./adventure-pocket-canvas.webp') center top / 100% 110% no-repeat;
   mask-image:
     linear-gradient(90deg, transparent, #000 2.4% 97.6%, transparent),
@@ -59,7 +80,45 @@ a:hover { color: var(--orange); }
   mask-composite: intersect;
   pointer-events: none;
 }
-.adventure-pocket + .hero { border-top: 0; }
+.adventure-pocket-action {
+  position: absolute;
+  z-index: 3;
+  inset-inline-start: var(--pocket-text-inset);
+  inset-block-end: var(--pocket-label-line);
+  width: min(22rem, calc(100% - var(--pocket-text-inset) - .5rem));
+  transform: translateY(50%);
+  mix-blend-mode: lighten;
+}
+.adventure-pocket-action img {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: saturate(.76) contrast(1.12);
+  mask-image:
+    linear-gradient(90deg, transparent, #000 3% 97%, transparent),
+    linear-gradient(180deg, transparent, #000 18% 81%, transparent);
+  mask-composite: intersect;
+}
+.adventure-pocket-action-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.adventure-pocket-tab {
+  position: absolute;
+  z-index: 3;
+  inset-inline-start: var(--pocket-tab-inset);
+  inset-block-end: var(--pocket-label-line);
+  width: var(--pocket-tab-width);
+  height: auto;
+  filter: drop-shadow(0 2px 2px #001313da);
+  transform: translateY(50%) rotate(-4deg);
+}
+.adventure-pocket:focus-visible { outline: 2px solid var(--orange); outline-offset: 4px; }
+.adventure-stage + .hero { border-top: 0; }
 .adventure-banner {
   --book-serif: Alegreya, "Times New Roman", serif;
   --book-ink: #221d18;
@@ -130,11 +189,22 @@ a:hover { color: var(--orange); }
   .adventure-pocket { padding: 0 0 1rem; }
   .adventure-banner { transform: none; filter: none; border: 1px solid LinkText; }
   .adventure-print { background: Canvas; clip-path: none; }
-  .adventure-pocket::before, .adventure-pocket::after, .adventure-banner::before, .adventure-banner::after { display: none; }
+  .adventure-pocket-action { position: static; transform: none; mix-blend-mode: normal; }
+  .adventure-pocket-action-label {
+    position: static;
+    display: block;
+    width: auto;
+    height: auto;
+    padding: .5rem;
+    clip-path: none;
+    color: LinkText;
+    text-align: center;
+    text-decoration: underline;
+    white-space: normal;
+  }
+  .adventure-stage::before, .adventure-pocket-action img, .adventure-pocket-tab, .adventure-pocket::before,
+  .adventure-pocket::after, .adventure-banner::before, .adventure-banner::after { display: none; }
 }
-.adventure-banner:hover { color: #163230; }
-.adventure-banner:hover .adventure-start { text-decoration-thickness: 2px; }
-.adventure-banner:focus-visible { outline: 2px solid var(--orange); outline-offset: 4px; }
 .adventure-copy {
   width: 100%;
   min-width: 0;
@@ -144,15 +214,6 @@ a:hover { color: var(--orange); }
   text-align: center;
 }
 .adventure-caption { display: block; }
-.adventure-start {
-  display: inline-block;
-  margin-top: .64rem;
-  color: var(--book-ink);
-  font: 700 clamp(.82rem, 3.3cqi, 1rem)/1.15 var(--book-serif);
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: .17em;
-}
 .adventure-masthead {
   display: inline-block;
   padding: .26em .56em;
