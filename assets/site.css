@@ -365,6 +365,28 @@ summary:hover { color: var(--orange); }
   grid-column: 1 / -1;
   margin: 0 0 .55rem;
 }
+@media (min-width: 48rem) {
+  .adventure-book-window {
+    /* Use the cover ratio to size by height and leave room below for the prompt and portrait. */
+    --cover-height: min(50svh, max(7.5rem, 100svh - 33rem));
+    width: min(72%, 23.2rem, calc(var(--cover-height) * 1055 / 970));
+  }
+  .profile-prompt {
+    max-width: 32rem;
+    gap: .35rem .65rem;
+    padding: .55rem .75rem;
+  }
+  .profile-prompt .prompt-heading { grid-column: 1 / -1; }
+  .profile-prompt #prompt { padding-block: .45rem; }
+  .profile-prompt .copy-button { grid-area: 3 / 1; justify-self: start; }
+  .profile-prompt .prompt-openers {
+    grid-area: 3 / 2;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+  .profile-prompt #copy-status { margin: 0; }
+}
 :focus-visible { outline: 2px solid var(--orange); outline-offset: 4px; }
 [role="status"] { color: var(--mint); font-size: .9rem; }
 .profile h2 { color: var(--orange); font-size: clamp(1.35rem, 4.2vw, 1.85rem); line-height: 1.3; margin: 1.7rem 0 .65rem; }
