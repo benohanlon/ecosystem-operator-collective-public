@@ -43,10 +43,10 @@ function replaceGenerated(source, region, content) {
 const [name, role, positioning, metadata, ...sections] = read('benohanlon.md').trim().split('\n\n');
 const workHeading = sections.indexOf('## Work with me');
 const casesHeading = sections.indexOf('## Cases');
-const contactHeading = sections.indexOf('## Contact');
+const contactHeading = sections.indexOf('### Contact me');
 if (!name?.startsWith('# ') || !role || !positioning || !metadata?.startsWith('Last reviewed:') ||
-    workHeading < 0 || casesHeading <= workHeading || contactHeading <= casesHeading) {
-  throw new Error('The Markdown profile must start with name, role, positioning and review date, followed by Work with me, Cases and Contact in that order.');
+    workHeading < 0 || contactHeading <= workHeading || casesHeading <= contactHeading) {
+  throw new Error('The Markdown profile must start with name, role, positioning and review date. Contact me must appear under Work with me, before Cases.');
 }
 const introduction = markdown.parse(name) +
   markdown.parse(positioning).replace('<p>', '<p class="hero-positioning">');
@@ -60,8 +60,10 @@ if (instructionsHeading !== adventureHeading + 3 || instructionsHeading >= workH
   throw new Error('Agent instructions must sit between the adventure prompt and Work with me.');
 }
 const prompt = markdown.parse(adventure[1]);
-const work = markdown.parse(sections.slice(workHeading, contactHeading).join('\n\n'));
-const contact = markdown.parse(sections.slice(contactHeading).join('\n\n'));
+const contact = markdown.parse(sections.slice(contactHeading, casesHeading).join('\n\n'));
+const work = markdown.parse(sections.slice(workHeading, contactHeading).join('\n\n')) +
+  '<section id="contact" class="profile-contact" aria-labelledby="contact-me">\n' + contact + '</section>\n' +
+  markdown.parse(sections.slice(casesHeading).join('\n\n'));
 const instructions = markdown.parse(sections.slice(instructionsHeading + 1, workHeading).join('\n\n'));
 const guidance = '<details id="agent-instructions">\n<summary>Agent instructions</summary>\n' +
   instructions + '</details>\n' + markdown.parse(metadata.split(' · ')[0]);
@@ -71,7 +73,6 @@ updated = replaceGenerated(updated, 'role', markdown.parse(role).replace('<p>', 
 updated = replaceGenerated(updated, 'prompt', prompt);
 updated = replaceGenerated(updated, 'profile', work);
 updated = replaceGenerated(updated, 'guidance', guidance);
-updated = replaceGenerated(updated, 'contact', contact);
 
 const adventureSource = read('adventure.html');
 const adventurePage = replaceGenerated(adventureSource, 'prompt', prompt);
