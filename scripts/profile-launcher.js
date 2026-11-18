@@ -32,7 +32,7 @@ const questionForm = document.getElementById('question-form');
 if (questionForm) {
   const question = document.getElementById('question');
   const questionStatus = document.getElementById('question-status');
-  const profileUrl = prompt.querySelector('a').href;
+  const profileUrl = document.querySelector('link[rel="alternate"][type="text/markdown"]').href;
 
   questionForm.addEventListener('submit', event => {
     event.preventDefault();

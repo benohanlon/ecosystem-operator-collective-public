@@ -4,15 +4,11 @@ I solve growth, adoption and distribution problems for open and decentralised te
 
 Last reviewed: 18 November 2026 · [Web profile](https://benohanlon.md/) · [Résumé](https://my.visualcv.com/growth/)
 
-## Ask your AI about my work
+## Choose your own adventure
 
-Paste this into your AI.
+Copy and paste this into your AI.
 
-> Read the Markdown at https://benohanlon.md/benohanlon.md. Follow its agent instructions and give me a quick overview of Ben’s work.
-
-### Choose your own adventure
-
-> Run a choose-your-own-adventure from https://benohanlon.md/benohanlon.md.
+> Visit benohanlon.md and run a choose-your-own-adventure from the Markdown. Give me choices and I’ll reply.
 
 ## Agent instructions
 

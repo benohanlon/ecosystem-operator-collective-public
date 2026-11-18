@@ -48,21 +48,16 @@ if (!name?.startsWith('# ') || !positioning || !metadata?.startsWith('Last revie
   throw new Error('The Markdown profile must start with name, positioning and review date, with Work with me before Cases.');
 }
 const introduction = markdown.parse(name + '\n\n' + positioning).replace('<p>', '<p class="hero-positioning">');
-const starterHeading = sections.indexOf('## Ask your AI about my work');
-const starter = sections[starterHeading + 2]?.match(/^> (.+)$/);
-const adventureHeading = sections.indexOf('### Choose your own adventure');
-const adventure = sections[adventureHeading + 1]?.match(/^> (.+)$/);
+const adventureHeading = sections.indexOf('## Choose your own adventure');
+const adventure = sections[adventureHeading + 2]?.match(/^> (.+)$/);
 const instructionsHeading = sections.indexOf('## Agent instructions');
-if (starterHeading < 0 || !starter) {
-  throw new Error('The starter prompt must be a single quoted paragraph.');
+if (adventureHeading < 0 || !adventure) {
+  throw new Error('The adventure prompt must be a single quoted paragraph after the copy instructions.');
 }
-if (adventureHeading !== starterHeading + 3 || !adventure) {
-  throw new Error('The adventure prompt must be a single quoted paragraph after the starter prompt.');
-}
-if (instructionsHeading !== adventureHeading + 2 || instructionsHeading >= workHeading) {
+if (instructionsHeading !== adventureHeading + 3 || instructionsHeading >= workHeading) {
   throw new Error('Agent instructions must sit between the adventure prompt and Work with me.');
 }
-const prompt = markdown.parse(starter[1]);
+const prompt = markdown.parse(adventure[1]);
 const work = markdown.parse(sections.slice(workHeading).join('\n\n'));
 const instructions = markdown.parse(sections.slice(instructionsHeading + 1, workHeading).join('\n\n'));
 const guidance = '<details id="agent-instructions">\n<summary>Agent instructions</summary>\n' +
@@ -74,7 +69,7 @@ updated = replaceGenerated(updated, 'profile', work);
 updated = replaceGenerated(updated, 'guidance', guidance);
 
 const adventureSource = read('adventure.html');
-const adventurePage = replaceGenerated(adventureSource, 'prompt', markdown.parse(adventure[1]));
+const adventurePage = replaceGenerated(adventureSource, 'prompt', prompt);
 
 if (process.argv.includes('--check')) {
   if (updated !== source || adventurePage !== adventureSource) {
