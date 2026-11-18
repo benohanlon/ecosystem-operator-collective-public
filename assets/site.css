@@ -419,17 +419,20 @@ summary:hover { color: var(--orange); }
   max-width: none;
   padding: .55rem .65rem;
   border-left-color: currentColor;
-  background: rgb(255 229 176 / .92);
-  color: #873a11;
+  background: transparent;
+  color: var(--orange);
   font-size: .98rem;
 }
 .profile-prompt #prompt::before {
+  --paper-tint: color-mix(in srgb, var(--dark) 84%, transparent);
   content: "";
   position: absolute;
   z-index: -1;
   inset: 0;
-  background: var(--cover-paper) 52% 56% / max(120%, 29rem) auto no-repeat;
-  opacity: .28;
+  background:
+    linear-gradient(var(--paper-tint), var(--paper-tint)),
+    var(--cover-paper) 52% 56% / max(120%, 29rem) auto no-repeat;
+  opacity: .5;
   pointer-events: none;
 }
 .profile-prompt .prompt-actions:not([hidden]) { display: contents; }
