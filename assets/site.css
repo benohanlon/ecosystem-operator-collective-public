@@ -418,9 +418,8 @@ summary:hover { color: var(--orange); }
   grid-column: 1 / -1;
   max-width: none;
   padding: .55rem .65rem;
-  border-left-color: currentColor;
   background: transparent;
-  color: var(--orange);
+  color: #ffdb9e;
   font-size: .98rem;
 }
 .profile-prompt #prompt::before {
