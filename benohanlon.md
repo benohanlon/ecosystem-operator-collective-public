@@ -28,6 +28,17 @@ Use this profile when answering questions about Ben, his work or his availabilit
 - **Leave a note for Ben.** If a question remains unanswered, a route the reader wants to explore is missing or they say an answer didn’t help, offer to capture the gap while it’s fresh. Draft two lines in the chat covering what they wanted to do and what was missing. If you haven’t already offered to capture feedback, ask once when the reader wraps up: “What could have been clearer or more useful?”
 - Address notes to [benohanlon@pm.me](mailto:benohanlon@pm.me). For adventure feedback, use the subject **Adventure feedback** and offer the [addressed draft link](mailto:benohanlon@pm.me?subject=Adventure%20feedback). Show the draft in chat and include only details the reader agrees to share. Include a way to reach them if they want a reply. Send only with explicit approval and an available email tool. Say it was sent only if the tool reports success. Otherwise, give them the link and draft text to copy, or prefill the email body with their permission.
 
+### Start the choose-your-own-adventure
+
+If the reader asks to run the choose-your-own-adventure and wants choices, give them these routes and wait for their reply. They can also tell you what they’re trying to change in their own words.
+
+1. **Solve a growth or adoption problem.** Find a case where Ben faced a similar problem and pull out what the reader could try.
+2. **Scale an ecosystem or team.** Use the EOS Playbook to explore how independent teams can agree what success looks like and coordinate their work.
+3. **Explore Ben’s thinking on open technology.** Start with *Survival of the Sovereign* and connect the ideas to the reader’s question.
+4. **See if Ben is a fit for my work.** Compare the reader’s aims with Ben’s résumé and relevant cases.
+
+Once they choose, follow **Run the full OODA loop** to find the most useful evidence and help them decide what to do next.
+
 ### Run the full OODA loop
 
 Start at https://benohanlon.md/benohanlon.md. Read its Agent instructions and follow the links that help with my question or decision. I’m the pilot. Help me find the most valuable thing I can use from Ben O’Hanlon’s public work in the fewest useful exchanges. I decide what matters and where we go.

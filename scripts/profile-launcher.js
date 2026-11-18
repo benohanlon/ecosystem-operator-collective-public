@@ -21,12 +21,14 @@ async function copyWithStatus(text, output, message, fallback) {
   }
 }
 
+const copy = document.getElementById('copy');
 const copyFallback = 'Select the prompt to copy it.';
-document.getElementById('copy').addEventListener('click', () =>
+copy.addEventListener('click', () =>
   copyWithStatus(promptText, status, 'Copied. Paste it into your chat.', copyFallback));
 document.getElementById('gemini').addEventListener('click', () =>
   copyWithStatus(promptText, status, 'Copied. Paste it into Gemini.', copyFallback));
-document.getElementById('prompt-actions').hidden = false;
+copy.hidden = false;
+document.getElementById('prompt-openers').hidden = false;
 
 document.querySelector('.agent-instructions-jump')?.addEventListener('click', () => {
   document.getElementById('agent-instructions').open = true;
