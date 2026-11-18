@@ -48,8 +48,6 @@ Keep track of what the reader has told you and what you’ve already shown them 
 
 I’m open to senior growth, marketing and ecosystem leadership roles. Through the [Ecosystem Operator Collective](https://benohanlon.md/README.md), I work with teams on growth, adoption and distribution. I’m based in Greater Manchester, UK.
 
-[Book a call](https://cal.com/benohanlon/30min) · [Email me](mailto:benohanlon@pm.me) · [Read my résumé](https://my.visualcv.com/growth/)
-
 ## Cases
 
 ### Getting early adoption through a network people already trust
@@ -89,12 +87,21 @@ For example, a unit trying to get more developers through their first integratio
 - [Sovereign Harness](https://benohanlon.md/projects/README.md#sovereign-harness) is a personal AI operating system I’m building so people can run fleets of agents, switch models and keep their knowledge and workflows private. It’s in private alpha and being built for open-source release.
 - [Reading list](https://benohanlon.md/lists/README.md) collects the books and ideas we return to.
 
-## Contact
-
-[Email me](mailto:benohanlon@pm.me) · [Book a call](https://cal.com/benohanlon/30min) · [LinkedIn](https://www.linkedin.com/in/memetics/)
-
 ## Add a question
 
 - We’re launching a product and need the first users to try it. How did Ben approach this at RealFi?
 - Developers try our tools but rarely finish an integration. Which case is closest to that problem?
 - What kind of role or project is Ben open to?
+
+## Contact
+
+- [Email me](mailto:benohanlon@pm.me)
+- [Book a call](https://cal.com/benohanlon/30min)
+- [Read my résumé](https://my.visualcv.com/growth/)
+
+Elsewhere
+
+- [LinkedIn](https://www.linkedin.com/in/memetics/ "LinkedIn")
+- [X](https://x.com/benohanlon "X")
+- [Substack](https://ecosystemoperator.substack.com/ "Substack")
+- [Linktree](https://linktr.ee/benohanlon "Linktree")
