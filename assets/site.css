@@ -16,6 +16,7 @@
   --orange: #f17435;
   --line: #315857;
   --panel: #0a2628;
+  --cover-paper: url('./adventure-paperback-cover.webp');
   color: #e2ecec;
   background: var(--dark);
   font-family: system-ui, sans-serif;
@@ -137,7 +138,6 @@ a:hover { color: var(--orange); }
 .adventure-banner {
   --book-serif: Alegreya, "Times New Roman", serif;
   --book-ink: #221d18;
-  --cover-paper: url('./adventure-paperback-cover.webp');
   --paper-edge: polygon(
     0 19px, 1px 15px, 3px 13px, 2px 10px, 5px 8px, 6px 5px,
     10px 3px, 13px 0, 16px 2px, 24px 1px, 62% 0,
@@ -413,13 +413,24 @@ summary:hover { color: var(--orange); }
   text-wrap: balance;
 }
 .profile-prompt #prompt {
+  position: relative;
+  isolation: isolate;
   grid-column: 1 / -1;
   max-width: none;
   padding: .55rem .65rem;
   border-left-color: currentColor;
-  background: #ffe5b0;
+  background: rgb(255 229 176 / .92);
   color: #873a11;
   font-size: .98rem;
+}
+.profile-prompt #prompt::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: var(--cover-paper) 52% 56% / max(120%, 29rem) auto no-repeat;
+  opacity: .28;
+  pointer-events: none;
 }
 .profile-prompt .prompt-actions:not([hidden]) { display: contents; }
 .profile-prompt .copy-button {
