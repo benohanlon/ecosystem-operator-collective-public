@@ -12,7 +12,7 @@ Last reviewed: 18 November 2026 · [Web profile](https://benohanlon.md/) · [Ré
 
 Copy and paste this into your AI.
 
-> Read https://benohanlon.md/benohanlon.md and follow “Run the full OODA loop” under Agent instructions. Start with my question and help me find what’s useful for my next decision. If you can’t open the Markdown, ask me to paste or upload it.
+> Visit [benohanlon.md](https://benohanlon.md/benohanlon.md) and run a choose-your-own-adventure from the Markdown. Give me the choices and I’ll reply.
 
 ## Agent instructions
 
