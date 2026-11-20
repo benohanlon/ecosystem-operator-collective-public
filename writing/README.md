@@ -2,6 +2,10 @@
 
 Start here to see how we think. These essays set out a few ideas we return to in our work, from how independent teams coordinate around shared goals to what happens when people lose control of the systems they depend on. We’ll add to this selection over time. We publish at [The Ecosystem Operator](https://ecosystemoperator.substack.com/).
 
+## Rights
+
+All rights reserved for Ben O’Hanlon’s original writing in this repository, including essays, articles, excerpts and the *Survival of the Sovereign* series, except where an item expressly states a different licence. Third-party material remains subject to its own terms.
+
 ## Numbers come before strategy
 
 To scale a team or an ecosystem, agree what winning means before choosing a strategy. A small set of visible, system-wide units of account gives teams a shared axis to orient around. You can judge proposals by how they would move those numbers. That’s how you get high alignment with loose coupling. Teams can choose their own strategies and experiment in parallel. In a decentralised ecosystem, the goal is capital productivity, measured by how much durable economic value each unit of capital produces. The growth flywheel shows how each team’s work reinforces the rest, and the numbers show whether growth is compounding.

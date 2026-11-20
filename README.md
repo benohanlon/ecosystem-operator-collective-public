@@ -21,3 +21,5 @@ Edit `benohanlon.md` and run `node scripts/build-profile.cjs` to regenerate the 
 ## Licence
 
 See [LICENSE](LICENSE) for the files covered by MIT and the scope of the grant.
+
+All rights reserved for original writing by Ben O’Hanlon unless an item expressly states a different licence. See the [writing rights notice](writing/README.md#rights).
