@@ -51,7 +51,7 @@ a:hover { color: var(--orange); }
   justify-content: space-between;
   gap: .5rem;
 }
-:is(.page-share button:not([hidden]), .profile-fork) {
+:is(.page-share button:not([hidden]), .profile-repo-links a) {
   display: flex;
   align-items: center;
   gap: .45rem;
@@ -65,13 +65,49 @@ a:hover { color: var(--orange); }
   font-size: .875rem;
   cursor: pointer;
 }
-:is(.page-share button, .profile-fork):is(:hover, :focus-visible) { color: var(--mint); }
-.profile-fork { text-decoration: none; }
-.profile-fork:hover { text-decoration: underline; }
-.profile-fork-icon {
-  flex: 0 0 1rem;
-  filter: invert(.9);
+:is(.page-share button, .profile-repo-links a):is(:hover, :focus-visible) { color: var(--mint); }
+.profile-repo-links { display: flex; gap: .3rem; }
+.profile-repo-links a {
+  justify-content: center;
+  width: 2.75rem;
+  padding: 0;
+  text-decoration: none;
 }
+.profile-github-icon { filter: invert(.9); }
+.profile-fork-icon {
+  position: relative;
+  width: 18px;
+  height: 18px;
+}
+.profile-fork-icon::before,
+.profile-fork-icon::after {
+  position: absolute;
+  content: "";
+}
+.profile-fork-icon::before {
+  inset: 4px 3px auto;
+  height: 5px;
+  border: 1.5px solid currentColor;
+  border-top: 0;
+  border-radius: 0 0 3px 3px;
+}
+.profile-fork-icon::after {
+  top: 8px;
+  left: calc(50% - .75px);
+  width: 1.5px;
+  height: 6px;
+  background: currentColor;
+}
+.profile-fork-icon i {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border: 1.5px solid currentColor;
+  border-radius: 50%;
+}
+.profile-fork-icon i:first-child { top: 0; left: 1px; }
+.profile-fork-icon i:nth-child(2) { top: 0; right: 1px; }
+.profile-fork-icon i:last-child { bottom: 0; left: calc(50% - 2.5px); }
 .share-icon {
   display: block;
   position: relative;
@@ -116,7 +152,7 @@ a:hover { color: var(--orange); }
 }
 .page-share-status:empty { padding: 0; }
 @media (max-width: 40rem) {
-  :is(.page-share button:not([hidden]), .profile-fork) { background: #090d0d; }
+  :is(.page-share button:not([hidden]), .profile-repo-links a) { background: #090d0d; }
 }
 .adventure-opening { --pocket-depth: clamp(3.4rem, 8vw, 5.2rem); }
 .adventure-stage { position: relative; isolation: isolate; }
