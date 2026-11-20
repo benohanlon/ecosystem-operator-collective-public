@@ -28,6 +28,7 @@ for (const id of ['chatgpt', 'claude']) {
 async function copyPrompt(successMessage) {
   try {
     await navigator.clipboard.writeText(promptText);
+    window.captureSiteEvent?.('prompt_copy');
     manualCopyNote.hidden = true;
     status.textContent = successMessage;
   } catch {

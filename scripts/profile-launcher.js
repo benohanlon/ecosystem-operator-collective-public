@@ -15,6 +15,7 @@ for (const [id, destination] of launchers) {
 async function copyWithStatus(text, output, message, fallback) {
   try {
     await navigator.clipboard.writeText(text);
+    window.captureSiteEvent?.('prompt_copy');
     output.textContent = message;
   } catch {
     output.textContent = fallback;
