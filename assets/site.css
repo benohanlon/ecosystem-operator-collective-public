@@ -43,8 +43,15 @@ a:hover { color: var(--orange); }
   margin-bottom: clamp(1rem, 2.6vw, 2rem);
 }
 .page-share { position: relative; z-index: 2; }
-.profile-share { position: absolute; inset: 0 -.55rem auto auto; }
-.page-share button:not([hidden]) {
+.profile-site-tools {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .5rem;
+}
+:is(.page-share button:not([hidden]), .profile-fork) {
   display: flex;
   align-items: center;
   gap: .45rem;
@@ -58,7 +65,13 @@ a:hover { color: var(--orange); }
   font-size: .875rem;
   cursor: pointer;
 }
-.page-share button:hover, .page-share button:focus-visible { color: var(--mint); }
+:is(.page-share button, .profile-fork):is(:hover, :focus-visible) { color: var(--mint); }
+.profile-fork { text-decoration: none; }
+.profile-fork:hover { text-decoration: underline; }
+.profile-fork-icon {
+  flex: 0 0 1rem;
+  filter: invert(.9);
+}
 .share-icon {
   display: block;
   position: relative;
@@ -103,10 +116,7 @@ a:hover { color: var(--orange); }
 }
 .page-share-status:empty { padding: 0; }
 @media (max-width: 40rem) {
-  .page-share button:not([hidden]) { background: #090d0d; }
-}
-@media (max-width: 44rem) {
-  .profile-share { position: relative; inset: auto; width: max-content; margin-inline-start: auto; }
+  :is(.page-share button:not([hidden]), .profile-fork) { background: #090d0d; }
 }
 .adventure-opening { --pocket-depth: clamp(3.4rem, 8vw, 5.2rem); }
 .adventure-stage { position: relative; isolation: isolate; }
