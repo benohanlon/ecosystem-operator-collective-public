@@ -17,3 +17,7 @@ An independent consultancy led by Ben O’Hanlon. We help projects grow by worki
 ## Maintain the public profile
 
 Edit `benohanlon.md` and run `node scripts/build-profile.cjs` to regenerate the homepage and the prompt on the adventure page. Run `node scripts/build-profile.cjs --check` before publishing to check both against the Markdown.
+
+## Licence
+
+See [LICENSE](LICENSE) for the files covered by MIT and the scope of the grant.
