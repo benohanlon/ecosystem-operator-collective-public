@@ -5,6 +5,12 @@
   --wrinkled-paper: url('./inner-sea-paper.webp');
 }
 
+/* The printed pages and foldout use dark ink on light paper. */
+.adventure-spread,
+.chart-foldout {
+  color-scheme: only light;
+}
+
 .adventure-page main {
   width: min(37rem, calc(100% - clamp(1.25rem, 4vw, 2rem)));
   margin-block: clamp(.4rem, 1.25svh, .9rem) clamp(1.4rem, 4svh, 2.75rem);
