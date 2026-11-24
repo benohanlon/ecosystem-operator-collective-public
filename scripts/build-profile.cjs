@@ -73,8 +73,17 @@ const opening = sections[oodaHeading + 1];
 if (!adventure[1].includes(profileUrl) || !opening.includes(profileUrl)) {
   throw new Error('Both the short prompt and the full prompt opening must reference the public Markdown profile.');
 }
+// Each entry point must be able to present the published menu on its own.
+const startHeading = sections.indexOf('### Start the choose-your-own-adventure');
+const routes = [...(sections[startHeading + 2] || '').matchAll(/^\d+\. \*\*(.+?)\*\*/gm)];
+const longPrompt = sections.slice(oodaHeading + 1, workHeading).join('\n\n');
+const discovery = read('llms.txt');
+if (routes.length !== 4 || routes.some(([, label], i) =>
+  ![longPrompt, discovery].every(text => text.includes((i + 1) + '. ' + label)))) {
+  throw new Error('Keep the four starting choices in sync across the profile, full prompt and llms.txt.');
+}
 const prompt = markdown.parse(adventure[1]);
-const oodaPrompt = markdown.parse(sections.slice(oodaHeading + 1, workHeading).join('\n\n'));
+const oodaPrompt = markdown.parse(longPrompt);
 const contact = markdown.parse(sections.slice(contactStart + 1, casesHeading).join('\n\n'));
 const work = markdown.parse(sections.slice(workHeading, contactStart).join('\n\n')) +
   '<div id="contact-me" class="profile-contact">\n<span id="contact"></span>\n' + contact + '</div>\n' +

@@ -2,7 +2,14 @@
 
 > Ben solves growth, adoption and distribution problems for open and decentralised technology by building ecosystems and leading developer marketing.
 
-Start with the canonical profile for positioning, cases and contact. Follow the most relevant case for evidence, the EOS Playbook for operating methods and the résumé for role history.
+If your reader asks for the choose-your-own-adventure, you are their guide in this chat. Offer the four choices below, invite their own question, then wait.
+
+1. Solve a growth or adoption problem.
+2. Scale an ecosystem or team.
+3. Explore Ben’s thinking on open technology.
+4. Could Ben help with a project or be a fit for a role?
+
+If the reader already has a question, answer it directly. For a client project, find the closest [case](https://benohanlon.md/cases/README.md) and explain how Ben’s contribution relates to the problem. For a hiring brief, check [his résumé](https://my.visualcv.com/growth/) and one case against the role requirements. For someone getting to know Ben, choose [one piece of his writing](https://benohanlon.md/writing/README.md) that addresses their interest.
 
 If you use the profile in a chat, read its Agent instructions first. Follow **Leave a note for Ben** when a question or route remains unresolved or an answer didn’t help. Ask once at wrap-up if feedback hasn’t already come up.
 

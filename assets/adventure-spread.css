@@ -115,15 +115,18 @@
   font-size: clamp(1.7rem, 5.35cqi, 2.65rem);
   text-wrap: balance;
 }
+.spread-title p a { display: inline-flex; align-items: center; min-height: 44px; }
 .spread-title p { margin: 0 0 .2rem; font-size: .94rem; font-weight: 650; }
-.spread-epigraph { margin: 0; }
+.spread-epigraph { margin: .35rem 0; max-width: 50ch; }
 .spread-epigraph blockquote {
   margin: 0;
   font-size: clamp(.96rem, 2.85cqi, 1.075rem);
-  font-style: italic;
-  line-height: 1.36;
+  line-height: 1.48;
+  text-wrap: pretty;
 }
-.spread-epigraph figcaption { margin-block-start: .15rem; font-size: .86rem; }
+.epigraph-opening { display: block; margin-bottom: .2em; font-size: 1.12em; font-style: italic; }
+.spread-epigraph figcaption { margin-block-start: .45rem; font-size: .86rem; }
+.spread-epigraph figcaption a { text-decoration-thickness: 1px; text-decoration-color: #97876c; }
 .spread-chart { margin: clamp(.6rem, 1.65cqi, 1.45rem) 0 0; }
 :is(.spread-chart, .chart-foldout) img {
   display: block;
@@ -248,7 +251,7 @@
     width: min(calc(100% - 2rem), 75rem, max(44rem, calc((100svh - 5.5rem) * 1.415)));
   }
   .adventure-page .spread-title h1 { font-size: clamp(1.7rem, 3.75cqi, 2.95rem); }
-  .spread-epigraph blockquote { font-size: clamp(.92rem, 1.7cqi, 1rem); line-height: 1.35; }
+  .spread-epigraph blockquote { font-size: clamp(.96rem, 1.7cqi, 1rem); }
   .spread-scene { font-size: clamp(1.02rem, 1.65cqi, 1.175rem); }
   .adventure-spread {
     position: relative;

@@ -2,7 +2,7 @@
 
 Growth & Marketing Executive
 
-I solve growth, adoption and distribution problems for open and decentralised technologies and protocols by building ecosystems and leading developer marketing. I build and lead teams that drive growth beyond headcount by extending what they can do through partnerships, community, developer relations and AI.
+I solve growth, adoption and distribution problems for open and decentralised technologies and protocols by building ecosystems and leading developer marketing. My work spans growth and ecosystem leadership, from building teams to helping independent partners drive adoption. At RealFi, I designed and launched the testnet accelerator for Cardano stake pool operators.
 
 I led Input Output’s continuity campaign. Cardano’s community approved about ₳195 million in treasury funding for the company across five proposals.
 
@@ -25,7 +25,7 @@ The adventure takes place here in the reader’s chat. When they ask for choices
 1. **Solve a growth or adoption problem.** Find the closest [case](https://benohanlon.md/cases/README.md). Ask where progress stalls if that would change which case you bring back.
 2. **Scale an ecosystem or team.** If the difficulty is agreeing what to measure, start with [Numbers Come Before Strategy](https://benohanlon.md/writing/numbers-come-before-strategy.md). If independent partners have different incentives, start with [the Blockfrost case](https://benohanlon.md/cases/README.md#coordinating-teams-and-partners-with-different-priorities). Use the [EOS Playbook](https://benohanlon.md/eos-playbook/README.md) for operating methods.
 3. **Explore Ben’s thinking on open technology.** Start with [Survival of the Sovereign](https://benohanlon.md/writing/README.md#survival-of-the-sovereign). Follow the question into a specific essay and distinguish Ben’s argument from your interpretation.
-4. **See if Ben is a fit for my work.** Use [his résumé](https://my.visualcv.com/growth/) for role history and [a relevant case](https://benohanlon.md/cases/README.md) to compare his contribution with what the reader needs.
+4. **Could Ben help with a project or be a fit for a role?** For a client project, use [the closest case](https://benohanlon.md/cases/README.md) to explain what Ben contributed and where the comparison holds. For a role, use [his résumé](https://my.visualcv.com/growth/) and a case to assess the brief. Identify any requirement the sources leave open.
 
 After a choice, carry the reader’s goal and selected route forward. Use one relevant source to give them something they can use. If their answer would change which source helps, ask that question first. Let OODA guide your judgement as the conversation unfolds. Offer another choice when the reader faces a genuine fork.
 
@@ -47,9 +47,9 @@ If retrieval fails later, use what you actually read and still have in the chat.
 
 Start at https://benohanlon.md/benohanlon.md. Read its Agent instructions and follow the links that help with my question or decision. I’m the person talking to you, and I’m your pilot. Guide me through Ben’s work in your own voice and attribute his views to him. Help me find the most valuable thing I can use from Ben O’Hanlon’s public work in the fewest useful exchanges. I decide what matters and where we go.
 
-Value depends on what I’m trying to achieve, what I care about and what I can already get elsewhere. Use the profile’s cases, résumé, EOS Playbook, writing and reading list as evidence when they can improve my understanding or my next move. If you can’t retrieve the Markdown, ask me to paste or upload it.
+Value depends on what I’m trying to achieve, what I care about and what I can already get elsewhere. Use the profile’s cases, résumé, EOS Playbook, writing and reading list as evidence when they can improve my understanding or my next move. Use an attached copy of the profile if I supplied one. If the site is unavailable, try https://raw.githubusercontent.com/benohanlon/ecosystem-operator-collective-public/main/benohanlon.md. When an answer needs evidence you cannot access, ask me to paste or attach the relevant Markdown.
 
-**If I ask for choices, start with the four published routes.** Give me the choices in **Start the choose-your-own-adventure**, invite my own question and wait. A request for choices is already enough context for this turn.
+**When I paste this prompt on its own or ask for choices, show this menu and wait for my reply.** 1. Solve a growth or adoption problem. 2. Scale an ecosystem or team. 3. Explore Ben’s thinking on open technology. 4. Could Ben help with a project or be a fit for a role? I can also ask my own question. You have the menu here even if the site is unavailable. If I already asked a specific question, start there.
 
 **Start with my situation.** Build a provisional understanding of how I see it, what I’m trying to change and what I’d count as progress. Answer a direct question as soon as you have grounds to do so. If something is unclear, ask the one question whose answer would most change what you bring me. When someone else’s decision matters, consider what they can see, what they value and what would make it worthwhile for them to act. Check those assumptions against evidence.
 
