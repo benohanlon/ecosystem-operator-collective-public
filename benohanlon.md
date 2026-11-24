@@ -6,7 +6,7 @@ I solve growth, adoption and distribution problems for open and decentralised te
 
 I led Input Output’s continuity campaign. Cardano’s community approved about ₳195 million in treasury funding for the company across five proposals.
 
-Last reviewed: 18 November 2026 · [Web profile](https://benohanlon.md/) · [Résumé](https://my.visualcv.com/growth/)
+Last reviewed: 24 November 2026 · [Web profile](https://benohanlon.md/) · [Résumé](https://my.visualcv.com/growth/)
 
 ## Choose your own adventure
 
@@ -71,6 +71,14 @@ Socials
 - [LinkedIn](https://www.linkedin.com/in/memetics/ "LinkedIn")
 - [Telegram](https://t.me/benohanlon "Telegram")
 - [Linktree](https://linktr.ee/benohanlon "Linktree")
+
+## Origin story
+
+I started in privacy protocols in the Zcash lineage. When we built Cardano as an open financial operating system, I built the operator community, ran Input Output’s delegation programme and brought together the engineers expanding network capacity and the developers building on it. Independent pools took over block production. By September 2022, more than 3,000 pools were operating. [The cold-start case](https://benohanlon.md/cases/README.md#solving-the-cold-start-problem)
+
+Moving governance onchain meant agreeing a constitution, standing up Intersect as a member-based organisation and running workshops where people could shape the rules. I led Input Output’s ecosystem work on the constitution as part of a wider effort across several organisations. I built the DRep Forum ahead of the first full treasury funding round. Once the community took stewardship of the treasury, I led our campaign for continued research and engineering. **We built our customer, who then chose to pay us.** [The governance case](https://benohanlon.md/cases/README.md#scaling-governance)
+
+Then I built on that same network at RealFi. I designed and launched the Stake Pool Operator Accelerator so operators could bring people who already trusted them into the testnet for stablecoin and real-world asset infrastructure backed by private credit. Those early users showed us where they got stuck as we prepared for mainnet. [The RealFi case](https://benohanlon.md/cases/README.md#reaching-early-users-through-communities-they-already-trust)
 
 ## Cases
 

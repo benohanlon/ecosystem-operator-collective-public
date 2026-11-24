@@ -45,6 +45,7 @@ const reviewIndex = blocks.findIndex(block => block.startsWith('Last reviewed:')
 const introCopy = blocks.slice(0, reviewIndex);
 const [metadata, ...sections] = blocks.slice(reviewIndex);
 const workHeading = sections.indexOf('## Work with me');
+const storyHeading = sections.indexOf('## Origin story');
 const casesHeading = sections.indexOf('## Cases');
 const playbookHeading = sections.indexOf('## Ecosystem Operating System Playbook');
 const writingHeading = sections.indexOf('## Writing and projects');
@@ -75,9 +76,15 @@ if (!adventure[1].includes(profileUrl) || !opening.includes(profileUrl)) {
 }
 const prompt = markdown.parse(adventure[1]);
 const oodaPrompt = markdown.parse(sections.slice(oodaHeading + 1, workHeading).join('\n\n'));
-const contact = markdown.parse(sections.slice(contactStart + 1, casesHeading).join('\n\n'));
+const contactEnd = storyHeading < 0 ? casesHeading : storyHeading;
+if (contactEnd <= contactStart || contactEnd > casesHeading) {
+  throw new Error('Origin story must sit after the contact links and before Cases.');
+}
+const contact = markdown.parse(sections.slice(contactStart + 1, contactEnd).join('\n\n'));
+const originStory = markdown.parse(sections.slice(contactEnd, casesHeading).join('\n\n'));
 const work = markdown.parse(sections.slice(workHeading, contactStart).join('\n\n')) +
   '<div id="contact-me" class="profile-contact">\n<span id="contact"></span>\n' + contact + '</div>\n' +
+  originStory +
   markdown.parse(sections[casesHeading]) +
   '<div class="profile-cases">\n' + markdown.parse(sections.slice(casesHeading + 1, playbookHeading).join('\n\n')) + '</div>\n' +
   markdown.parse(sections.slice(playbookHeading).join('\n\n'));
