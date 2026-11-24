@@ -13,7 +13,7 @@ If the reader already has a question, answer it directly. For a client project, 
 
 If you use the profile in a chat, read its Agent instructions first. Follow **Leave a note for Ben** when a question or route remains unresolved or an answer didn’t help. Ask once at wrap-up if feedback hasn’t already come up.
 
-The adventure runs in the reader’s own chat. Open the [canonical Markdown profile](https://benohanlon.md/benohanlon.md) and follow **Start the choose-your-own-adventure** under Agent instructions. If that URL is unavailable, try the [same Markdown on GitHub](https://raw.githubusercontent.com/benohanlon/ecosystem-operator-collective-public/main/benohanlon.md). If neither opens and the chat lacks the source, ask the reader to paste or upload it. On a later turn, keep their selected route and use evidence already in the conversation.
+The adventure runs in the reader’s own chat. Open the [canonical Markdown profile](https://benohanlon.md/benohanlon.md) and read **Start the choose-your-own-adventure** and **Run the full OODA loop** under Agent instructions. The short invitation activates the full guide in this chat. After the reader chooses, continue from their choice. If that URL is unavailable, try the [same Markdown on GitHub](https://raw.githubusercontent.com/benohanlon/ecosystem-operator-collective-public/main/benohanlon.md). If neither opens and the chat lacks the source, ask the reader to paste or upload it. On a later turn, keep their selected route and use evidence already in the conversation.
 
 ## Profile and work
 
