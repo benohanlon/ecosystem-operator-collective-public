@@ -4,7 +4,7 @@ Growth & Marketing Executive
 
 I solve growth, adoption and distribution problems for open and decentralised technologies and protocols by building ecosystems and leading developer marketing.
 
-I took a cryptocurrency to the top three by market cap at its peak and built what was arguably the world’s largest DAO by population, participation and treasury size. We built our customer, who then chose to pay us. I led the continuity campaign that won funding from Cardano’s treasury for research and engineering. I then launched stablecoin infrastructure and real-world assets backed by private credit on the open financial operating system we built.
+I took a cryptocurrency to the top three by market cap at its peak and built what was arguably the world’s largest DAO by population, participation and treasury size. We built our customer, who then chose to pay us. I led the continuity campaign that secured ₳195 million across five proposals, including funding for research and engineering. I then launched stablecoin infrastructure and real-world assets backed by private credit on the open financial operating system we built.
 
 Last reviewed: 18 November 2026 · [Web profile](https://benohanlon.md/) · [Résumé](https://my.visualcv.com/growth/)
 
