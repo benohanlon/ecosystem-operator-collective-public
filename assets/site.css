@@ -461,6 +461,9 @@ summary:hover { color: var(--orange); }
   grid-column: 1 / -1;
   margin: 0 0 .55rem;
 }
+@media (max-width: 38rem) {
+  .adventure-pocket .adventure-book-window { width: min(58%, 24svh); }
+}
 @media (min-width: 48rem) {
   .adventure-book-window {
     /* Use the cover ratio to size by height and leave room below for the prompt and portrait. */

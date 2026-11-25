@@ -2,6 +2,23 @@
  * SPDX-FileCopyrightText: 2026 Ben O’Hanlon
  * SPDX-License-Identifier: MIT
  */
+// Keep visual, keyboard and reading order together when the two pages stack.
+const story = document.querySelector('.book-leaf-right');
+const illustration = document.querySelector('.book-leaf-left');
+const title = document.querySelector('.spread-title');
+const spreadLayout = window.matchMedia('(min-width: 60rem)');
+function arrangePages() {
+  if (spreadLayout.matches) {
+    story.before(illustration);
+    illustration.prepend(title);
+  } else {
+    illustration.before(story);
+    story.prepend(title);
+  }
+}
+arrangePages();
+spreadLayout.addEventListener('change', arrangePages);
+
 const prompt = document.getElementById('prompt');
 const promptText = Array.from(prompt.children, block => {
   if (block.tagName === 'OL') {
