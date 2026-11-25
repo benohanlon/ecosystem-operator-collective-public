@@ -38,3 +38,11 @@ document.getElementById('prompt-openers').hidden = false;
 document.querySelector('.agent-instructions-jump')?.addEventListener('click', () => {
   document.getElementById('agent-instructions').open = true;
 });
+
+function openLinkedInterests() {
+  const section = document.querySelector('.work-interests');
+  const target = document.getElementById(location.hash.slice(1));
+  if (section && target && section.contains(target)) section.open = true;
+}
+openLinkedInterests();
+window.addEventListener('hashchange', openLinkedInterests);

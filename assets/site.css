@@ -625,6 +625,7 @@ summary:hover { color: var(--orange); }
   text-decoration: none;
   text-shadow: 0 -1px 1px #101b18;
 }
+.closing-privacy { margin: 1rem 0 0; text-align: center; font-size: .875rem; }
 .closing-click-icon { flex: none; color: #e1b18b; }
 .closing-link:hover, .closing-link:focus-visible {
   border-top-color: #a4805e;
@@ -662,3 +663,5 @@ summary:hover { color: var(--orange); }
   .profile-contact ul { gap: .35rem .7rem; }
   .profile-contact a { font-size: .9rem; }
 }
+.work-interests > summary { cursor: pointer; }
+.work-interests > summary h3 { display: inline; }
