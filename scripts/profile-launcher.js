@@ -1,3 +1,7 @@
+/*
+ * SPDX-FileCopyrightText: 2026 Ben O’Hanlon
+ * SPDX-License-Identifier: MIT
+ */
 const prompt = document.getElementById('prompt');
 const promptText = prompt.textContent.trim();
 const status = document.getElementById('copy-status');

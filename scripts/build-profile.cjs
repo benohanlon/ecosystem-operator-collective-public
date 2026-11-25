@@ -1,3 +1,7 @@
+/*
+ * SPDX-FileCopyrightText: 2026 Ben O’Hanlon
+ * SPDX-License-Identifier: MIT
+ */
 const fs = require('node:fs');
 const path = require('node:path');
 const { Marked } = require('./vendor/marked.umd.js');

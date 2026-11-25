@@ -1,3 +1,7 @@
+<!--
+SPDX-FileCopyrightText: 2026 Ben O’Hanlon
+SPDX-License-Identifier: MIT
+-->
 # Collective case template
 
 Each case explains how we addressed a growth, adoption or distribution problem through ecosystem building and developer marketing. Pick one problem a reader can recognise and one episode that shows how the work changed it.

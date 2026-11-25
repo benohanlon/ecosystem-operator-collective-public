@@ -1,3 +1,7 @@
+/*
+ * SPDX-FileCopyrightText: 2026 Ben O’Hanlon
+ * SPDX-License-Identifier: MIT
+ */
 const prompt = document.getElementById('prompt');
 const promptText = Array.from(prompt.children, block => block.textContent.trim()).join('\n\n');
 const copy = document.getElementById('copy-move');
