@@ -107,10 +107,10 @@ const longPrompt = sections.slice(oodaHeading + 1, workHeading).join('\n\n')
 const prompt = markdown.parse(adventure[1]);
 const oodaPrompt = markdown.parse(longPrompt);
 const contact = markdown.parse(sections.slice(contactStart + 1, casesHeading).join('\n\n'));
-const interests = sections.indexOf('### Ecosystems I’d like to work in');
+const interests = sections.indexOf('### Where I’m a good fit');
 if (interests <= workHeading || interests >= contactStart) throw new Error('Missing work interests under Work with me.');
 const work = markdown.parse(sections.slice(workHeading, interests).join('\n\n')) +
-  '<details class="work-interests" id="where-i-d-like-to-work"><summary>' + markdown.parse(sections[interests]).trim() + '</summary>\n' +
+  '<details class="work-interests" id="where-i-d-like-to-work"><summary><span id="ecosystems-i-d-like-to-work-in"></span>' + markdown.parse(sections[interests]).trim() + '</summary>\n' +
   markdown.parse(sections.slice(interests + 1, contactStart).join('\n\n')) + '</details>\n' +
   '<div id="contact-me" class="profile-contact">\n<span id="contact"></span>\n' + contact + '</div>\n' +
   markdown.parse(sections[casesHeading]) +

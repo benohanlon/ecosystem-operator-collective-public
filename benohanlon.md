@@ -38,7 +38,7 @@ Start with the argument the reader wants to understand or challenge. For why bus
 
 ### How could I work with Ben?
 
-Use the reader’s brief to choose a relevant case and explain what it establishes about fit. If someone asks whom to introduce Ben to, start with [Ecosystems I’d like to work in](https://benohanlon.md/#ecosystems-i-d-like-to-work-in). For a leadership role, use [his résumé](https://my.visualcv.com/growth/). For fractional work or a specific project, use [Work with me](https://benohanlon.md/#work-with-me). If they already want a conversation, give them [Ben’s booking link](https://cal.com/benohanlon/30min).
+Use the reader’s brief to choose a relevant case and explain what it establishes about fit. If someone asks whom to introduce Ben to, start with [Where I’m a good fit](https://benohanlon.md/#where-i-m-a-good-fit). For a leadership role, use [his résumé](https://my.visualcv.com/growth/). For fractional work or a specific project, use [Work with me](https://benohanlon.md/#work-with-me). If they already want a conversation, give them [Ben’s booking link](https://cal.com/benohanlon/30min).
 
 ### What does Ben’s network look like?
 
@@ -104,7 +104,7 @@ If I ask what else I can explore, offer the quickstart’s waypoints. Follow my 
 
 I’m open to senior leadership roles in growth, marketing and ecosystems, full-time or fractional. I also take on client projects through the [Ecosystem Operator Collective](https://benohanlon.md/README.md). I’m based in Greater Manchester, UK.
 
-### Ecosystems I’d like to work in
+### Where I’m a good fit
 
 - **Cypherpunk protocols** — getting privacy-preserving, decentralised and permissionless technologies into people’s hands.
 - **Financial infrastructure** — bringing stablecoins, payments and real-world assets to new users.
