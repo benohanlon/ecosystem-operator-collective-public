@@ -39,7 +39,14 @@
   // The random ID exists only for this page load.
   const distinctId = crypto.randomUUID();
   const currentUrl = location.origin + location.pathname;
+  const demoRoutes = {
+    '/lcr/template/': '2 · GitHub template',
+    '/lcr/harness/': '5 · OODA Harness'
+  };
+  const demoSlide = location.pathname === '/' && new URLSearchParams(location.search).get('demo') === 'lcr-profile'
+    ? '3 · Worked example' : demoRoutes[location.pathname];
   const events = new Set([
+    'lcr_demo_qr_visit',
     '$pageview', 'cyoa_starter_click', 'adventure_entry',
     'prompt_copy', 'substack_signup_click', 'substack_updates_preferences_click'
   ]);
@@ -63,6 +70,7 @@
         distinct_id: distinctId,
         properties: {
           $current_url: currentUrl,
+          ...(demoSlide ? {demo_slide: demoSlide} : {}),
           $host: location.hostname,
           $pathname: location.pathname,
           $process_person_profile: false,
@@ -81,5 +89,6 @@
   document.addEventListener('auxclick', event => {
     if (event.button === 1) captureLink(event);
   });
+  if (demoSlide) capture('lcr_demo_qr_visit');
   capture('$pageview');
 })();
