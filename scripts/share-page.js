@@ -1,3 +1,7 @@
+/*
+ * SPDX-FileCopyrightText: 2026 Ben O’Hanlon
+ * SPDX-License-Identifier: MIT
+ */
 const shareButton = document.querySelector('[data-share-page]');
 const shareStatus = shareButton.parentElement.querySelector('[role="status"]');
 const shareUrl = document.querySelector('link[rel="canonical"]').href;
