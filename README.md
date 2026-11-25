@@ -16,7 +16,7 @@ An independent consultancy led by Ben O’Hanlon. We help projects grow by worki
 
 ## Maintain the public profile
 
-Edit `benohanlon.md` and run `node scripts/build-profile.cjs` to regenerate the homepage and the prompt on the adventure page. Run `node scripts/build-profile.cjs --check` before publishing to check both against the Markdown.
+Edit the four reader routes in [the agent quickstart](./agent-quickstart.md) and the profile copy in `benohanlon.md`. Run `node scripts/build-profile.cjs` to sync the downloadable menus, agent index, homepage and adventure prompt. Run `node scripts/build-profile.cjs --check` before publishing to check both against the Markdown.
 
 ## Licence
 

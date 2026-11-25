@@ -3,7 +3,12 @@
  * SPDX-License-Identifier: MIT
  */
 const prompt = document.getElementById('prompt');
-const promptText = Array.from(prompt.children, block => block.textContent.trim()).join('\n\n');
+const promptText = Array.from(prompt.children, block => {
+  if (block.tagName === 'OL') {
+    return Array.from(block.children, (item, i) => (i + 1) + '. ' + item.textContent.trim()).join('\n');
+  }
+  return block.textContent.trim();
+}).join('\n\n');
 const copy = document.getElementById('copy-move');
 const preview = document.getElementById('prompt-preview');
 const status = document.getElementById('move-status');

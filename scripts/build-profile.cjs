@@ -25,7 +25,7 @@ const markdown = new Marked({
     if (token.type === 'link' && !token.href.startsWith('#')) {
       let target = new URL(token.href, repository);
       // GitHub renders the evidence pages and their section anchors for web readers.
-      if (target.origin === profileOrigin && target.pathname.endsWith('.md') && target.pathname !== '/benohanlon.md') {
+      if (target.origin === profileOrigin && target.pathname.endsWith('.md') && !['/benohanlon.md', '/agent-quickstart.md'].includes(target.pathname)) {
         target = new URL(target.pathname.slice(1) + target.search + target.hash, repository);
       }
       token.href = ['https:', 'http:', 'mailto:'].includes(target.protocol) ? target.href : '#';
@@ -44,7 +44,26 @@ function replaceGenerated(source, region, content) {
   return source.slice(0, start + begin.length) + '\n' + content.trimEnd() + '\n' + source.slice(stop);
 }
 
-const [name, role, ...blocks] = read('benohanlon.md').trim().split('\n\n');
+// The standalone guide owns the menu. Mirror it into the downloadable profile and discovery file.
+const quickstart = read('agent-quickstart.md');
+const routeBlock = quickstart.split('## What are you trying to do?\n\n')[1]?.split('\n\n')[0];
+const labels = [...(routeBlock || '').matchAll(/^(\d+)\. \*\*(.+?)\*\* /gm)];
+if (labels.length !== 4 || labels.some((match, i) => Number(match[1]) !== i + 1)) {
+  throw new Error('Expected four numbered reader routes in agent-quickstart.md.');
+}
+const choices = labels.map(([, number, label]) => number + '. ' + label).join('\n');
+
+function mirror(source, region, content) {
+  const start = '<!-- begin quickstart ' + region + ' -->';
+  const end = '<!-- end quickstart ' + region + ' -->';
+  const [before, rest] = source.split(start);
+  if (rest === undefined || !rest.includes(end)) throw new Error('Missing quickstart region: ' + region);
+  return before + start + '\n\n' + content + '\n\n' + rest.slice(rest.indexOf(end));
+}
+
+const profile = mirror(mirror(read('benohanlon.md'), 'routes', routeBlock), 'choices', choices);
+const discovery = mirror(read('llms.txt'), 'choices', choices);
+const [name, role, ...blocks] = profile.trim().split('\n\n');
 const reviewIndex = blocks.findIndex(block => block.startsWith('Last reviewed:'));
 const introCopy = blocks.slice(0, reviewIndex);
 const [metadata, ...sections] = blocks.slice(reviewIndex);
@@ -72,20 +91,12 @@ if (instructionsHeading !== adventureHeading + 3 || instructionsHeading >= workH
 if (oodaHeading <= instructionsHeading || oodaHeading + 1 >= workHeading) {
   throw new Error('Full OODA loop guidance must sit inside Agent instructions.');
 }
-const profileUrl = profileOrigin + '/benohanlon.md';
-const opening = sections[oodaHeading + 1];
-if (!adventure[1].includes(profileUrl) || !opening.includes(profileUrl)) {
-  throw new Error('Both the short prompt and the full prompt opening must reference the public Markdown profile.');
+const quickstartUrl = profileOrigin + '/agent-quickstart.md';
+if (![adventure[1], sections[oodaHeading + 1]].every(text => text.includes(quickstartUrl))) {
+  throw new Error('Both prompts must direct the reader to the agent quickstart.');
 }
-// Each entry point must be able to present the published menu on its own.
-const startHeading = sections.indexOf('### Start the choose-your-own-adventure');
-const routes = [...(sections[startHeading + 2] || '').matchAll(/^\d+\. \*\*(.+?)\*\*/gm)];
-const longPrompt = sections.slice(oodaHeading + 1, workHeading).join('\n\n');
-const discovery = read('llms.txt');
-if (routes.length !== 4 || routes.some(([, label], i) =>
-  ![longPrompt, discovery].every(text => text.includes((i + 1) + '. ' + label)))) {
-  throw new Error('Keep the four starting choices in sync across the profile, full prompt and llms.txt.');
-}
+const longPrompt = sections.slice(oodaHeading + 1, workHeading).join('\n\n')
+  .replace(/<!-- (?:begin|end) quickstart choices -->/g, '').trim();
 const prompt = markdown.parse(adventure[1]);
 const oodaPrompt = markdown.parse(longPrompt);
 const contact = markdown.parse(sections.slice(contactStart + 1, casesHeading).join('\n\n'));
@@ -107,12 +118,13 @@ updated = replaceGenerated(updated, 'guidance', guidance);
 const adventureSource = read('adventure.html');
 const adventurePage = replaceGenerated(adventureSource, 'prompt', oodaPrompt);
 
-if (process.argv.includes('--check')) {
-  if (updated !== source || adventurePage !== adventureSource) {
-    console.error('Run node scripts/build-profile.cjs before publishing the profile or adventure.');
+const outputs = { 'benohanlon.md': profile, 'llms.txt': discovery, 'index.html': updated, 'adventure.html': adventurePage };
+for (const [file, contents] of Object.entries(outputs)) {
+  if (contents === read(file)) continue;
+  if (process.argv.includes('--check')) {
+    console.error(file + ' is out of date. Run node scripts/build-profile.cjs.');
     process.exitCode = 1;
+  } else {
+    fs.writeFileSync(path.join(root, file), contents, 'utf8');
   }
-} else {
-  if (updated !== source) fs.writeFileSync(path.join(root, 'index.html'), updated, 'utf8');
-  if (adventurePage !== adventureSource) fs.writeFileSync(path.join(root, 'adventure.html'), adventurePage, 'utf8');
 }
