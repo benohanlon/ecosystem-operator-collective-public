@@ -46,7 +46,7 @@ Use [Ben’s public profile](https://benohanlon.md/benohanlon.md#answer-question
 
 ### How do I build something like this?
 
-If they want their own adventure, open [Create your own CYOA profile.md](https://github.com/benohanlon/profile-md-template/blob/main/profile.md). Use Ben’s profile as the worked example. If they want the agentic team behind it, start with [how the harness works](https://benohanlon.md/projects/README.md#sovereign-harness) or open the [profile packs](https://sovereignharness.io/#profile-packs). They can start with the function they need.
+If they want their own adventure, open [Create your own CYOA profile.md](https://github.com/benohanlon/profile-md-template#make-your-own). Use Ben’s profile as the worked example. If they want the agentic team behind it, start with [how the harness works](https://benohanlon.md/projects/README.md#sovereign-harness) or open the [profile packs](https://sovereignharness.io/#profile-packs). They can start with the function they need.
 
 <!-- end quickstart routes -->
 
