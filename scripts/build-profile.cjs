@@ -44,14 +44,21 @@ function replaceGenerated(source, region, content) {
   return source.slice(0, start + begin.length) + '\n' + content.trimEnd() + '\n' + source.slice(stop);
 }
 
-// The standalone guide owns the menu. Mirror it into the downloadable profile and discovery file.
+// The guide owns the opening and the navigable waypoint sections.
 const quickstart = read('agent-quickstart.md');
-const routeBlock = quickstart.split('## What are you trying to do?\n\n')[1]?.split('\n\n')[0];
-const labels = [...(routeBlock || '').matchAll(/^(\d+)\. \*\*(.+?)\*\* /gm)];
-if (labels.length !== 4 || labels.some((match, i) => Number(match[1]) !== i + 1)) {
-  throw new Error('Expected four numbered reader routes in agent-quickstart.md.');
+function section(title) {
+  const heading = '## ' + title + '\n\n';
+  const body = quickstart.split('\n' + heading)[1]?.split('\n## ')[0].trim();
+  if (!body) throw new Error('Missing quickstart section: ' + title);
+  return body;
 }
-const choices = labels.map(([, number, label]) => number + '. ' + label).join('\n');
+const opening = section('Opening');
+const routes = section('Waypoints');
+const waypoints = [...routes.matchAll(/^### (.+)$/gm)].map(match => match[1]);
+if (!waypoints.length || new Set(waypoints).size !== waypoints.length) {
+  throw new Error('Expected distinct, named waypoints.');
+}
+const choices = waypoints.map(label => '- ' + label).join('\n');
 
 function mirror(source, region, content) {
   const start = '<!-- begin quickstart ' + region + ' -->';
@@ -61,7 +68,7 @@ function mirror(source, region, content) {
   return before + start + '\n\n' + content + '\n\n' + rest.slice(rest.indexOf(end));
 }
 
-const profile = mirror(mirror(read('benohanlon.md'), 'routes', routeBlock), 'choices', choices);
+const profile = mirror(mirror(read('benohanlon.md'), 'routes', routes), 'opening', opening);
 const discovery = mirror(read('llms.txt'), 'choices', choices);
 const [name, role, ...blocks] = profile.trim().split('\n\n');
 const reviewIndex = blocks.findIndex(block => block.startsWith('Last reviewed:'));
@@ -96,7 +103,7 @@ if (![adventure[1], sections[oodaHeading + 1]].every(text => text.includes(quick
   throw new Error('Both prompts must direct the reader to the agent quickstart.');
 }
 const longPrompt = sections.slice(oodaHeading + 1, workHeading).join('\n\n')
-  .replace(/<!-- (?:begin|end) quickstart choices -->/g, '').trim();
+  .replace(/<!-- (?:begin|end) quickstart opening -->/g, '').trim();
 const prompt = markdown.parse(adventure[1]);
 const oodaPrompt = markdown.parse(longPrompt);
 const contact = markdown.parse(sections.slice(contactStart + 1, casesHeading).join('\n\n'));
@@ -116,7 +123,8 @@ updated = replaceGenerated(updated, 'profile', work);
 updated = replaceGenerated(updated, 'guidance', guidance);
 
 const adventureSource = read('adventure.html');
-const adventurePage = replaceGenerated(adventureSource, 'prompt', oodaPrompt);
+const spread = replaceGenerated(adventureSource, 'opening', markdown.parse(opening));
+const adventurePage = replaceGenerated(spread, 'prompt', oodaPrompt);
 
 const outputs = { 'benohanlon.md': profile, 'llms.txt': discovery, 'index.html': updated, 'adventure.html': adventurePage };
 for (const [file, contents] of Object.entries(outputs)) {

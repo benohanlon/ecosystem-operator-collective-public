@@ -16,7 +16,7 @@ An independent consultancy led by Ben O’Hanlon. We help projects grow by worki
 
 ## Maintain the public profile
 
-Edit the four reader routes in [the agent quickstart](./agent-quickstart.md) and the profile copy in `benohanlon.md`. Run `node scripts/build-profile.cjs` to sync the downloadable menus, agent index, homepage and adventure prompt. Run `node scripts/build-profile.cjs --check` before publishing to check both against the Markdown.
+Edit the adventure opening and waypoint sections in [the agent quickstart](./agent-quickstart.md) and edit Ben’s profile and the longer OODA guidance in `benohanlon.md`. The build copies the opening and waypoints from the guide. Run `node scripts/build-profile.cjs` to sync the downloadable guide, agent index, homepage and adventure page. Run `node scripts/build-profile.cjs --check` before publishing to check both against the Markdown.
 
 ## Licence
 

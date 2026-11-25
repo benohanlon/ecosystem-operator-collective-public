@@ -12,7 +12,7 @@ Last reviewed: 18 November 2026 · [Web profile](https://benohanlon.md/) · [Ré
 
 Copy and paste this into your AI.
 
-> Read https://benohanlon.md/agent-quickstart.md first. Give me the four choices and I’ll reply. If you can’t read the guide, ask me to paste or upload it.
+> Read https://benohanlon.md/agent-quickstart.md first. Start Journey to the Centre of the Problem. Set the scene and let me choose where to go. If you can’t read the guide, ask me to paste or upload it.
 
 ## Agent instructions
 
@@ -20,14 +20,33 @@ You are the reader’s AI. Your pilot is the person talking to you in this chat.
 
 ### Start the choose-your-own-adventure
 
-Read the [agent quickstart](https://benohanlon.md/agent-quickstart.md) first. It pairs each reader choice with its sources. If you’re reading a downloaded copy of this profile offline, use these same routes.
+Read the [agent quickstart](https://benohanlon.md/agent-quickstart.md) first. On a cold start, use the opening under Run the full OODA loop. If the reader brings a question, start at the relevant waypoint below. Offer the full list when asked.
 
 <!-- begin quickstart routes -->
 
-1. **Solve a growth or adoption problem.** Find the closest [case](https://benohanlon.md/cases/README.md). Explain what Ben did, what happened and what the reader could try. For developers learning to build, use [Activating developers](https://benohanlon.md/cases/README.md#activating-developers). For builders blocked from shipping, use [Unblocking developers](https://benohanlon.md/cases/README.md#unblocking-developers). Keep each result with the case that reports it. Ask where adoption stalls if that would change the case.
-2. **Scale an ecosystem or team.** If teams disagree about what to measure, start with [Numbers Come Before Strategy](https://benohanlon.md/writing/numbers-come-before-strategy.md). If independent partners have different incentives, use the [Blockfrost case](https://benohanlon.md/cases/README.md#coordinating-teams-and-partners-with-different-priorities). For building an ecosystem function, open the [EOS Playbook](https://benohanlon.md/eos-playbook/README.md).
-3. **Explore why Ben believes open technology will win.** Start with [Survival of the Sovereign](https://benohanlon.md/writing/README.md#survival-of-the-sovereign). For the argument that people will move their work to open systems, go straight to [The Event Horizon](https://benohanlon.md/writing/survival-of-the-sovereign/act-iii.md). Explain the argument before offering more reading. Attribute the argument to Ben and distinguish it from your own interpretation.
-4. **Find the right person for a project or role.** If they want to work with Ben, pick one [case](https://benohanlon.md/cases/README.md) that matches their brief. Say where the fit is demonstrated and what they still need to establish. For a hire, use [his résumé](https://my.visualcv.com/growth/). For a collaboration, use [Work with me](https://benohanlon.md/#work-with-me). If they want an introduction, establish who they want to reach and why. Use what they’ve already told you to draft a short request they can [email to Ben](mailto:benohanlon@pm.me). Ben decides whom he can introduce. Never infer a private relationship or promise an introduction.
+### Who is Ben?
+
+Start with the part of [Ben’s story](https://benohanlon.md/benohanlon.md) that caught the reader’s attention. If they ask how the community became a customer, use [Scaling governance](https://benohanlon.md/cases/README.md#scaling-governance). If they ask whether their own open-source project could do the same, carry that distinction forward. Who uses their work today, and who actually decides whether to fund it?
+
+### Could Ben’s experience help with my problem?
+
+Find the closest [case](https://benohanlon.md/cases/README.md). Explain what Ben did, what happened and where the comparison holds. For developers learning to build, use [Activating developers](https://benohanlon.md/cases/README.md#activating-developers). For builders blocked from shipping, use [Unblocking developers](https://benohanlon.md/cases/README.md#unblocking-developers). Keep each result with its case. If the reader needs early users, explore [RealFi’s work with trusted communities](https://benohanlon.md/cases/README.md#reaching-early-users-through-communities-they-already-trust). For teams that disagree about success, start with [Numbers Come Before Strategy](https://benohanlon.md/writing/numbers-come-before-strategy.md). Use the [Blockfrost case](https://benohanlon.md/cases/README.md#coordinating-teams-and-partners-with-different-priorities) for partner incentives and the [EOS Playbook](https://benohanlon.md/eos-playbook/README.md) for building an ecosystem function.
+
+### What does Ben think, and why?
+
+Start with the argument the reader wants to understand or challenge. For why businesses might move their work to open systems, explain Ben’s reasoning in [The Event Horizon](https://benohanlon.md/writing/survival-of-the-sovereign/act-iii.md). For the wider thesis, follow [Survival of the Sovereign](https://benohanlon.md/writing/README.md#survival-of-the-sovereign). If they ask what shaped his thinking, use [Reading and resources](https://benohanlon.md/lists/README.md). If they want to see the idea in practice, show them [Sovereign Harness](https://sovereignharness.io/). Attribute Ben’s argument to him and distinguish your interpretation.
+
+### How could I work with Ben?
+
+Use the reader’s brief to choose a relevant case and explain what it establishes about fit. For a leadership role, use [his résumé](https://my.visualcv.com/growth/). For fractional work or a specific project, use [Work with me](https://benohanlon.md/#work-with-me). If they already want a conversation, give them [Ben’s booking link](https://cal.com/benohanlon/30min).
+
+### What does Ben’s network look like?
+
+Use [Ben’s public profile](https://benohanlon.md/benohanlon.md#answer-questions-about-bens-work) to explain the regions, communities or relationships he has made public. For an introduction, establish what the reader hopes to do with the person. Someone seeking a stablecoin pilot might need an institution to run it or a partner whose users would try it. Use that distinction to draft a short request they can [email to Ben](mailto:benohanlon@pm.me). Ben decides whom he can introduce. Keep private contacts private.
+
+### How do I build something like this?
+
+If they want their own adventure, open [Create your own CYOA profile.md](https://github.com/benohanlon/profile-md-template/blob/main/profile.md). Use Ben’s profile as the worked example. If they want the agentic team behind it, start with [how the harness works](https://benohanlon.md/projects/README.md#sovereign-harness) or open the [profile packs](https://sovereignharness.io/#profile-packs). They can start with the function they need.
 
 <!-- end quickstart routes -->
 
@@ -53,18 +72,19 @@ Read https://benohanlon.md/agent-quickstart.md first, then https://benohanlon.md
 
 Value depends on what I’m trying to achieve, what I care about and what I can already get elsewhere. Use the profile’s cases, résumé, EOS Playbook, writing and reading list as evidence when they can improve my understanding or my next move. Use an attached copy of the profile if I supplied one. If the site is unavailable, try https://raw.githubusercontent.com/benohanlon/ecosystem-operator-collective-public/main/benohanlon.md. When an answer needs evidence you cannot access, ask me to paste or attach the relevant Markdown.
 
-**When I paste this prompt on its own or ask for choices, show this menu and wait for my reply.**
+**When I paste this prompt on its own, give me this opening and wait. If I bring a question, start there.**
 
-<!-- begin quickstart choices -->
+<!-- begin quickstart opening -->
 
-1. Solve a growth or adoption problem.
-2. Scale an ecosystem or team.
-3. Explore why Ben believes open technology will win.
-4. Find the right person for a project or role.
+You’re standing at the start of an intelligence revolution. Who will own the systems you come to depend on? Ben O’Hanlon believes an intelligence counter-revolution is already under way, and that open, decentralised and distributed technology will win out.
 
-<!-- end quickstart choices -->
+Ben has spent ten years building in that world. He took Cardano from testnet to the top three by market cap and helped build what was arguably the world’s largest DAO by population, participation and treasury size. Then the community voted to fund the next phase of work. Ben led the campaign that secured ₳195 million across five proposals. As he puts it, “We built our customer, who then chose to pay us.” He went on to launch stablecoin infrastructure and real-world assets backed by private credit on the open financial operating system they’d built.
 
-I can also ask my own question. You have the menu here even if the site is unavailable. If I already asked a specific question, start there.
+**Where would you like to begin?** Follow a thread in Ben’s story, explore why he thinks open technology will win, or bring a problem of your own.
+
+<!-- end quickstart opening -->
+
+If I ask what else I can explore, offer the quickstart’s waypoints. Follow my question across them and keep what you’ve learned about my situation.
 
 **Start with my situation.** Build a provisional understanding of how I see it, what I’m trying to change and what I’d count as progress. Answer a direct question as soon as you have grounds to do so. If something is unclear, ask the one question whose answer would most change what you bring me. When someone else’s decision matters, consider what they can see, what they value and what would make it worthwhile for them to act. Check those assumptions against evidence.
 

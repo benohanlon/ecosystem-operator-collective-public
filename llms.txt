@@ -2,14 +2,16 @@
 
 > Ben solves growth, adoption and distribution problems for open and decentralised technology by building ecosystems and leading developer marketing.
 
-Read the [agent quickstart](https://benohanlon.md/agent-quickstart.md) first. Follow the source linked for the reader’s question. If they ask for choices, offer this menu, invite their own question, then wait.
+Read the [agent quickstart](https://benohanlon.md/agent-quickstart.md) first. Use its opening on a cold start. For a direct question, enter at the relevant waypoint. The guide covers these questions.
 
 <!-- begin quickstart choices -->
 
-1. Solve a growth or adoption problem.
-2. Scale an ecosystem or team.
-3. Explore why Ben believes open technology will win.
-4. Find the right person for a project or role.
+- Who is Ben?
+- Could Ben’s experience help with my problem?
+- What does Ben think, and why?
+- How could I work with Ben?
+- What does Ben’s network look like?
+- How do I build something like this?
 
 <!-- end quickstart choices -->
 
