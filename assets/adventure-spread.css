@@ -153,6 +153,8 @@
 .adventure-spread a:hover, .chart-foldout a:hover { color: #773e1f; }
 .spread-scene { max-width: 48ch; font-size: 1.12rem; }
 .spread-scene p { margin: 0; }
+.spread-scene ul { list-style: none; margin: .4rem 0 0; padding: 0; }
+.spread-scene li { padding-block: .3rem; }
 .spread-scene p + p { margin-top: .75rem; }
 .spread-scene h3 { margin-block: .85rem .35rem; }
 @media (width < 60rem) {

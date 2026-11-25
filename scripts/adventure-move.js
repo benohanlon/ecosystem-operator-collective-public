@@ -24,8 +24,8 @@ arrangePages();
 spreadLayout.addEventListener('change', arrangePages);
 
 const prompt = document.getElementById('prompt');
-const promptText = Array.from(prompt.children, block => {
-  if (block.tagName === 'OL') {
+const basePrompt = Array.from(prompt.children, block => {
+  if (block.tagName === 'OL' || block.tagName === 'UL') {
     return Array.from(block.children, (item, i) => (i + 1) + '. ' + item.textContent.trim()).join('\n');
   }
   return block.textContent.trim();
@@ -48,12 +48,23 @@ if (typeof chart.showModal === 'function') {
   });
 }
 
-for (const id of ['chatgpt', 'claude']) {
-  const launcher = document.getElementById(id);
-  const url = new URL(launcher.href);
-  url.searchParams.set('q', promptText);
-  launcher.href = url.href;
+const selectedIntent = document.createElement('p');
+selectedIntent.textContent = 'I’m here to see whether Ben could help with a problem I’m trying to solve. Start with my problem. If I haven’t described it yet, ask what I’m trying to change.';
+let promptText = basePrompt;
+function updatePrompt() {
+  const selected = location.hash === '#bring-a-problem';
+  if (selected) prompt.append(selectedIntent);
+  else selectedIntent.remove();
+  promptText = selected ? basePrompt + '\n\n' + selectedIntent.textContent : basePrompt;
+  for (const id of ['chatgpt', 'claude']) {
+    const launcher = document.getElementById(id);
+    const url = new URL(launcher.href);
+    url.searchParams.set('q', promptText);
+    launcher.href = url.href;
+  }
 }
+updatePrompt();
+window.addEventListener('hashchange', updatePrompt);
 
 async function copyPrompt(successMessage) {
   try {
