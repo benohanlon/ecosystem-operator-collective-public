@@ -2,9 +2,9 @@
 
 Growth & Marketing Executive
 
-I solve growth, adoption and distribution problems for open and decentralised technologies and protocols by building ecosystems and leading developer marketing. My work spans growth and ecosystem leadership, from building teams to helping independent partners drive adoption. At RealFi, I designed and launched the testnet accelerator for Cardano stake pool operators.
+I solve growth, adoption and distribution problems for open and decentralised technologies and protocols by building ecosystems and leading developer marketing.
 
-I led Input Output’s continuity campaign. Cardano’s community approved about ₳195 million in treasury funding for the company across five proposals.
+I took a cryptocurrency to the top three by market cap at its peak and built what was arguably the world’s largest DAO by population, participation and treasury size. We built our customer, who then chose to pay us. I led the continuity campaign that won funding from Cardano’s treasury for research and engineering. I then launched stablecoin infrastructure and real-world assets backed by private credit on the open financial operating system we built.
 
 Last reviewed: 18 November 2026 · [Web profile](https://benohanlon.md/) · [Résumé](https://my.visualcv.com/growth/)
 
