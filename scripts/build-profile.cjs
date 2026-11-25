@@ -4,6 +4,7 @@
  */
 const fs = require('node:fs');
 const path = require('node:path');
+const { execFileSync } = require('node:child_process');
 const { Marked } = require('./vendor/marked.umd.js');
 
 const root = path.join(__dirname, '..');
@@ -68,10 +69,24 @@ function mirror(source, region, content) {
   return before + start + '\n\n' + content + '\n\n' + rest.slice(rest.indexOf(end));
 }
 
-const profile = mirror(mirror(read('benohanlon.md'), 'routes', routes), 'opening', opening);
+const assembled = mirror(mirror(read('benohanlon.md'), 'routes', routes), 'opening', opening);
+const dateLine = /^Last (?:reviewed|updated): ([^·\n]+?)(?= · )/m;
+function profileDate() {
+  const saved = assembled.match(dateLine)?.[1];
+  if (!saved) throw new Error('Missing profile update date.');
+  // Downloaded source archives retain their published date without Git history.
+  if (!fs.existsSync(path.join(root, '.git'))) return saved;
+  const git = (...args) => execFileSync('git', args, { cwd: root, encoding: 'utf8' }).replace(/\r\n/g, '\n');
+  const committed = git('show', 'HEAD:benohanlon.md');
+  const changed = assembled.replace(dateLine, '') !== committed.replace(dateLine, '') ||
+    quickstart !== git('show', 'HEAD:agent-quickstart.md');
+  const when = changed ? new Date() : new Date(git('log', '-1', '--format=%cI', '--', 'benohanlon.md', 'agent-quickstart.md').trim());
+  return new Intl.DateTimeFormat('en-GB', { dateStyle: 'long', timeZone: 'Europe/London' }).format(when);
+}
+const profile = assembled.replace(dateLine, 'Last updated: ' + profileDate());
 const discovery = mirror(read('llms.txt'), 'choices', choices);
 const [name, role, ...blocks] = profile.trim().split('\n\n');
-const reviewIndex = blocks.findIndex(block => block.startsWith('Last reviewed:'));
+const reviewIndex = blocks.findIndex(block => block.startsWith('Last updated:'));
 const introCopy = blocks.slice(0, reviewIndex);
 const [metadata, ...sections] = blocks.slice(reviewIndex);
 const workHeading = sections.indexOf('## Work with me');
