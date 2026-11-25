@@ -6,14 +6,18 @@
 const story = document.querySelector('.book-leaf-right');
 const illustration = document.querySelector('.book-leaf-left');
 const title = document.querySelector('.spread-title');
+const map = document.querySelector('.spread-chart');
+const quotation = document.querySelector('.spread-epigraph');
+const references = document.querySelector('.spread-references');
 const spreadLayout = window.matchMedia('(min-width: 60rem)');
 function arrangePages() {
   if (spreadLayout.matches) {
     story.before(illustration);
-    illustration.prepend(title);
+    illustration.prepend(title, map, quotation);
   } else {
     illustration.before(story);
-    story.prepend(title);
+    story.prepend(title, map);
+    references.after(quotation);
   }
 }
 arrangePages();

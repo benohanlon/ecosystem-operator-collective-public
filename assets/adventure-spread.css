@@ -154,7 +154,7 @@
 .spread-scene p + p { margin-top: .75rem; }
 .spread-scene p:last-child > strong:first-child { display: block; }
 @media (width < 60rem) {
-  .spread-title p, .book-folio { display: none; }
+  .spread-title p { display: none; }
 }
 .spread-references {
   display: flex;
@@ -183,7 +183,13 @@
   margin-block-start: .6rem;
   scroll-margin-top: 1rem;
 }
-.book-folio { margin: 0; text-align: end; font-size: .92rem; }
+.adventure-page .chapter-label {
+  margin: 0;
+  color: var(--ink);
+  font: 600 1rem/1.4 Alegreya, Georgia, serif;
+  font-variant: small-caps;
+  letter-spacing: .08em;
+}
 :is(.adventure-continuation, .chart-foldout) button:not([hidden]) {
   display: inline-flex;
   align-items: center;
