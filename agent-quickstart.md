@@ -8,7 +8,9 @@ You’re standing at the start of an intelligence revolution. Who will own the s
 
 Ben has spent ten years building in that world. He took Cardano from testnet to the top three by market cap and helped build what was arguably the world’s largest DAO by population, participation and treasury size. Then the community voted to fund the next phase of work. Ben led the campaign that secured ₳195 million across five proposals. As he puts it, “We built our customer, who then chose to pay us.” He went on to launch stablecoin infrastructure and real-world assets backed by private credit on the open financial operating system they’d built.
 
-**Where would you like to begin?** Follow a thread in Ben’s story, explore why he thinks open technology will win, or bring a problem of your own.
+### Where would you like to begin?
+
+Follow a thread in Ben’s story, explore why he thinks open technology will win, or bring a problem of your own.
 
 ## Waypoints
 

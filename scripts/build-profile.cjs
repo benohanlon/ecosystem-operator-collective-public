@@ -123,7 +123,9 @@ updated = replaceGenerated(updated, 'profile', work);
 updated = replaceGenerated(updated, 'guidance', guidance);
 
 const adventureSource = read('adventure.html');
-const spread = replaceGenerated(adventureSource, 'opening', markdown.parse(opening));
+// The opening also appears inside the expanded prompt. Give the printed page its own anchors.
+const scene = markdown.parse(opening).replace(/(<h[1-6] id=")/g, '$1chapter-');
+const spread = replaceGenerated(adventureSource, 'opening', scene);
 const adventurePage = replaceGenerated(spread, 'prompt', oodaPrompt);
 
 const outputs = { 'benohanlon.md': profile, 'llms.txt': discovery, 'index.html': updated, 'adventure.html': adventurePage };
