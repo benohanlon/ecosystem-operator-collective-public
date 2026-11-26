@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Create a profile.md people can give to their AI to explore your work. Start with your CV, your work samples and a live example.">
+  <meta name="theme-color" content="#031c1d">
+  <title>Create your own CYOA profile.md | benohanlon.md</title>
+  <link rel="canonical" href="https://benohanlon.md/create/">
+  <link rel="stylesheet" href="../assets/site.css?v=closing-privacy">
+  <style>
+    .maker-page {
+      width: min(65rem, calc(100% - 2.5rem));
+      margin: 0 auto;
+    }
+
+    .maker-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: .5rem 1.5rem;
+      border-bottom: 1px solid var(--line);
+      padding: 1.25rem 0;
+    }
+
+    .maker-nav [aria-current] { color: var(--light-amber); }
+
+    .maker-hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr);
+      align-items: end;
+      gap: clamp(1.75rem, 5vw, 4.5rem);
+      padding: clamp(2.5rem, 7vw, 5rem) 0 clamp(2rem, 6vw, 4rem);
+    }
+
+    .maker-page h1 {
+      max-width: 17ch;
+      font-size: clamp(2.1rem, 5.5vw, 4rem);
+      line-height: 1.12;
+      letter-spacing: -.045em;
+      margin: 0 0 1.2rem;
+      color: var(--mint);
+    }
+
+    .maker-page h1 span { color: var(--orange); }
+
+    .maker-lead {
+      font-size: clamp(1.05rem, 2vw, 1.26rem);
+      margin: 0;
+      max-width: 35rem;
+    }
+
+    .maker-quote {
+      margin: 1.25rem 0;
+      padding-left: 1rem;
+      border-left: 2px solid var(--orange);
+      color: var(--light-amber);
+    }
+
+    .maker-action, .maker-copy {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 2.75rem;
+      border: 1px solid var(--mint);
+      border-radius: .35rem;
+      padding: .5rem 1rem;
+      background: var(--mint);
+      color: var(--dark);
+      font: 700 .95rem/1.35 system-ui, sans-serif;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .maker-action:hover, .maker-copy:hover {
+      background: var(--light-amber);
+      border-color: var(--light-amber);
+      color: var(--dark);
+    }
+
+    .maker-page :is(a, button):focus-visible {
+      outline: 2px solid var(--orange);
+      outline-offset: 4px;
+    }
+
+    .maker-example {
+      display: block;
+      overflow: hidden;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: .55rem;
+      text-decoration: none;
+    }
+
+    .maker-example img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .maker-example span {
+      display: block;
+      padding: .8rem 1rem;
+    }
+
+    .maker-example strong {
+      display: block;
+      text-decoration: underline;
+      text-underline-offset: .22em;
+    }
+
+    .maker-example small { color: #c4d7d5; }
+
+    .maker-build {
+      max-width: 49rem;
+      margin: 0 auto;
+      border-top: 1px solid var(--line);
+      padding-top: clamp(1.5rem, 4vw, 2.75rem);
+      scroll-margin-top: 1rem;
+    }
+
+    .maker-page h2 {
+      margin: 0 0 .65rem;
+      font-size: clamp(1.22rem, 3vw, 1.65rem);
+      line-height: 1.3;
+      color: var(--mint);
+    }
+
+    .maker-build > p { margin: 0 0 1rem; }
+
+    .maker-prompt {
+      margin: 1.15rem 0 0;
+      border: 1px solid var(--line);
+      border-radius: .55rem;
+      background: var(--panel);
+    }
+
+    .maker-prompt pre {
+      margin: 0;
+      padding: clamp(1rem, 4vw, 1.65rem);
+      color: #eef9f5;
+      font: 500 .95rem/1.7 "IBM Plex Mono", Consolas, monospace;
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+    }
+
+    .maker-controls {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: .55rem 1rem;
+      padding: 0 clamp(1rem, 4vw, 1.65rem) 1.15rem;
+    }
+
+    .maker-controls[hidden] { display: none; }
+    .maker-status { color: var(--mint); font-size: .9rem; }
+
+    .maker-finish {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.5rem 2.5rem;
+      max-width: 49rem;
+      margin: clamp(1.75rem, 5vw, 3rem) auto;
+    }
+
+    .maker-finish p { margin: 0; }
+
+    .maker-footer {
+      border-top: 1px solid var(--line);
+      padding: 1.25rem 0 2rem;
+    }
+
+    @media (max-width: 42rem) {
+      .maker-hero, .maker-finish { grid-template-columns: 1fr; }
+      .maker-example { width: min(100%, 27rem); }
+    }
+  </style>
+</head>
+<body>
+  <main class="maker-page">
+    <nav class="maker-nav" aria-label="Site navigation">
+      <a href="../">benohanlon.md</a>
+      <span aria-current="page">Create your own</span>
+    </nav>
+
+    <header class="maker-hero">
+      <div>
+        <h1>Create your own CYOA <span>profile.md</span></h1>
+        <p class="maker-lead">Give people a way to ask their own AI about your work. Share your profile alongside your CV, after you meet someone or when you follow up. They bring their own questions and get straight to the examples that matter to them.</p>
+        <blockquote class="maker-quote">“Here’s my MD. Put it into your AI and ask about me.”</blockquote>
+        <a class="maker-action" href="#prompt">Get the build prompt</a>
+      </div>
+      <a class="maker-example" href="../">
+        <img src="../assets/adventure-square-safe-social.jpg" alt="" width="1200" height="630">
+        <span><strong>See Ben’s worked example</strong><small>I built benohanlon.md so you can see how it’s put together and make your own.</small></span>
+      </a>
+    </header>
+
+    <section class="maker-build" id="prompt" aria-labelledby="prompt-heading">
+      <h2 id="prompt-heading">Put this into your AI</h2>
+      <p>Attach your CV and add the work you want people to find. That could be case studies, articles, projects, talks or notes. Then paste this into the same chat.</p>
+      <div class="maker-prompt">
+        <pre id="build-prompt">Assemble me a profile.md from my CV and the work I’ve shared. Use https://benohanlon.md/benohanlon.md as a worked example for the structure.
+
+Use my own material to write the profile and link to the evidence behind it. Give readers a few starting choices so they can explore it as a Choose Your Own Adventure.
+
+Ask me if anything important is missing, then give me the Markdown to review.</pre>
+        <div class="maker-controls" id="copy-controls" hidden>
+          <button class="maker-copy" id="copy-prompt" type="button">Copy prompt</button>
+          <span class="maker-status" id="copy-status" role="status"></span>
+        </div>
+      </div>
+    </section>
+
+    <div class="maker-finish">
+      <section>
+        <h2>Review your profile</h2>
+        <p>Try a question someone might actually ask about your work. Follow the answer to the evidence, then decide what you want to publish.</p>
+      </section>
+      <section>
+        <h2>Give it an address</h2>
+        <p>I bought benohanlon.md so I could share one address that opens my website and points to the Markdown file. A <code>.md</code> domain is optional. You can put <code>profile.md</code> on a domain you already own.</p>
+      </section>
+    </div>
+
+    <footer class="maker-footer">
+      <a href="https://github.com/benohanlon/profile-md-template#make-your-own">Use the GitHub template</a>
+    </footer>
+  </main>
+
+  <script>
+    const buildPrompt = document.getElementById('build-prompt');
+    const copy = document.getElementById('copy-prompt');
+    const status = document.getElementById('copy-status');
+
+    document.getElementById('copy-controls').hidden = false;
+
+    copy.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(buildPrompt.textContent.trim());
+        status.textContent = 'Copied. Paste it into the chat with your CV and work samples.';
+      } catch {
+        const selection = window.getSelection();
+        if (selection) {
+          const range = document.createRange();
+          range.selectNodeContents(buildPrompt);
+          selection.removeAllRanges();
+          selection.addRange(range);
+          status.textContent = 'Prompt selected. Copy it and paste it into your chat.';
+        } else {
+          status.textContent = 'Select the prompt above to copy it.';
+        }
+      }
+    });
+  </script>
+</body>
+</html>
